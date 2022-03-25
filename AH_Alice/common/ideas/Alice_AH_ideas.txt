@@ -1,0 +1,86 @@
+ideas = {
+	country = {
+		
+		AlC_idea_support_from_other_worlds = {
+
+			picture = eng_for_the_good_of_the_revolution
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_efficiency_gain_factor = 0.1
+				research_speed_factor = 0.1
+				MONTHLY_POPULATION = 0.4
+				weekly_manpower = 6000
+				political_power_factor = 0.15
+			}
+		}
+		
+		AlC_idea_prepare_war = {
+
+			picture = generic_infantry_bonus
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				justify_war_goal_time = -0.5
+				war_support_factor = 0.20
+				army_org_factor = 0.1
+			}
+		}
+		
+		ALC_supremacy_of_technology = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_supremacy_of_technology
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+				armor = 0.15
+				air_equipment = 0.15
+				naval_equipment = 0.15
+			}
+		}
+
+		ALC_superior_will = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_supremacy_of_will
+			
+			modifier = {
+				army_defence_factor = 0.07
+				army_attack_factor = 0.07
+				army_morale_factor = 0.1
+				land_reinforce_rate = 0.01
+			}
+		}
+		
+	}
+}

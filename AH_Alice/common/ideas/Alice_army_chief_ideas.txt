@@ -1,0 +1,475 @@
+ideas = {
+	political_advisor = {
+
+		Alice_political_advisor_1 = {
+			
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				
+			}
+			
+			traits = { silent_workhorse }
+		}
+		
+		Alice_political_advisor_2 = {
+			
+			picture = generic_army_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			cost = 150
+			
+			traits = { economist }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		Alice_political_advisor_3 = {
+			
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			cost = 150
+			
+			traits = { economic_organizer }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		Alice_political_advisor_4 = {
+			
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			cost = 150
+			
+			traits = { captain_of_industry }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		Alice_political_advisor_5 = {
+			
+			picture = generic_navy_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			
+			traits = { war_industrialist }
+			
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	
+	theorist = {
+		Alice_casilia_theorist = {
+			ledger = army
+
+			picture = Alice_casilia_government
+			
+			visible = {
+				
+			}
+			
+			allowed = {
+				
+			}
+			
+			available = {
+				has_country_flag = flag_Alice_bacome_theorist
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.25
+			}
+			cost = 25
+			traits = { Alice_government_theorist }
+		}
+	}
+	
+	army_chief = {
+		
+		Alice_army_chief_1 = {
+			
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			available = {
+				
+			}
+
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_army_chief_2 = {
+		
+			picture = generic_air_asia_2
+			
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+			available = {
+				
+			}
+			
+			traits = { army_chief_drill_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_army_chief_3 = {
+			
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			available = {
+				not = { has_government = communism }
+			}
+
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	navy_chief = {
+		
+		
+		
+		Alice_navy_chief_1 = {
+			picture = generic_army_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_chief_naval_aviation_2 }
+			
+			ai_will_do = {
+				factor = 0.2
+			}
+		}
+		
+		Alice_navy_chief_2 = {
+			picture = generic_army_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_chief_commerce_raiding_1 }
+			
+			ai_will_do = {
+				factor = 0.2
+			}
+		}
+		
+		Alice_navy_chief_3 = {
+			picture = generic_army_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 0.2
+			}
+		}
+	}
+	air_chief = {
+		
+		
+		Alice_air_chief_1 = {
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { air_chief_night_operations_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_air_chief_2 = {
+			picture = generic_air_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_air_chief_4 = {
+			
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			available = {
+				
+			}
+
+			
+			traits = { air_air_combat_training_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_air_chief_5 = {
+			
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			available = {
+				
+			}
+
+			
+			traits = { air_chief_all_weather_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}	
+	
+	
+	high_command = {
+		
+		Alice_high_command_1 = {
+			ledger = army
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		Alice_high_command_2 = {
+			ledger = army
+			picture = generic_army_asia_1
+			
+			allowed = {
+				original_tag = ALC
+				
+			}
+			available = {
+				
+			}
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 3
+			}
+		}
+		
+		Alice_high_command_3 = {
+			ledger = army
+			picture = generic_army_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { army_concealment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		Alice_high_command_4 = {
+			ledger = air
+			picture = generic_army_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { air_tactical_bombing_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_high_command_5 = {
+			ledger = navy
+			generic_navy_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { air_naval_strike_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_high_command_6 = {
+			ledger = air
+			generic_navy_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { air_air_combat_training_3 }
+			
+			ai_will_do = {
+				factor = 0.8
+			}
+		}	
+		
+		Alice_high_command_7 = {
+			ledger = navy
+			generic_navy_asia_3
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_capital_ship_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_high_command_8 = {
+			ledger = navy
+			picture = generic_air_asia_1
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_naval_air_defense_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Alice_high_command_9 = {
+			ledger = air
+			picture = generic_air_asia_2
+			
+			allowed = {
+				original_tag = ALC
+			}
+			
+
+			
+			traits = { navy_carrier_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

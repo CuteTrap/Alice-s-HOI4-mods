@@ -1,0 +1,180 @@
+music = {
+	name = "caoyuanacaoyuan"
+	file = "pooryushuka.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "battleisgoing"
+	file = "battleisgoing.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "lostdream"
+	file = "lostdream.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "meiji_17_shanghaiALICE"
+	file = "meiji_17_shanghaiALICE.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "unitedfront"
+	file = "unitedfront.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "badapple"
+	file = "badapple.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "unstablespring"
+	file = "unstablespring.ogg"
+	volume = 0.85
+}
+
+music = {
+	name = "jap_singthespring"
+	file = "jap_singthespring.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "pooryushuka_japanese"
+	file = "pooryushuka_japanese.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "AzurLane_activityIII"
+	file = "AzurLane_activityIII.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "WindsOfPeople"
+	file = "WindsOfPeople.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "MonicaBejenaru_BellaCiao"
+	file = "MonicaBejenaru_BellaCiao.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "ElPuebloUnido"
+	file = "ElPuebloUnido.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Lyubo_bratcy_lyubo"
+	file = "Lyubo_bratcy_lyubo.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Komsomol_Song_PRC"
+	file = "Komsomol_Song_PRC.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "the_most_pretty_future_road"
+	file = "the_most_pretty_future_road.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Kiokunohigari"
+	file = "Kiokunohigari.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "RedDahlia"
+	file = "RedDahlia.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "OrigaPooryu"
+	file = "OrigaPooryu.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "SonOfPeople"
+	file = "SonOfPeople.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Lube_my_little_sister"
+	file = "Lube_my_little_sister.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "MyLongForgottenCloisteredSleep"
+	file = "MyLongForgottenCloisteredSleep.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "MapleTownMemories"
+	file = "MapleTownMemories.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "EpisodeOfMelodica"
+	file = "EpisodeOfMelodica.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "InoryMeiluke"
+	file = "InoryMeiluke.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Sispuellamagica"
+	file = "Sispuellamagica.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "SoraField"
+	file = "SoraField.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "LeGivreFreezingFloweret"
+	file = "LeGivreFreezingFloweret.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "GhostlyEyes"
+	file = "GhostlyEyes.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "eiennomiko"
+	file = "eiennomiko.ogg"
+	volume = 0.65
+}
+

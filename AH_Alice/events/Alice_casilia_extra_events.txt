@@ -1,0 +1,97 @@
+add_namespace = Alice_extra_event
+
+country_event = {
+	id = Alice_extra_event.1
+	title = Alice_extra_event.1.t
+	desc = Alice_extra_event.1.d
+	picture = GFX_report_Alice_Casillia_3
+	
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_extra_event.1.a
+		custom_effect_tooltip = Alice_bacome_theorist_tt
+		set_country_flag = flag_Alice_bacome_theorist
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = Alice_extra_event.1.b
+		random_army_leader = {
+			limit = { 
+				or = { 
+					has_trait = Alice_Casilia
+					has_trait = Alice_Casilia2
+				} 
+			}
+			add_unit_leader_trait = Alice_Casilia_focus_on_battle
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = Alice_extra_event.2
+	title = Alice_extra_event.2.t
+	desc = Alice_extra_event.2.d
+	picture = GFX_report_Alice_Casillia_9
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_extra_event.2.a
+		custom_effect_tooltip = Alice_able_to_transfer_factories_tt
+		set_country_flag = Alice_flag_able_to_transfer_factories
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = Alice_extra_event.3
+	title = Alice_extra_event.3.t
+	desc = Alice_extra_event.3.d
+	picture = GFX_report_Alice_Casillia_4
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_extra_event.3.a
+		custom_effect_tooltip = Alice_poem_1_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = Alice_extra_event.3.b
+		add_political_power = -5
+		if = {
+			limit = {
+				has_idea = Alice_children_protecting_centre_2
+			}
+			swap_ideas = {
+				remove_idea = Alice_children_protecting_centre_2
+				add_idea = Alice_children_protecting_centre_3
+			}
+		}
+		custom_effect_tooltip = Alice_poem_1_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}

@@ -1,0 +1,402 @@
+add_namespace = Alice_novel_event
+
+country_event = { #Alice_chapter1_8_a
+	id = Alice_novel_event.1
+	title = Alice_novel_event.1.t
+	desc = Alice_novel_event.1.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.1.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter1_7_a
+	id = Alice_novel_event.2
+	title = Alice_novel_event.2.t
+	desc = Alice_novel_event.2.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.2.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter2_12_a
+	id = Alice_novel_event.3
+	title = Alice_novel_event.3.t
+	desc = Alice_novel_event.3.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.3.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter2_22_a
+	id = Alice_novel_event.4
+	title = Alice_novel_event.4.t
+	desc = Alice_novel_event.4.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.4.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_2_a
+	id = Alice_novel_event.5
+	title = Alice_novel_event.5.t
+	desc = Alice_novel_event.5.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.5.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_14_a
+	id = Alice_novel_event.6
+	title = Alice_novel_event.6.t
+	desc = Alice_novel_event.6.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.6.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_15_a
+	id = Alice_novel_event.7
+	title = Alice_novel_event.7.t
+	desc = Alice_novel_event.7.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.7.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter1_2_a
+	id = Alice_novel_event.8
+	title = Alice_novel_event.8.t
+	desc = Alice_novel_event.8.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.8.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_18_a
+	id = Alice_novel_event.9
+	title = Alice_novel_event.9.t
+	desc = Alice_novel_event.9.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.9.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_20_a
+	id = Alice_novel_event.11
+	title = Alice_novel_event.11.t
+	desc = Alice_novel_event.11.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.11.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_30_a
+	id = Alice_novel_event.12
+	title = Alice_novel_event.12.t
+	desc = Alice_novel_event.12.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.12.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_31_a
+	id = Alice_novel_event.13
+	title = Alice_novel_event.13.t
+	desc = Alice_novel_event.13.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.13.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_35_a
+	id = Alice_novel_event.14
+	title = Alice_novel_event.14.t
+	desc = Alice_novel_event.14.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.14.a
+		country_event = { id = Alice_novel_event.1401 }
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_35_a
+	id = Alice_novel_event.1401
+	title = Alice_novel_event.1401.t
+	desc = Alice_novel_event.1401.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.1401.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_38_a
+	id = Alice_novel_event.15
+	title = Alice_novel_event.15.t
+	desc = Alice_novel_event.15.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.15.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_42_a
+	id = Alice_novel_event.16
+	title = Alice_novel_event.16.t
+	desc = Alice_novel_event.16.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.16.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter3_50_a
+	id = Alice_novel_event.17
+	title = Alice_novel_event.17.t
+	desc = Alice_novel_event.17.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.17.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter4_2_a
+	id = Alice_novel_event.18
+	title = Alice_novel_event.18.t
+	desc = Alice_novel_event.18.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.18.a
+		country_event = { id = Alice_novel_event.1801 }
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter4_2_a
+	id = Alice_novel_event.1801
+	title = Alice_novel_event.1801.t
+	desc = Alice_novel_event.1801.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.1801.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+
+country_event = { #Alice_chapter4_14_a
+	id = Alice_novel_event.19
+	title = Alice_novel_event.19.t
+	desc = Alice_novel_event.19.d
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_novel_event.19.a
+		
+		ai_chance = {
+		factor = 1
+		}
+	}
+	
+	
+}
+

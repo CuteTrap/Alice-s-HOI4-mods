@@ -1,0 +1,63 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_1"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_2"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_3"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_4"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_4.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_5"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_5.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_6"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_6.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_7"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_7.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_8"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_8.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_9"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_9.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_10"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_10.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_11"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_11.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_12"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_12.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_13"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_13.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_14"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_14.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_15"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_15.dds"
+	}
+}

@@ -1,0 +1,76 @@
+Alice_came_here_decision = {
+
+	Alice_has_came_here_decision = {
+		
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_casilia_evnet.1 }
+		}	
+	}
+	
+	Alice_become_leader_decision = { #此处是仅限原版的功能。为达成此功能，同时修改了country_leader里的特质文件（新增加了一条，对兼容版覆盖不影响）。这条决议会影响兼容版，覆盖的时候注意删掉。
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = Alice_starts_fall_in_love
+			not = {
+				has_country_leader = { name = "爱丽丝 · 卡希莉雅" }
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 200
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			create_country_leader = {
+				name = "爱丽丝 · 卡希莉雅"
+				desc = "POLITICS_Alice_casilia_DESC"
+				picture = "gfx/leaders/Alice_casilia/GFX_portrait_Alice_casilia.dds"
+				expire = "1980.1.1"
+				ideology = leninism
+				traits = {
+					Alice_country_leader_trait
+				}
+			}
+		}	
+	}
+	
+	
+
+
+}

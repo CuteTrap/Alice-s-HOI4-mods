@@ -1,0 +1,150 @@
+﻿
+
+##### OOB #####
+units = { 
+    
+
+	
+	fleet = {
+		name = "爱丽丝第一舰队"
+		naval_base = 7622
+		task_force = {	
+			name = "爱丽丝第一舰队"
+			location = 7622  
+			ship = { name = "解放1号" definition = carrier start_experience_factor = 0.7 equipment = { ship_hull_carrier_1 = {amount = 1 owner = ALC version_name = "解放级" } } 				
+				air_wings = { 
+					cv_fighter_equipment_1 =  { owner = "ALC" amount = 30 }
+					cv_nav_bomber_equipment_1 = { owner = "ALC" amount = 30 }
+
+				}
+			}
+			ship = { name = "解放2号" definition = carrier start_experience_factor = 0.7 equipment = { ship_hull_carrier_1 = {amount = 1 owner = ALC version_name = "解放级" } } 				
+				air_wings = { 
+					cv_fighter_equipment_1 =  { owner = "ALC" amount = 30 }
+					cv_nav_bomber_equipment_1 = { owner = "ALC" amount = 30 }
+
+				}
+			}
+			ship = { name = "解放3号" definition = carrier start_experience_factor = 0.7 equipment = { ship_hull_carrier_1 = {amount = 1 owner = ALC version_name = "解放级" } } 				
+				air_wings = { 
+					cv_fighter_equipment_1 =  { owner = "ALC" amount = 30 }
+					cv_nav_bomber_equipment_1 = { owner = "ALC" amount = 30 }
+
+				}
+			}
+			ship = { name = "革命1号" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = ALC version_name = "革命级" } } }
+			ship = { name = "革命2号" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = ALC version_name = "革命级" } } }
+			ship = { name = "革命3号" definition = battleship start_experience_factor = 0.5 equipment = { ship_hull_heavy_1 = {amount = 1 owner = ALC version_name = "革命级" } } }
+			ship = { name = "赤旗1号" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = ALC version_name = "赤旗级"} } }
+			ship = { name = "赤旗2号" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = ALC version_name = "赤旗级"} } }
+			ship = { name = "赤旗3号" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = ALC version_name = "赤旗级"} } }
+			ship = { name = "赤旗4号" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = ALC version_name = "赤旗级"} } }
+			ship = { name = "赤旗5号" definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2 = {amount = 1 owner = ALC version_name = "赤旗级"} } }
+			ship = { name = "赤旗II型1号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型2号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型3号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型4号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型5号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型6号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型7号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型8号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型9号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型11号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型12号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型13号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型14号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "赤旗II型15号" definition = light_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_2  = {amount = 1 owner = ALC version_name = "赤旗II级"} } }
+			ship = { name = "工人1号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人2号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人3号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人4号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人5号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人6号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人7号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人8号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人9号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人10号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人11号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人12号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人13号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人14号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人15号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人16号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人17号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人18号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人19号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人20号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人21号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人22号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人23号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人24号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人25号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人26号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人27号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人28号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人29号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人30号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人31号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人32号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人33号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人34号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人35号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人36号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人37号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人38号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人39号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人40号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人41号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人42号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人43号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人44号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人45号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人46号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人47号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人48号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			ship = { name = "工人49号" definition = destroyer equipment = { ship_hull_light_2 = {amount = 1 owner = ALC version_name = "工人级"} } }
+			
+		}
+		
+	}
+	
+	
+	fleet = {	
+		name = "潜艇编队"
+		naval_base = 7622
+		task_force = {
+			name = "潜艇编队"
+			location = 7622 
+			ship = { name = "I-1" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-2" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }		
+			ship = { name = "I-3" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-4" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }		
+			ship = { name = "I-5" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-6" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-7" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-8" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-9" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-10" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-11" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-12" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "I-13" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }	
+			ship = { name = "Ro-26" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+			ship = { name = "Ro-27" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+			ship = { name = "Ro-28" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+			ship = { name = "Ro-30" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+			ship = { name = "Ro-31" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+			ship = { name = "Ro-32" definition = submarine equipment = { ship_hull_submarine_1 = {amount = 1 owner = ALC version_name = "A-01级"} } }
+		}
+	
+	}
+	
+}
+
+
+
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################

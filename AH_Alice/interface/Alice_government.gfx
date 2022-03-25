@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_idea_Alice_casilia_government"
+		texturefile = "gfx/leaders/Alice_casilia/GFX_portrait_Alice_casilia_government.dds"
+	}
+}

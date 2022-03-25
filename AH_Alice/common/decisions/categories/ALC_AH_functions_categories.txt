@@ -1,0 +1,8 @@
+ALC_AH_decision = {
+	allowed = {
+		
+	}
+	visible = {
+		tag = ALC
+	}
+}

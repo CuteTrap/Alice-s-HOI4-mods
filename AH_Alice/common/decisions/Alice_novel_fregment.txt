@@ -1,0 +1,530 @@
+Alice_novel_selection = {
+
+
+	Alice_chapter1_2_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.8 }
+		}	
+	}
+
+	Alice_chapter1_7_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.2 }
+		}	
+	}
+	
+	Alice_chapter1_8_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.1 }
+		}	
+	}
+	
+	Alice_chapter2_12_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.3 }
+		}	
+	}
+	
+	Alice_chapter2_22_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.4 }
+		}	
+	}
+	
+	Alice_chapter3_2_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.5 }
+		}	
+	}
+	
+	Alice_chapter3_14_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.6 }
+		}	
+	}
+	
+	Alice_chapter3_15_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.7 }
+		}	
+	}
+	
+	Alice_chapter3_18_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.9 }
+		}	
+	}
+	
+	Alice_chapter3_20_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.11 }
+		}	
+	}
+	
+	Alice_chapter3_30_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.12 }
+		}	
+	}
+	
+	Alice_chapter3_31_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.13 }
+		}	
+	}
+	
+	Alice_chapter3_35_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.14 }
+		}	
+	}
+	
+	Alice_chapter3_38_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.15 }
+		}	
+	}
+	
+	Alice_chapter3_42_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.16 }
+		}	
+	}
+	
+	Alice_chapter3_50_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.17 }
+		}	
+	}
+	
+	Alice_chapter4_2_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.18 }
+		}	
+	}
+	
+	Alice_chapter4_14_a = {
+		
+		icon = generic_independence
+
+		available = {
+			
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			country_event = { id = Alice_novel_event.19 }
+		}	
+	}
+	
+	
+
+
+}
+

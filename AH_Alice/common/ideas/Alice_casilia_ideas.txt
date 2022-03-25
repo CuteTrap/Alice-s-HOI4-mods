@@ -1,0 +1,258 @@
+ideas = {
+	country = {
+		
+		Alice_NKVD = {
+
+			picture = generic_communist_army
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_cost = 0.1
+				subversive_activites_upkeep = -0.5
+				operative_slot = 1
+				intelligence_agency_defense = 1.0
+				stability_weekly = 0.001
+				communism_drift = 0.02
+			}
+		}
+		
+		Alice_NKVD_2 = {
+
+			picture = generic_communist_army
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+				political_power_cost = 0.2
+				subversive_activites_upkeep = -0.5
+				operative_slot = 4
+				intel_network_gain = 0.2
+				boost_ideology_mission_factor = 1.0
+				propaganda_mission_factor = 1.0
+				boost_resistance_factor = 1.0
+				intelligence_agency_defense = 1.0
+				stability_weekly = 0.001
+				communism_drift = 0.02
+			}
+		}
+		
+		Alice_NKVD_3 = {
+
+			picture = generic_communist_army
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+				subversive_activites_upkeep = -0.5
+				operative_slot = 4
+				intel_network_gain = 0.2
+				boost_ideology_mission_factor = 1.0
+				propaganda_mission_factor = 1.0
+				boost_resistance_factor = 1.0
+				intelligence_agency_defense = 1.0
+				stability_weekly = 0.001
+				communism_drift = 0.02
+			}
+		}
+		
+		Alice_children_protecting_centre = {
+
+			picture = FRA_liberte_egalite_solidarite
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.01
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				army_defence_factor = 0.05
+				army_org_factor = 0.07
+				MONTHLY_POPULATION = 0.15
+			}
+		}
+		
+		Alice_children_protecting_centre_2 = {
+
+			picture = FRA_liberte_egalite_solidarite
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				army_defence_factor = 0.05
+				army_org_factor = 0.07
+				MONTHLY_POPULATION = 0.25
+				compliance_gain = 0.05
+				resistance_target = -0.2
+			}
+		}
+		
+		Alice_children_protecting_centre_3 = { #新添加
+
+			picture = FRA_liberte_egalite_solidarite
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+				war_support_factor = 0.1
+				stability_factor = 0.1
+				army_defence_factor = 0.05
+				army_org_factor = 0.07
+				MONTHLY_POPULATION = 0.25
+				compliance_gain = 0.05
+				resistance_target = -0.2
+				conscription_factor = -0.05
+				research_speed_factor = 0.08
+			}
+		}
+		
+		Alice_love_degree_3 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				political_power_factor = 0.05
+			}
+		}
+		
+		Alice_love_degree_2 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+		Alice_love_degree_1 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+		Alice_love_degree_0 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+		Alice_love_degree_n1 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+		Alice_love_degree_n2 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+		Alice_love_degree_n3 = {
+
+			picture = FRA_market_dynamism
+
+			allowed_civil_war = {
+				is_ai = no
+			}
+
+			removal_cost = -1
+			
+			
+			modifier = {
+				
+			}
+		}
+		
+	}
+}

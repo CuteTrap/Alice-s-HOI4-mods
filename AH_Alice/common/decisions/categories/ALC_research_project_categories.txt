@@ -1,0 +1,9 @@
+ALC_research_project = {
+	allowed = {
+		
+	}
+	visible = {
+		has_government = communism
+		has_country_flag = ALC_national_research_project
+	}
+}

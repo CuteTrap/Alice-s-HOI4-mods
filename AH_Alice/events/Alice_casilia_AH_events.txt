@@ -1,0 +1,200 @@
+add_namespace = Alice_casilia_AH_evnet
+
+country_event = { #开局部队
+	id = Alice_casilia_AH_evnet.1
+	title = Alice_casilia_AH_evnet.1.t
+	desc = Alice_casilia_AH_evnet.1.d
+	picture = GFX_report_Alice_Casillia_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_casilia_AH_evnet.1.a
+		add_political_power = 50
+		custom_effect_tooltip = ALC_beginning_troops_tt
+		add_to_variable = { var = ubs_save value = 400 }
+		hidden_effect = {
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 315 }
+				create_unit = {
+					division = "name = \"爱丽丝近卫军1师\" division_template = \"爱丽丝近卫军\" start_experience_factor = 0.3" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫军2师\" division_template = \"爱丽丝近卫军\" start_experience_factor = 0.3" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫军3师\" division_template = \"爱丽丝近卫军\" start_experience_factor = 0.3" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫军4师\" division_template = \"爱丽丝近卫军\" start_experience_factor = 0.3" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫军5师\" division_template = \"爱丽丝近卫军\" start_experience_factor = 0.3" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫装甲师1师\" division_template = \"爱丽丝近卫装甲师\" start_experience_factor = 0.7" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"爱丽丝近卫装甲师2师\" division_template = \"爱丽丝近卫装甲师\" start_experience_factor = 0.7" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"特种登陆部队\" division_template = \"海军陆战队\" start_experience_factor = 0.7" 
+					owner = ALC
+				}
+				create_unit = {
+					division = "name = \"特种登陆部队\" division_template = \"海军陆战队\" start_experience_factor = 0.7" 
+					owner = ALC
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #大清洗
+	id = Alice_casilia_AH_evnet.2
+	title = Alice_casilia_AH_evnet.2.t
+	desc = Alice_casilia_AH_evnet.2.d
+	picture = GFX_report_Alice_Casillia_14
+	
+	
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = Alice_casilia_AH_evnet.2.a
+		add_political_power = -50
+		add_manpower = -2000
+		add_stability = 0.03
+		add_war_support = 0.02
+		
+		ai_chance = {
+		factor = 1000
+		}
+	}
+	
+}
+
+country_event = {
+	id = Alice_casilia_AH_evnet.4
+	title = Alice_casilia_AH_evnet.4.t
+	desc = Alice_casilia_AH_evnet.4.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_casilia_AH_evnet.4.a
+		add_tech_bonus = {
+			name = ALC_cruiser_modernization
+			bonus = 2.0
+			uses = 1
+			category = cl_tech	
+			category = ca_tech	
+		}
+		add_tech_bonus = {
+			name = ALC_modern_escorts
+			bonus = 1.0
+			uses = 1
+			category = dd_tech	
+		}
+		ALC = { country_event = Alice_casilia_AH_evnet.401 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = Alice_casilia_AH_evnet.4.b
+		ALC = { country_event = Alice_casilia_AH_evnet.402 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = Alice_casilia_AH_evnet.401
+	title = Alice_casilia_AH_evnet.401.t
+	desc = Alice_casilia_AH_evnet.401.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_casilia_AH_evnet.401.a
+		if = {
+			limit = { NOT = { has_tech = basic_medium_tank } }
+			set_technology = {
+				basic_medium_tank = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = improved_medium_tank } 
+				is_ai = yes
+			}
+			set_technology = {
+				improved_medium_tank = 1
+			}
+		}
+		add_tech_bonus = {
+			name = ALC_soviet_armor_tech
+			bonus = 2.0
+			uses = 1
+			category = armor	
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = {
+	id = Alice_casilia_AH_evnet.402
+	title = Alice_casilia_AH_evnet.402.t
+	desc = Alice_casilia_AH_evnet.402.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = Alice_casilia_AH_evnet.402.a
+		if = {
+			limit = { NOT = { has_tech = basic_medium_tank } }
+			set_technology = {
+				basic_medium_tank = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = improved_medium_tank } }
+			set_technology = {
+				improved_medium_tank = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}

@@ -1,0 +1,297 @@
+# Songs from the esteemed metal band Sabaton
+# Five song to enjoy while playing Hearts of Iron IV
+
+music_station = "Alice_Casilia"
+
+music = {
+	song = "caoyuanacaoyuan"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "battleisgoing"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "lostdream"
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "meiji_17_shanghaiALICE"
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "unitedfront"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "unstablespring"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "jap_singthespring"
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "pooryushuka_japanese"
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "badapple"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "AzurLane_activityIII"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "WindsOfPeople"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "MonicaBejenaru_BellaCiao"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "ElPuebloUnido"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "Lyubo_bratcy_lyubo"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "Komsomol_Song_PRC"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "the_most_pretty_future_road"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "Kiokunohigari"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "RedDahlia"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "OrigaPooryu"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "SonOfPeople"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "Lube_my_little_sister"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}	
+}
+
+music = {
+	song = "MyLongForgottenCloisteredSleep"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "MapleTownMemories"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "EpisodeOfMelodica"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "InoryMeiluke"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "Sispuellamagica"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "SoraField"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "LeGivreFreezingFloweret"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "GhostlyEyes"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "eiennomiko"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+

@@ -1,0 +1,3238 @@
+﻿focus_tree = {
+	id = ALC_AH_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 20
+			tag = ALC
+		}
+	}
+	
+
+	default = no
+
+	continuous_focus_position = { x = 1100 y = 2000 }
+
+	
+
+	focus = {
+		id = ALC_open_up_the_universities
+		icon = GFX_focus_research
+		prerequisite = { focus = ALC_agriculture_proj }
+		x = 0
+		y = 2
+		relative_position_id = ALC_agriculture_proj
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = ALC_everything_is_done
+		icon = GFX_goal_support_communism #GFX_focus_generic_treaty
+		x = 6
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		select_effect = {
+			
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_political_power = 150
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_manpower = 200000
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 600 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 400 }
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 150 }
+			315 = {
+				add_resource = {
+				type = steel
+				amount = 40
+				}
+				add_resource = {
+				type = tungsten
+				amount = 10
+				}
+				add_resource = {
+				type = oil
+				amount = 10
+				}
+				add_resource = {
+				type = rubber
+				amount = 10
+				}
+				add_resource = {
+				type = aluminium
+				amount = 10
+				}
+				add_resource = {
+				type = chromium
+				amount = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_the_fate_of_the_imperial_family
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		prerequisite = { focus = ALC_asian_communist_solidarity_2 focus = ALC_join_comintern }
+		x = -2
+		y = 2
+		relative_position_id = ALC_everything_is_done
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = Alice_NKVD
+				add_idea = Alice_NKVD_2
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_army_reformed
+		icon = GFX_focus_spr_class_war
+		prerequisite = { focus = ALC_red_brigades }
+		prerequisite = { focus = ALC_the_fate_of_the_imperial_family }
+		x = 0
+		y = 1
+		relative_position_id = ALC_red_brigades
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			ALC = { country_event = { id = Alice_casilia_evnet.601 days = 1 } }
+		}
+	}
+
+	focus = {
+		id = ALC_rebuild_the_civil_service
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = ALC_reeducation_campaign }
+		x = 0
+		y = 1
+		relative_position_id = ALC_reeducation_campaign
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = ALC_reeducation_campaign
+		icon = GFX_ALC_focus_re_education #GFX_goal_generic_propaganda
+		prerequisite = { focus = ALC_the_fate_of_the_imperial_family }
+		x = 0
+		y = 1
+		relative_position_id = ALC_the_fate_of_the_imperial_family
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = Alice_NKVD_2
+				add_idea = Alice_NKVD_3
+			}
+			hidden_effect = {
+				country_event = { id = Alice_casilia_AH_evnet.2 days = 20 }
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_finish_the_fight
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = ALC_army_reformed }
+		x = 0
+		y = 1
+		relative_position_id = ALC_army_reformed
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+		
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		will_lead_to_war_with = MAN
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			ALC = { country_event = { id = Alice_extra_event.3 days = 1 } }
+		}
+	}
+
+	focus = { #准备统一中美洲
+		id = ALC_join_comintern
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { focus = ALC_everything_is_done }
+		mutually_exclusive = { focus = ALC_asian_communist_solidarity_2 }
+		x = -5
+		y = 1
+		relative_position_id = ALC_everything_is_done
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = AlC_idea_prepare_war
+		}
+	}
+	
+	focus = { #爱丽丝获得核心
+		id = ALC_invite_PRC_to_comintern
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = ALC_join_comintern }
+		prerequisite = { focus = ALC_soviet_support2 }
+		x = 0
+		y = 4
+		relative_position_id = ALC_join_comintern
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = ALC_get_core_tt
+			unlock_decision_tooltip = ALC_get_core
+		}
+	}
+	
+	focus = { #消灭精灵
+		id = ALC_eliminate_seirei
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = ALC_invite_PRC_to_comintern focus = ALC_invite_PRC_to_comintern2 }
+		x = 4
+		y = 1
+		relative_position_id = ALC_invite_PRC_to_comintern
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			ALC = {
+				create_wargoal = {
+					type = annex_everything
+					target = USA
+					expire = 0
+				}
+			}
+		}
+	}
+	
+	focus = { #决战世羽
+		id = ALC_eliminate_shiyu
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = ALC_invite_PRC_to_comintern focus = ALC_invite_PRC_to_comintern2 }
+		x = 6
+		y = 1
+		relative_position_id = ALC_invite_PRC_to_comintern
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			ALC = {
+				create_wargoal = {
+					type = annex_everything
+					target = SHY
+					expire = 0
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_red_brigades
+		icon = GFX_ALC_red_army
+		prerequisite = { focus = ALC_asian_communist_solidarity_2 focus = ALC_join_comintern }
+		x = 2
+		y = 2
+		relative_position_id = ALC_everything_is_done
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			army_experience = 20
+			add_ideas = ALC_red_brigades
+		}
+	}
+
+	focus = {
+		id = ALC_communist_volunteers
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = ALC_reeducation_campaign }
+		prerequisite = { focus = ALC_army_reformed }
+		x = -2
+		y = 1
+		relative_position_id = ALC_army_reformed
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			ALC = { country_event = { id = Alice_extra_event.1 days = 1 } }
+		}
+	}
+	
+	focus = {
+		id = ALC_tech_for_PRC
+		icon = GFX_ALC_support_prc
+		prerequisite = { focus = ALC_asian_communist_solidarity_2 }
+		x = -1
+		y = 1
+		relative_position_id = ALC_asian_communist_solidarity_2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = ALC_prc_together
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = ALC_tech_for_PRC }
+		x = 0
+		y = 2
+		relative_position_id = ALC_tech_for_PRC
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_asian_communist_solidarity_2
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		prerequisite = { focus = ALC_everything_is_done }
+		mutually_exclusive = { focus = ALC_join_comintern }
+		x = 5
+		y = 1
+		relative_position_id = ALC_everything_is_done
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = { #并入共产国际
+		id = ALC_invite_PRC_to_comintern2
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = ALC_asian_communist_solidarity_2 }
+		prerequisite = { focus = ALC_prc_together }
+		x = 0
+		y = 4
+		relative_position_id = ALC_asian_communist_solidarity_2
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 4
+				date > 1941.11.1
+			}
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_exchange_info_tech
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = ALC_tech_for_PRC focus = ALC_soviet_support }
+		x = 5
+		y = 2
+		relative_position_id = ALC_join_comintern
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = touhou_RAB_with_kap
+				bonus = 1.0
+				uses = 2
+				category = industry
+			}
+			add_timed_idea = {
+				idea = ALC_soviet_construction
+				days = 360
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_tokyo_peoples_university
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = ALC_open_up_the_universities }
+		x = 0
+		y = 2
+		relative_position_id = ALC_open_up_the_universities
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = ALC_idea_educational_duty
+			set_country_flag = ALC_national_research_project
+			unlock_decision_category_tooltip = ALC_research_project
+		}
+	}
+
+	focus = {
+		id = ALC_information_agency
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = ALC_exchange_info_tech }
+		x = 0
+		y = 2
+		relative_position_id = ALC_exchange_info_tech
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = ALC_information
+		}
+	}
+	
+	focus = {
+		id = ALC_soviet_support
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = ALC_join_comintern }
+		x = 1
+		y = 1
+		relative_position_id = ALC_join_comintern
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			313 = {
+				controller = {
+					ALC = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+			312 = {
+				controller = {
+					ALC = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+			317 = {
+				controller = {
+					ALC = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+			316 = {
+				controller = {
+					ALC = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+			304 = {
+				controller = {
+					ALC = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+							expire = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_soviet_support2
+		icon = GFX_ALC_follow_moscow
+		prerequisite = { focus = ALC_soviet_support }
+		x = 0
+		y = 2
+		relative_position_id = ALC_soviet_support
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			ALC = {
+				create_wargoal = {
+					type = annex_everything
+					target = MEX
+					expire = 0
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_nationalize_the_zaibatsus
+		icon = GFX_focus_jap_zaibatsu
+		x = 14
+		y = 0
+		relative_position_id = ALC_everything_is_done
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = ALC_idea_soil_reformation1
+		}
+	}
+
+	focus = {
+		id = ALC_people_owned_mines2
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = ALC_nationalize_the_zaibatsus }
+		x = -2
+		y = 1
+		relative_position_id = ALC_nationalize_the_zaibatsus
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ALC_people_owned_mines_1
+			
+		}
+	}
+
+	focus = {
+		id = ALC_resources_proj
+		icon = GFX_ALC_soil_revolution
+		prerequisite = { focus = ALC_people_owned_mines2 }
+		x = -1
+		y = 1
+		relative_position_id = ALC_people_owned_mines2
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = touhou_RAB_with_kap
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = ALC_coal_liquification
+				bonus = 1.0
+				uses = 1
+				category = synth_resources	
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_resources_proj_2
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = ALC_rebuild_after_war }
+		prerequisite = { focus = ALC_resources_proj }
+		x = 0
+		y = 1
+		relative_position_id = ALC_resources_proj
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ALC_people_owned_mines_1
+				add_idea = ALC_people_owned_mines_2
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_steel_factory
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = ALC_resources_proj_2 }
+		x = -1
+		y = 1
+		relative_position_id = ALC_resources_proj_2
+
+		cost = 9
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			315 = {
+				add_resource = {
+				type = steel
+				amount = 60
+				}
+			}
+
+		}
+	}
+	
+	focus = {
+		id = ALC_naval_range
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = ALC_resources_proj_2 }
+		x = 1
+		y = 1
+		relative_position_id = ALC_resources_proj_2
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ALC_navey_range
+		}
+	}
+	
+	focus = {
+		id = ALC_charcoal_oil
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = ALC_naval_range }
+		x = 1
+		y = 1
+		relative_position_id = ALC_naval_range
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_coal_liquification
+				bonus = 1.0
+				uses = 2
+				category = synth_resources	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ALC
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ALC
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_trade_pressure
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = ALC_steel_factory }
+		x = -1
+		y = 1
+		relative_position_id = ALC_steel_factory
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ALC_control_trade
+		}
+	}
+	
+	focus = {
+		id = ALC_united_mine_resources
+		icon = GFX_ALC_united_mine_icon
+		prerequisite = { focus = ALC_steel_factory focus = ALC_naval_range }
+		x = 1
+		y = 1
+		relative_position_id = ALC_steel_factory
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_industrial_transfer_project
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ALC_naval_range }
+		prerequisite = { focus = ALC_steel_factory }
+		x = 2
+		y = 2
+		relative_position_id = ALC_steel_factory
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			ALC = { country_event = { id = Alice_extra_event.2 days = 1 } }
+		}
+	}
+
+	focus = {
+		id = ALC_public_works
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ALC_nationalize_the_zaibatsus }
+		x = 2
+		y = 1
+		relative_position_id = ALC_nationalize_the_zaibatsus
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = ALC
+					is_core_of = ALC
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_fully_controlled_by = ALC
+					is_core_of = ALC
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}
+	}
+
+
+	focus = {
+		id = ALC_rebuild_after_war
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = ALC_public_works }
+		prerequisite = { focus = ALC_people_owned_mines2 }
+		x = -2
+		y = 1
+		relative_position_id = ALC_public_works
+		cost = 9
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+		
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 6 }
+		}
+	}
+	focus = {
+		id = ALC_industry_input
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ALC_steel_factory }
+		prerequisite = { focus = ALC_naval_range }
+		x = 0
+		y = 2
+		relative_position_id = ALC_steel_factory
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ALC_input
+		}
+	}
+	focus = {
+		id = ALC_agriculture_proj
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = ALC_public_works }
+		x = 0
+		y = 1
+		relative_position_id = ALC_public_works
+		cost = 5
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ALC_idea_soil_reformation1
+				add_idea = ALC_idea_soil_reformation2
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_stability = 0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_peoples_airforce
+		icon = GFX_red_zero
+		prerequisite = { focus = ALC_rebuild_after_war }
+		x = 0
+		y = 2
+		relative_position_id = ALC_rebuild_after_war
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			has_full_control_of_state = 315
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			air_experience = 50
+			315 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+			694 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = air_base
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_tokyo_aluminum_plant
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = ALC_rebuild_after_war }
+		prerequisite = { focus = ALC_resources_proj }
+		x = -1
+		y = 1
+		relative_position_id = ALC_rebuild_after_war
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+		
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			315 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			315 = {
+				add_resource = {
+					type = aluminium
+					amount = 30
+				}
+				add_resource = {
+					type = tungsten
+					amount = 20
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_rebuild_navy
+		icon = GFX_ALC_red_navy
+		prerequisite = { focus = ALC_rebuild_after_war }
+		x = 1
+		y = 1
+		relative_position_id = ALC_rebuild_after_war
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			has_full_control_of_state = 315
+			has_full_control_of_state = 318
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			navy_experience = 25
+			add_ideas = ALC_red_navy
+			315 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}		
+		}
+	}
+	
+	focus = {
+		id = ALC_new_naval_school
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = ALC_rebuild_navy }
+		x = 0
+		y = 2
+		relative_position_id = ALC_rebuild_navy
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			navy_experience = 25
+			every_navy_leader = {
+				add_skill_level = 1
+				add_defense = 1
+				add_attack = 1
+				add_maneuver = 1
+				add_coordination = 1
+			}
+			add_ideas = ALC_idea_new_naval_school
+		}
+	}
+	
+	focus = {
+		id = ALC_island_battle
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = ALC_soviet_tank2 focus = ALC_special_battle2 }
+		prerequisite = { focus = ALC_expand_the_snlf }
+		mutually_exclusive = { focus = ALC_land_battle }
+		x = 1
+		y = 1
+		relative_position_id = ALC_expand_the_snlf
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_amphibious_operations
+				bonus = 1.0
+				uses = 2
+				category = tp_tech
+			}
+			swap_ideas = {
+				remove_idea = JAP_expand_the_snlf
+				add_idea = ALC_special_force_marine
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_breakthrough_supremacy
+		icon = GFX_special_warfare_icon #GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = ALC_special_battle }
+		prerequisite = { focus = ALC_air_land_cooperation }
+		x = -1
+		y = 1
+		relative_position_id = ALC_air_land_cooperation
+		cost = 6
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ALC_unusual_battle
+				add_idea = ALC_unusual_battle2
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_focus_on_carrier
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = ALC_first_air_fleet }
+		mutually_exclusive = { focus = ALC_focus_on_support focus = ALC_focus_on_heavy }
+		x = -1
+		y = 3
+		relative_position_id = ALC_first_air_fleet
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_carrier_primacy
+				bonus = 1.0
+				uses = 1
+				category = cv_tech
+			}
+			add_ideas = ALC_red_navy2
+		}
+	}
+	
+	focus = {
+		id = ALC_focus_on_heavy
+		icon = GFX_cjc_great_warship #GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ALC_the_ultimate_battleship }
+		mutually_exclusive = { focus = ALC_focus_on_support focus = ALC_focus_on_carrier }
+		x = 1
+		y = 3
+		relative_position_id = ALC_the_ultimate_battleship
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_battleship_primacy
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+			}
+			add_ideas = ALC_red_navy3
+		}
+	}
+	
+	focus = {
+		id = ALC_focus_on_support
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = ALC_modern_escorts }
+		mutually_exclusive = { focus = ALC_focus_on_heavy focus = ALC_focus_on_carrier }
+		x = 0
+		y = 2
+		relative_position_id = ALC_modern_escorts
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_fleet_submarines
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+			add_ideas = ALC_red_navy4
+		}
+	}
+
+	focus = {
+		id = ALC_army_expansion_law
+		icon = GFX_goal_generic_army_doctrines
+		x = 14
+		y = 7
+		relative_position_id = ALC_everything_is_done
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			army_experience = 50
+			add_tech_bonus = {
+				name = ALC_small_arms_modernization
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons	
+			}
+		}
+	}
+	
+	focus = { #密码科
+		id = ALC_focus_on_crypto
+		icon = GFX_focus_generic_cryptologic_bomb
+		prerequisite = { focus = ALC_army_expansion_law focus = ALC_fighter_modernization }
+		x = 4
+		y = 1
+		relative_position_id = ALC_army_expansion_law
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = touhou_secret_weapons
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+			set_technology = { ALC_decryption_recon_tech = 1 }
+			custom_effect_tooltip = cjc_decryption_recon_tt
+		}
+	}
+
+	focus = {
+		id = ALC_supremacy_of_technology
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = ALC_army_expansion_law }
+		mutually_exclusive = { focus = ALC_supremacy_of_will }
+		x = -2
+		y = 1
+		relative_position_id = ALC_army_expansion_law
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = ALC_supremacy_of_technology
+		}
+	}
+
+	focus = {
+		id = ALC_modern_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus =ALC_supremacy_of_technology  }
+		x = -2
+		y = 1
+		relative_position_id = ALC_supremacy_of_technology
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_modern_artillery
+				bonus = 1.0
+				uses = 2
+				category = artillery	
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_focus_on_amphibious_tank
+		icon = GFX_goal_generic_production2 #GFX_goal_generic_army_tanks
+		prerequisite = { focus = ALC_modern_artillery }
+		x = 0
+		y = 1
+		relative_position_id = ALC_modern_artillery
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			has_tech = amphibious_tank
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			set_technology = { amphibious_tank = 1 }
+		}
+	}
+	
+	focus = {
+		id = ALC_tank_factory
+		icon = GFX_ALC_amry_battle #GFX_goal_generic_production2
+		prerequisite = { focus = ALC_focus_on_amphibious_tank }
+		prerequisite = { focus = ALC_soviet_tank2 }
+		x = 1
+		y = 1
+		relative_position_id = ALC_focus_on_amphibious_tank
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = ALC_idea_tank_factory
+		}
+	}
+
+	focus = {
+		id = ALC_bicycle_battalions
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = ALC_supremacy_of_technology focus = ALC_supremacy_of_will }
+		x = 2
+		y = 1
+		relative_position_id = ALC_supremacy_of_technology
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			set_technology = { bicycle_infantry = 1 }
+		}
+	}
+	
+	focus = {
+		id = ALC_air_land_cooperation
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = ALC_bicycle_battalions }
+		prerequisite = { focus = ALC_bomber_modernization }
+		x = 4
+		y = 1
+		relative_position_id = ALC_bicycle_battalions
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = ALC_peoples_air1
+		}
+	}
+
+	focus = {
+		id = ALC_supremacy_of_will
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = ALC_army_expansion_law }
+		mutually_exclusive = { focus = ALC_supremacy_of_technology }
+		x = 2
+		y = 1
+		relative_position_id = ALC_army_expansion_law
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_ideas = ALC_superior_will
+		}
+	}
+
+	focus = {
+		id = ALC_fighter_modernization
+		icon = GFX_goal_generic_air_fighter2
+		x = 7
+		y = 0
+		relative_position_id = ALC_army_expansion_law
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_fighter_modernization
+				bonus = 1.0
+				uses = 1
+				category = light_fighter		
+			}
+			add_tech_bonus = {
+				name = ALC_fighter_modernization
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter	
+			}
+		}
+	}
+	
+	focus = { #重视雷达
+		id = ALC_focus_radar
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = ALC_fighter_modernization focus = ALC_new_naval_estimates }
+		x = 3
+		y = 1
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = radar_focus
+				bonus = 2.0
+				uses = 2
+				category = radar_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_range_focus
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = ALC_fighter_modernization }
+		x = -1
+		y = 1
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_agility_focus
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = ALC_fighter_modernization }
+		x = 1
+		y = 1
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_the_zero
+		icon = GFX_focus_ALC_zero
+		prerequisite = { focus = ALC_first_air_fleet }
+		prerequisite = { focus = ALC_agility_focus }
+		x = 2
+		y = 1
+		relative_position_id = ALC_agility_focus
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+			has_tech = cv_fighter2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			custom_effect_tooltip = ALC_the_zero_tt
+			hidden_effect = { set_technology = { cv_fighter2 = 1 } }
+		}
+	}
+
+	focus = {
+		id = ALC_bomber_modernization
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = ALC_range_focus focus = ALC_agility_focus }
+		x = 0
+		y = 2
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_bomber_modernization
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber					
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_strategic_bomber_effort
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = ALC_range_focus }
+		prerequisite = { focus = ALC_bomber_modernization }
+		x = -1
+		y = 3
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_strategic_bomber_effort
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber	
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_unified_fighter_development
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = ALC_agility_focus }
+		prerequisite = { focus = ALC_the_zero }
+		x = 1
+		y = 3
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ALC_jet_prototypes
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = ALC_unified_fighter_development focus = ALC_strategic_bomber_effort }
+		x = 0
+		y = 4
+		relative_position_id = ALC_fighter_modernization
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_jet_prototypes
+				bonus = 1.0
+				uses = 2
+				category = jet_technology
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_new_naval_estimates
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 13
+		y = 0
+		relative_position_id = ALC_army_expansion_law
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_completed_focus = ALC_purge_the_kodoha_faction
+			}
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		complete_tooltip = {
+			random_state = {
+				limit = {
+					has_state_flag = ALC_new_naval_estimates_DY1
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_state = {
+				limit = {
+					has_state_flag = ALC_new_naval_estimates_DY2
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					not = { has_dlc = "Man the Guns" }
+				}
+				add_tech_bonus = {
+					name = ALC_supremacy_of_the_battlefleet
+					bonus = 1.0
+					uses = 1
+					category = shbb_tech	
+				}
+			}
+			else = {
+				navy_experience = 50
+			}
+			random_owned_controlled_state = {
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT
+					not = {
+						OR = {
+							state = 646
+							state = 645
+							state = 555
+						}
+					}
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ALC_new_naval_estimates_DY1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					ROOT = { has_full_control_of_state = PREV }
+					is_core_of = ROOT	
+					not = {
+						OR = {
+							state = 646
+							state = 645
+							state = 555
+						}
+					}				
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = ALC_new_naval_estimates_DY2
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_expand_the_snlf
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = ALC_bicycle_battalions }
+		x = 0
+		y = 1
+		relative_position_id = ALC_bicycle_battalions
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_ideas = JAP_expand_the_snlf
+			add_tech_bonus = {
+				name = ALC_expand_the_snlf
+				bonus = 1.0
+				uses = 1
+				category = marine_tech	
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_first_air_fleet
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = ALC_new_naval_estimates }
+		mutually_exclusive = { focus = ALC_the_ultimate_battleship }
+		x = -1
+		y = 1
+		relative_position_id = ALC_new_naval_estimates
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_carrier_warfare_experiments
+				bonus = 1.00
+				uses = 2
+				category = cat_base_strike
+			}
+			add_ideas = JAP_first_air_fleet
+		}
+	}
+
+	focus = {
+		id = ALC_modern_escorts
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ALC_first_air_fleet focus = ALC_the_ultimate_battleship }
+		x = 1
+		y = 1
+		relative_position_id = ALC_first_air_fleet
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_modern_escorts
+				bonus = 2.0
+				uses = 1
+				category = dd_tech	
+			}
+			add_tech_bonus = {
+				name = ALC_cruiser_modernization
+				bonus = 3.0
+				uses = 1
+				category = cl_tech	
+				category = ca_tech	
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_eternal_carrier
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = ALC_modern_escorts }
+		x = -1
+		y = 1
+		relative_position_id = ALC_modern_escorts
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			or = {
+				has_full_control_of_state = 689
+				has_full_control_of_state = 318
+				has_full_control_of_state = 319
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					has_full_control_of_state = 689
+				}
+				689 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 12304
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 318
+				}
+				318 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 4641
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 319
+				}
+				319 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 7632
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 693
+				}
+				693 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 10440
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 686
+				}
+				686 = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 1440
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ALC_the_ultimate_battleship
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ALC_new_naval_estimates }
+		mutually_exclusive = { focus = ALC_first_air_fleet }
+		x = 1
+		y = 1
+		relative_position_id = ALC_new_naval_estimates
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+		
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = ALC_supremacy_of_the_battlefleet
+				bonus = 2.0
+				uses = 2
+				category = bb_tech
+			}
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = ALC_long_lance_torpedoes
+		icon = GFX_goal_generic_occupy_start_war
+		prerequisite = { focus = ALC_new_naval_estimates }
+		x = 3
+		y = 1
+		relative_position_id = ALC_new_naval_estimates
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+
+		completion_reward = {
+			add_ideas = ALC_the_Long_Lance1
+		}
+	}
+
+	focus = {
+		id = ALC_torpedo_cruisers
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ALC_long_lance_torpedoes }
+		prerequisite = { focus = ALC_modern_escorts }
+		x = 0
+		y = 2
+		relative_position_id = ALC_long_lance_torpedoes
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			if = {
+				limit = {
+					not = { has_dlc = "Man the Guns" }
+				}
+				set_technology = { torpedo_cruiser = 1 }
+			}
+			else = {
+				set_technology = { torpedo_cruiser_mtg = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = ALC_torpedo_attack
+		icon = GFX_ALC_supreme_torpedo #GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = ALC_torpedo_cruisers }
+		x = 0
+		y = 2
+		relative_position_id = ALC_torpedo_cruisers
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ALC_the_Long_Lance1
+				add_idea = ALC_the_Long_Lance2
+			}
+		}
+	}
+	
+	focus = { #苏联坦克设计
+		id = ALC_soviet_tank
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = { focus = ALC_supremacy_of_technology }
+		x = 0
+		y = 1
+		relative_position_id = ALC_supremacy_of_technology
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			MGU = { country_event = Alice_casilia_AH_evnet.4 }
+			custom_effect_tooltip = ALC_soviet_tank_tt
+			custom_effect_tooltip = ALC_soviet_tank_effect_tt
+		}
+	}
+	
+	focus = { #组建新型装甲师团
+		id = ALC_soviet_tank2
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ALC_soviet_tank }
+		x = 0
+		y = 1
+		relative_position_id = ALC_soviet_tank
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			num_of_military_factories > 9
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = ALC_panzer_division_tt
+			hidden_effect = {
+				division_template = {
+					name = "试验型中战车师团"
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 0 y = 4 }
+						medium_armor = { x = 1 y = 0 }
+						medium_armor = { x = 1 y = 1 }
+						medium_armor = { x = 1 y = 2 }
+						medium_armor = { x = 1 y = 3 }
+						medium_armor = { x = 1 y = 4 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+						motorized = { x = 2 y = 2 }
+						motorized = { x = 2 y = 3 }
+						motorized = { x = 2 y = 4 }
+						motorized = { x = 3 y = 0 }
+						motorized = { x = 3 y = 1 }
+						motorized = { x = 3 y = 2 }
+						motorized = { x = 3 y = 3 }
+						motorized = { x = 3 y = 4 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						mot_recon = { x = 0 y = 1 }
+						maintenance_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 319 }
+					create_unit = {
+						division = "name = \"试验型中战车师团\" division_template = \"试验型中战车师团\" start_experience_factor = 0.2" 
+						owner = ALC
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #诡道
+		id = ALC_special_battle
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = ALC_supremacy_of_will }
+		x = 0
+		y = 1
+		relative_position_id = ALC_supremacy_of_will
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_tech = tech_mountaineers } }
+				set_technology = {
+					tech_mountaineers = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = paratroopers } }
+				set_technology = {
+					paratroopers = 1
+				}
+			}
+			army_experience = 15
+			add_ideas = ALC_unusual_battle
+		}
+	}
+	
+	focus = { #组建海陆空精英部队
+		id = ALC_special_battle2
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = ALC_special_battle }
+		x = 0
+		y = 1
+		relative_position_id = ALC_special_battle
+
+		cost = 8
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			custom_effect_tooltip = ALC_special_force_tt
+			hidden_effect = {
+				division_template = {
+					name = "特别山地师"
+					regiments = {
+						mountaineers = { x = 0 y = 0 }
+						mountaineers = { x = 0 y = 1 }
+						mountaineers = { x = 0 y = 2 }
+						mountaineers = { x = 0 y = 3 }
+						mountaineers = { x = 0 y = 4 }
+						mountaineers = { x = 1 y = 0 }
+						mountaineers = { x = 1 y = 1 }
+						mountaineers = { x = 1 y = 2 }
+						mountaineers = { x = 1 y = 3 }
+						artillery_brigade = { x = 1 y = 4 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 2 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				division_template = {
+					name = "海军陆战队"
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						marine = { x = 0 y = 3 }
+						marine = { x = 0 y = 4 }
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						marine = { x = 1 y = 3 }
+						marine = { x = 1 y = 4 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 2 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				division_template = {
+					name = "空降师"
+					regiments = {
+						paratrooper = { x = 0 y = 0 }
+						paratrooper = { x = 0 y = 1 }
+						paratrooper = { x = 0 y = 2 }
+						paratrooper = { x = 0 y = 3 }
+						paratrooper = { x = 0 y = 4 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 2 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 3 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 319 }
+					create_unit = {
+						division = "name = \"特别山地师\" division_template = \"特别山地师\" start_experience_factor = 0.7" 
+						owner = ALC
+					}
+					create_unit = {
+						division = "name = \"特别山地师\" division_template = \"特别山地师\" start_experience_factor = 0.7" 
+						owner = ALC
+					}
+					create_unit = {
+						division = "name = \"海军陆战队\" division_template = \"海军陆战队\" start_experience_factor = 0.7" 
+						owner = ALC
+					}
+					create_unit = {
+						division = "name = \"空降师\" division_template = \"空降师\" start_experience_factor = 0.7" 
+						owner = ALC
+					}
+				}
+			}
+		}
+	}
+	
+	focus = { #赤色陆军
+		id = ALC_land_battle
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = ALC_special_battle2 focus = ALC_soviet_tank2 }
+		mutually_exclusive = { focus = ALC_island_battle }
+		x = 1
+		y = 1
+		relative_position_id = ALC_soviet_tank2
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = touhou_mingliansi_move
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				name = touhou_doll_factory
+				bonus = 1
+				uses = 1
+				category = armor
+			}
+			add_ideas = ALC_idea_modern_army
+		}
+	}
+	
+
+}

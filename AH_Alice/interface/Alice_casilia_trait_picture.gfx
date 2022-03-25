@@ -1,0 +1,19 @@
+spriteTypes = {	
+
+	spriteType = {
+			name = "GFX_trait_Alice_Casilia"
+			texturefile = "gfx/interface/traits/personal/trait_communist_sympathizer.dds"
+	}
+	
+	spriteType = {
+			name = "GFX_trait_Alice_Casilia2"
+			texturefile = "gfx/interface/traits/personal/trait_communist_sympathizer.dds"
+	}
+	
+	spriteType = {
+			name = "GFX_trait_Alice_Casilia_focus_on_battle"
+			texturefile = "gfx/interface/traits/personal/trait_SPR_stalinist_loyalties.dds"
+	}
+
+
+}

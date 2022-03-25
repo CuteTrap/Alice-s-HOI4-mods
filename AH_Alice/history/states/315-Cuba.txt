@@ -1,0 +1,40 @@
+state= {
+	id=315
+	name="STATE_315"
+	manpower = 3607919
+	resources={
+		steel = 22 # was: 4
+		chromium = 90 # was: 160
+		oil = 4
+	}
+	
+	state_category = city
+
+	history= {
+		owner = ALC
+		buildings = {
+			infrastructure = 7
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			air_base = 4
+			7622 = {
+				naval_base = 5
+			}
+			1550 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = ALC
+		victory_points = {
+			7622 5 
+		}
+		victory_points = {
+			7590 1
+		}
+
+	}
+	provinces={
+		1550 4476 4600 7451 7546 7590 7622 10374 10498 12347
+	}
+}

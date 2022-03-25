@@ -1,0 +1,9 @@
+Alice_novel_selection = {
+	allowed = {
+		
+	}
+	visible = {
+		has_government = communism
+		has_country_flag = Alice_can_read_novel
+	}
+}

@@ -1,0 +1,21 @@
+on_actions = {
+	
+	on_startup = {
+		effect = {
+			every_state = {
+				limit = {
+					is_core_of = CUB
+				}
+				add_core_of = ALC
+			}
+			ALC = {
+				annex_country = { target = CUB transfer_troops = no }
+				load_focus_tree = ALC_AH_focus
+				country_event = { id = Alice_casilia_AH_evnet.1 }
+			}
+		}
+	}
+
+
+
+}

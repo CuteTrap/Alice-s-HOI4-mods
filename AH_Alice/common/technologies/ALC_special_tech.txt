@@ -1,0 +1,92 @@
+technologies = {
+	engineers_landing_reinforce_1 = {
+
+		engineer = {
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_landing_reinforce_2 = {
+
+		engineer = {
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.75
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_save_manpower = {
+
+		engineer = {
+			casualty_trickleback = 0.30
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	ALC_army_strengthen_1 = {
+
+		category_army = {
+			breakthrough = 0.10
+		}
+		category_all_infantry = { 
+			soft_attack = 0.1
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	ALC_decryption_recon_tech = {
+				
+		research_cost = 1.5
+		start_year = 1944
+
+		allow = {
+			always = no
+		}
+		decryption_power = 25
+		category_recon = {
+			recon = 1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

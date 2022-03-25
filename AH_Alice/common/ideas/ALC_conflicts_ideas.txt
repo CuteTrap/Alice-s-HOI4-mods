@@ -1,0 +1,263 @@
+ideas = {
+
+	country = {
+		ALC_nationalize_the_zaibatsus_rounouha = { #财阀再分配-劳农派
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = JAP_zaibatsu_control
+			
+			modifier = {
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		ALC_nationalize_the_zaibatsus_fukumotoha = { #激进的财阀国有化-福本派
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_control
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.07
+				production_speed_arms_factory_factor = 0.07
+				production_speed_dockyard_factor = 0.07
+				industrial_capacity_factory = 0.10
+				industrial_capacity_dockyard = 0.10
+				trade_laws_cost_factor = -0.25
+				political_power_cost = 0.1
+			}
+		}
+		
+		ALC_red_brigades2_rounouha = { #日本红军-劳农派
+			allowed = { original_tag = ALC }
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+			
+			modifier = {
+				conscription = 0.015
+				army_org_factor = 0.1
+				experience_gain_army = 0.1
+			}
+		}
+		
+		ALC_red_brigades = { #日本红军-福本派
+			allowed = { original_tag = ALC }
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+			
+			modifier = {
+				conscription = 0.015
+				breakthrough_factor = 0.1
+				experience_gain_army = 0.1
+			}
+		}
+		
+		ALC_agriculture_rounouha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = ALC }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 1600
+			}
+		}
+		
+		ALC_agriculture_kouzaha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = ALC }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 1200
+			}
+		}
+		
+		ALC_agriculture_fukumotoha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = ALC }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 2000
+			}
+		}
+		
+		ALC_people_owned_mines_rounouha = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		ALC_people_owned_mines_kouzaha = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		ALC_people_owned_mines_1 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		ALC_people_owned_mines_2 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				consumer_goods_factor = -0.03
+				global_building_slots_factor = 0.2
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		ALC_mines_unity_conflicts = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = -0.1
+			}
+		}
+		
+		ALC_fukumoto_in_charge = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_spy_intel
+			
+			modifier = {
+				political_power_cost = 0.10
+			}
+		}
+		
+		ALC_reactionary_stronger = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_spy_intel
+			
+			modifier = {
+				political_power_cost = 0.25
+				communism_drift = -0.1
+			}
+		}
+	}
+}
