@@ -1,0 +1,670 @@
+maid_recruit_sakuya_effect = {
+	generate_character = {
+		token_base = maid_izayoi_sakuya
+		name = sakuya_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sakuya.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_sakuya maid_fur organizer trait_engineer adaptable }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_naval_sakuya_effect = {
+	generate_character = {
+		token_base = maid_naval_izayoi_sakuya
+		name = sakuya_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sakuya.dds"
+			}
+			navy={
+				#small=""
+			}
+		}
+		navy_leader={
+			traits = { air_controller flight_deck_manager superior_tactician spotter }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 6
+			legacy_id=0
+		}
+	}
+}
+
+maid_recruit_felicia_effect = {
+	generate_character = {
+		token_base = maid_felicia
+		name = felicia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_felicia.dds"
+				#small="gfx/interface/ideas/maids/"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_felicia maid_communist politically_connected brilliant_strategist adaptable }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_you_1_effect = {
+	generate_character = {
+		token_base = maid_you_1
+		name = you_1_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_greenhair.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_you_2_effect = {
+	generate_character = {
+		token_base = maid_you_2
+		name = you_2_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_goldhair.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_you_3_effect = {
+	generate_character = {
+		token_base = maid_you_3
+		name = you_3_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_silvercat.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_you_4_effect = {
+	generate_character = {
+		token_base = maid_you_4
+		name = you_4_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_blackhair.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_reimu_effect = {
+	generate_character = {
+		token_base = maid_reimu
+		name = reimu_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_reimu.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_reimu trait_reckless infantry_leader commando }
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_tohru_effect = {
+	generate_character = {
+		token_base = maid_tohru
+		name = tohru_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_tohru.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_tohru trait_engineer trait_mountaineer ranger }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_noelle_effect = {
+	generate_character = {
+		token_base = maid_noelle
+		name = noelle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_noelle.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_noelle trait_cautious armor_officer fortress_buster inflexible_strategist unyielding_defender }
+			attack_skill = 2
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_bsAlice_effect = {
+	generate_character = {
+		token_base = maid_bsAlice
+		name = bsAlice_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_bsAlice.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_bsAlice trait_reckless armor_officer trickster brilliant_strategist }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_naval_bsAlice_effect = {
+	generate_character = {
+		token_base = maid_naval_bsAlice
+		name = bsAlice_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_bsAlice.dds"
+			}
+			navy={
+				#small=""
+			}
+		}
+		navy_leader={
+			traits = { aviation_enthusiast bold flight_deck_manager spotter }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 5
+			coordination_skill = 4
+			legacy_id=0
+		}
+	}
+}
+
+maid_recruit_william_effect = {
+	generate_character = {
+		token_base = maid_william
+		name = william_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_william.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_william organizer trait_cautious urban_assault_specialist infantry_officer }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_kotori_effect = {
+	generate_character = {
+		token_base = maid_kotori
+		name = kotori_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_kotori.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_kotori armor_officer infantry_officer media_personality }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_hilde_effect = {
+	generate_character = {
+		token_base = maid_hilde
+		name = hilde_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_hilde.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_hilde harsh_leader aggressive_assaulter camouflage_expert }
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_G36_effect = {
+	generate_character = {
+		token_base = maid_G36
+		name = G36_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_G36.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_G36 infantry_leader infantry_expert commando }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_newcastle_effect = {
+	generate_character = {
+		token_base = maid_newcastle
+		name = newcastle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_newcastle.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_newcastle naval_invader bearer_of_artillery naval_liason }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_naval_newcastle_effect = {
+	generate_character = {
+		token_base = maid_naval_newcastle
+		name = newcastle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_newcastle.dds"
+			}
+			navy={
+				#small=""
+			}
+		}
+		navy_leader={
+			traits = { aviation_enthusiast bold air_controller flight_deck_manager superior_tactician spotter fly_swatter }
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			maneuvering_skill = 6
+			coordination_skill = 5
+			legacy_id=0
+		}
+	}
+}
+
+maid_recruit_maid_1_effect = {
+	generate_character = {
+		token_base = maid_maid_1
+		name = maid_1_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_1.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_1 organizer jungle_rat naval_invader }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_maid_2_effect = {
+	generate_character = {
+		token_base = maid_maid_2
+		name = maid_2_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_2.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_2 winter_specialist hill_fighter }
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 6
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_maid_3_effect = {
+	generate_character = {
+		token_base = maid_maid_3
+		name = maid_3_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_3.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_3 combined_arms_expert scavenger }
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 2
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_maid_4_effect = {
+	generate_character = {
+		token_base = maid_maid_4
+		name = maid_4_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_4.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_4 ambusher trait_engineer }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_saika_effect = {
+	generate_character = {
+		token_base = maid_saika
+		name = saika_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_saika.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_saika organizer naval_liason invader_ii }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 3
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_asahi_effect = {
+	generate_character = {
+		token_base = maid_asahi
+		name = asahi_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_asahi.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_asahi organizer expert_improviser paratrooper }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 3
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_rizhao_effect = {
+	generate_character = {
+		token_base = maid_rizhao
+		name = rizhao_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_rizhao.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_rizhao media_personality trickster panzer_leader }
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_felix_effect = {
+	generate_character = {
+		token_base = maid_felix
+		name = felix_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_felix.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_felix brilliant_strategist trait_engineer }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_recruit_Alice_casilia_effect = {
+	generate_character = {
+		token_base = maid_Alice_casilia
+		name = Alice_casilia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_Alice_casilia.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_Alice_Casilia organizer maid_ambusher fortress_buster trickster adaptable }
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_naval_Alice_casilia_effect = {
+	generate_character = {
+		token_base = maid_naval_Alice_casilia
+		name = Alice_casilia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_Alice_casilia.dds"
+			}
+			navy={
+				#small=""
+			}
+		}
+		navy_leader={
+			traits = { aviation_enthusiast bold air_controller superior_tactician }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 5
+			legacy_id=0
+		}
+	}
+}
+
+maid_recruit_shura_effect = {
+	generate_character = {
+		token_base = maid_shura
+		name = shura_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_shura.dds"
+				#small=""
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_shura brilliant_strategist media_personality trickster trait_mountaineer panzer_leader naval_invader }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+		}
+	}
+}
+
+maid_naval_shura_effect = {
+	generate_character = {
+		token_base = maid_naval_shura
+		name = shura_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_shura.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_shura.dds"
+			}
+		}
+		navy_leader={
+			traits = { flight_deck_manager bold air_controller superior_tactician spotter }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
+			legacy_id=0
+		}
+	}
+}
+

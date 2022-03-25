@@ -1,0 +1,605 @@
+maid_defence_system_decisions_group = {
+
+	maid_defence_system_construction_start = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_unlock_defence_decision_flag
+		}
+		
+		available = {
+			has_country_flag = got_noelle_flag
+		}
+		
+		days_remove = 1
+		cost = 10
+		
+		icon = generic_construction
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			set_country_flag = maid_defence_system_construction_started_flag
+			unlock_decision_tooltip = maid_defence_system_first_line_construction
+		}
+		remove_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_first_line_construction = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_construction_started_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_1_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 150
+		cost = 0
+		
+		icon = generic_construction
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_first_line_done_flag
+			custom_effect_tooltip = maid_defence_system_first_line_done_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_first_line_strengthen = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_first_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 120
+		cost = 0
+		
+		icon = generic_construction
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_first_line_buffed_flag
+			custom_effect_tooltip = maid_defence_system_first_line_buffed_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_first_line_storage = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_first_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 60
+		cost = 0
+		
+		icon = generic_prepare_civil_war
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_first_line_stored_flag
+			custom_effect_tooltip = maid_many_equipments_will_in_storage_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_second_line_construction = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_first_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_1_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 160
+		cost = 0
+		
+		icon = generic_construction
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_second_line_done_flag
+			custom_effect_tooltip = maid_defence_system_second_line_done_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_second_line_strengthen = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_second_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 120
+		cost = 0
+		
+		icon = generic_construction
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_second_line_buffed_flag
+			custom_effect_tooltip = maid_defence_system_second_line_buffed_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_second_line_storage = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_second_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 60
+		cost = 0
+		
+		icon = generic_prepare_civil_war
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_second_line_stored_flag
+			custom_effect_tooltip = maid_lot_equipments_will_in_storage_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_third_line_construction = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_second_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_1_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 160
+		cost = 0
+		
+		icon = generic_construction
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_third_line_done_flag
+			custom_effect_tooltip = maid_defence_system_third_line_done_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_third_line_strengthen = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_third_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 120
+		cost = 0
+		
+		icon = generic_construction
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_third_line_buffed_flag
+			custom_effect_tooltip = maid_defence_system_third_line_buffed_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_third_line_storage = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_third_line_done_flag
+			not = {
+				has_country_flag = maid_defence_system_construction_finished_flag
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_borrow_2_willpower_for_defence_tt
+			}
+		}
+		
+		days_remove = 60
+		cost = 0
+		
+		icon = generic_prepare_civil_war
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_defence_system_third_line_stored_flag
+			custom_effect_tooltip = maid_huge_equipments_will_in_storage_tt
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_construction_finished = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_defence_system_first_line_done_flag
+		}
+		
+		available = {
+			
+		}
+		
+		days_remove = 1
+		cost = 0
+		
+		icon = generic_construction
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			set_country_flag = maid_defence_system_construction_finished_flag
+			custom_effect_tooltip = maid_defence_system_construction_finished_tt
+		}
+		remove_effect = {
+			hidden_effect = {
+				country_event = { id = maid_event.31 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_level_1 = {
+	
+    	fire_only_once = no
+		
+		visible = {
+			has_country_flag = maid_defence_system_construction_finished_flag
+			surrender_progress > 0.10
+		}
+		
+		available = {
+			surrender_progress > 0.15
+			not = {
+				has_idea = maid_idea_final_defence_level_1
+				has_idea = maid_idea_final_defence_level_1_B
+			}
+		}
+		
+		days_remove = 1
+		cost = 0
+		
+		icon = generic_independence
+		
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_first_line_buffed_flag }
+				add_ideas = maid_idea_final_defence_level_1_B
+			}
+			else = {
+				add_ideas = maid_idea_final_defence_level_1
+			}
+			custom_effect_tooltip = maid_idea_removed_when_low_surrender_tt
+			custom_effect_tooltip = maid_this_decision_is_repeatable_tt
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_first_line_stored_flag }
+				add_political_power = 100
+				army_experience = 50
+				navy_experience = 50
+				air_experience = 50
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 1000 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 1000 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 1000 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 3000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 30000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 3000 }
+				add_equipment_to_stockpile = { type = fighter_equipment amount = 1000 }
+				add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 500 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_level_2 = {
+	
+    	fire_only_once = no
+		
+		visible = {
+			has_country_flag = maid_defence_system_construction_finished_flag
+			has_country_flag = maid_defence_system_second_line_done_flag
+			surrender_progress > 0.30
+		}
+		
+		available = {
+			surrender_progress > 0.35
+			not = {
+				has_idea = maid_idea_final_defence_level_2
+				has_idea = maid_idea_final_defence_level_2_B
+			}
+		}
+		
+		days_remove = 1
+		cost = 0
+		
+		icon = generic_independence
+		
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_second_line_buffed_flag }
+				add_ideas = maid_idea_final_defence_level_2_B
+			}
+			else = {
+				add_ideas = maid_idea_final_defence_level_2
+			}
+			custom_effect_tooltip = maid_idea_removed_when_low_surrender_tt
+			custom_effect_tooltip = maid_this_decision_is_repeatable_tt
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_second_line_stored_flag }
+				add_political_power = 200
+				army_experience = 60
+				navy_experience = 60
+				air_experience = 60
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 2000 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 2000 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 2000 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 10000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 80000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 9000 }
+				add_equipment_to_stockpile = { type = fighter_equipment amount = 1200 }
+				add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 800 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_defence_system_level_3 = {
+	
+    	fire_only_once = no
+		
+		visible = {
+			has_country_flag = maid_defence_system_construction_finished_flag
+			has_country_flag = maid_defence_system_third_line_done_flag
+			surrender_progress > 0.45
+		}
+		
+		available = {
+			surrender_progress > 0.50
+			not = {
+				has_idea = maid_idea_final_defence_level_3
+				has_idea = maid_idea_final_defence_level_3_B
+			}
+		}
+		
+		days_remove = 1
+		cost = 0
+		
+		icon = generic_independence
+		
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_third_line_buffed_flag }
+				add_ideas = maid_idea_final_defence_level_3_B
+			}
+			else = {
+				add_ideas = maid_idea_final_defence_level_3
+			}
+			custom_effect_tooltip = maid_idea_removed_when_low_surrender_tt
+			custom_effect_tooltip = maid_this_decision_is_repeatable_tt
+		}
+		remove_effect = {
+			if = {
+				limit = { has_country_flag = maid_defence_system_third_line_stored_flag }
+				add_political_power = 300
+				army_experience = 100
+				navy_experience = 100
+				air_experience = 100
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 5000 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 5000 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 8000 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 32000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 220000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 32000 }
+				add_equipment_to_stockpile = { type = fighter_equipment amount = 2000 }
+				add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 1500 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+}

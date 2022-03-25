@@ -1,0 +1,14 @@
+leader_traits = {
+	
+	shura_country_leader_trait = { #Balans par l'empereur
+		random = no
+		MONTHLY_POPULATION = -0.3
+		industrial_capacity_dockyard = 0.15
+		research_speed_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

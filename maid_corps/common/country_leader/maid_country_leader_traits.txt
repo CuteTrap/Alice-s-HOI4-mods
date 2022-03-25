@@ -1,0 +1,286 @@
+leader_traits = {
+	
+	maid_parliament_country_leader_trait = {
+		random = no
+		stability_factor = 0.1
+		political_power_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		conscription = 0.01
+		local_resources_factor = 0.1
+		research_speed_factor = 0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	felicia_country_leader_trait = {
+		random = no
+		army_org_factor = 0.1
+		justify_war_goal_time = -0.2
+		compliance_gain = 0.03
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	you_country_leader_1_trait = {
+		random = no
+		local_resources_factor = 0.3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	you_country_leader_2_trait = {
+		random = no
+		production_factory_max_efficiency_factor = 0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	you_country_leader_3_trait = {
+		random = no
+		conscription_factor = 0.30
+		non_core_manpower = 0.30
+		mobilization_speed = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	you_country_leader_4_trait = {
+		random = no
+		stability_factor = 0.1
+		political_power_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	sakuya_country_leader_trait = {
+		random = no
+		political_power_factor = 0.10
+		consumer_goods_factor = -0.03
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	bsAlice_country_leader_trait = {
+		random = no
+		army_org_factor = -0.15
+		army_attack_factor = 0.1
+		breakthrough_factor = 0.1
+		army_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	kotori_country_leader_trait = {
+		random = no
+		stability_factor = 0.1
+		conscription_factor = 0.20
+		non_core_manpower = 0.20
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	noelle_country_leader_trait = {
+		random = no
+		army_defence_factor = 0.20
+		army_org_factor = 0.04
+		max_dig_in = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reimu_country_leader_trait = {
+		random = no
+		army_attack_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rizhao_country_leader_trait = { #元气偶像
+		random = no
+		production_speed_buildings_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	saika_country_leader_trait = {
+		random = no
+		MONTHLY_POPULATION = -0.2
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	asahi_country_leader_trait = {
+		random = no
+		MONTHLY_POPULATION = -0.2
+		army_core_attack_factor = 0.15
+		army_core_defence_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tohru_country_leader_trait = {
+		random = no
+		MONTHLY_POPULATION = 0.2
+		weekly_manpower = 3000
+		army_morale_Factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	Alice_casilia_country_leader_trait = {
+		random = no
+		send_volunteer_size = 12
+		boost_ideology_mission_factor = 1.0
+		propaganda_mission_factor = 1.0
+		operative_slot = 1
+		intel_network_gain_factor = 0.6
+		send_volunteers_tension = -1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	william_country_leader_trait = {
+		random = no
+		attrition = -0.08
+		supply_consumption_factor = -0.06
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	felix_country_leader_trait = {
+		random = no
+		planning_speed = 0.3
+		max_planning = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	maid_1_country_leader_trait = {
+		random = no
+		line_change_production_efficiency_factor = 0.2
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	maid_2_country_leader_trait = {
+		random = no
+		industrial_capacity_dockyard = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	maid_3_country_leader_trait = {
+		random = no
+		industrial_capacity_factory = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	maid_4_country_leader_trait = {
+		random = no
+		research_speed_factor = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hilde_country_leader_trait = {
+		random = no
+		army_intel_factor = 0.2
+		navy_intel_factor = 0.2
+		airforce_intel_factor = 0.2
+		civilian_intel_factor = 0.2
+		recon_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	G36_country_leader_trait = {
+		random = no
+		breakthrough_factor = 0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	newcastle_country_leader_trait = {
+		random = no
+		navy_screen_attack_factor = 0.2
+		navy_screen_defence_factor = 0.2
+		navy_anti_air_attack_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	belfast_country_leader_trait = {
+		random = no
+		navy_capital_ship_attack_factor = 0.2
+		army_artillery_attack_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	sirius_country_leader_trait = {
+		random = no
+		coordination_bonus = 0.15
+		naval_coordination = 0.20
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

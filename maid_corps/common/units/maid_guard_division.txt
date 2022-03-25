@@ -1,0 +1,114 @@
+sub_units = {
+
+	battle_maid_guard = {
+		sprite = maid_infantry
+		map_icon_category = infantry
+
+		priority = 602
+		ai_priority = 200
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 55
+		default_morale = 0.3
+		manpower = 800
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 2.0
+		weight = 0.5
+		
+		supply_consumption = 0.06
+	
+		need = {
+			maid_infantry_equipment = 100
+			maid_support_equipment = 20
+		}
+	}
+	
+	moto_maid_guard = {
+		sprite = maid_moto
+		map_icon_category = infantry
+
+		priority = 603
+		ai_priority = 200
+		active = no
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 25
+		max_organisation = 50
+		default_morale = 0.3
+		manpower = 800
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 2.0
+		weight = 0.75
+		
+		supply_consumption = 0.065
+		
+		transport = maid_motorized_equipment
+	
+		need = {
+			maid_infantry_equipment = 100
+			maid_support_equipment = 20
+			maid_motorized_equipment = 40
+		}
+		
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.5
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.3
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+}

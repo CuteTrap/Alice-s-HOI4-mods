@@ -1,0 +1,352 @@
+add_namespace = maid_story
+
+
+country_event = { #战争创伤故事链，通过激活女仆系统决议触发
+	id = maid_story.1
+	title = maid_story.1.t
+	desc = maid_story.1.d
+	picture = GFX_report_maid_shinsha_door
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {
+		name = maid_story.1.a
+		if = {
+			limit = {
+				has_war = no
+			}
+			country_event = { id = maid_story.1 days = 90 }
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_support_step_0_flag
+			}
+			random_list = {
+				40 = { country_event = { id = maid_story.1 days = 90 } }
+				60 = { country_event = { id = maid_story.101 days = 1 } }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_work_in_army_flag
+			}
+			random_list = {
+				75 = { country_event = { id = maid_story.1 days = 90 } }
+				25 = { country_event = { id = maid_story.101 days = 1 } }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_controled_government_flag
+			}
+			random_list = {
+				90 = { country_event = { id = maid_story.1 days = 90 } }
+				10 = { country_event = { id = maid_story.101 days = 1 } }
+			}
+		}
+		else = {
+			random_list = {
+				95 = { country_event = { id = maid_story.1 days = 90 } }
+				5 = { country_event = { id = maid_story.101 days = 1 } }
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = maid_story.101
+	title = maid_story.101.t
+	desc = maid_story.101.d
+	picture = GFX_report_maid_generic_20
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.101.a #关心
+		add_political_power = -10
+		country_event = { id = maid_story.102 days = 5 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.101.b
+		custom_effect_tooltip = maid_end_this_event_story_chain_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}
+
+country_event = {
+	id = maid_story.102
+	title = maid_story.102.t
+	desc = maid_story.102.d
+	picture = GFX_report_maid_generic_13
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.102.a
+		country_event = { id = maid_story.103 days = 5 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}
+
+country_event = { #讲述经历
+	id = maid_story.103
+	title = maid_story.103.t
+	desc = maid_story.103.d
+	picture = GFX_report_maid_generic_10
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.103.a
+		hidden_effect = {
+			random_list = {
+				25 = { country_event = { id = maid_story.104 days = 3 } }
+				25 = { country_event = { id = maid_story.105 days = 3 } }
+				50 = { country_event = { id = maid_story.106 days = 5 } }
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.103.b
+		hidden_effect = {
+			random_list = {
+				40 = { country_event = { id = maid_story.104 days = 3 } }
+				40 = { country_event = { id = maid_story.105 days = 3 } }
+				20 = { country_event = { id = maid_story.106 days = 5 } }
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}
+
+country_event = { #自杀
+	id = maid_story.104
+	title = maid_story.104.t
+	desc = maid_story.104.d
+	picture = GFX_report_maid_dead_end
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.104.a
+		hidden_effect = {
+			country_event = { id = maid_story.107 days = 8 }
+		}
+		add_manpower = -1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.104.b
+		hidden_effect = {
+			country_event = { id = maid_story.107 days = 8 }
+		}
+		add_manpower = -1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #自杀
+	id = maid_story.105
+	title = maid_story.105.t
+	desc = maid_story.105.d
+	picture = GFX_report_maid_dead_end
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.105.a
+		hidden_effect = {
+			country_event = { id = maid_story.107 days = 8 }
+		}
+		add_manpower = -1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.105.b
+		hidden_effect = {
+			country_event = { id = maid_story.107 days = 8 }
+		}
+		add_manpower = -1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #讨论要不要
+	id = maid_story.106
+	title = maid_story.106.t
+	desc = maid_story.106.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.106.a
+		custom_effect_tooltip = maid_remove_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = -1
+		}
+		country_event = { id = maid_story.107 days = 5 }
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.106.b
+		custom_effect_tooltip = maid_end_this_event_story_chain_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}
+
+country_event = { #讨论范围
+	id = maid_story.107
+	title = maid_story.107.t
+	desc = maid_story.107.d
+	picture = GFX_report_maid_generic_8
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.107.a
+		hidden_effect = {
+			country_event = { id = maid_story.108 days = 15 }
+		}
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_ideas = maid_idea_ptsd_heal_1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.107.b
+		hidden_effect = {
+			country_event = { id = maid_story.108 days = 15 }
+		}
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_ideas = maid_idea_ptsd_heal_2
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.107.c
+		hidden_effect = {
+			country_event = { id = maid_story.108 days = 15 }
+		}
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_ideas = maid_idea_ptsd_heal_3
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_story.107.e
+		custom_effect_tooltip = maid_end_this_event_story_chain_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}
+
+country_event = {
+	id = maid_story.108
+	title = maid_story.108.t
+	desc = maid_story.108.d
+	picture = GFX_report_maid_generic_17
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_story.108.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+}

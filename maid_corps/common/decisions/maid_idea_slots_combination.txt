@@ -1,0 +1,1479 @@
+maid_idea_combinations = {
+	maid_ic_research_project_decision = {
+		icon = generic_research
+		allowed = {
+			
+		}
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+		visible = {
+			not = {
+				has_idea = maid_idea_research_project
+			}
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_research_project
+		}
+	}
+	maid_ic_research_project_decision_remove = {
+		icon = generic_research
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_idea = maid_idea_research_project
+		}
+		fire_only_once = no
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_research_project
+		}
+	}
+	
+	maid_become_idol = { #女仆当偶像提升凝聚力
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				or = {
+					has_idea = idea_maid_idol
+					has_idea = idea_maid_idol_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			if = {
+				limit = {
+					not = { has_country_flag = idol_has_being_improved_flag }
+				}
+				add_ideas = idea_maid_idol
+			}
+			if = {
+				limit = { has_country_flag = idol_has_being_improved_flag }
+				add_ideas = idea_maid_idol_2
+			}
+			if = {
+				limit = {
+					not = { has_country_flag = idol_evnet_has_triggered_flag }
+				}
+				country_event = { id = maid_event.12 days = 2 }
+				set_country_flag = idol_evnet_has_triggered_flag
+			}
+		}
+	}
+	
+	maid_idol_retire = { #女仆偶像退休
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			or = {
+				has_idea = idea_maid_idol
+				has_idea = idea_maid_idol_2
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			if = {
+				limit = { has_idea = idea_maid_idol }
+				remove_ideas = idea_maid_idol
+			}
+			if = {
+				limit = { has_idea = idea_maid_idol_2 }
+				remove_ideas = idea_maid_idol_2
+			}
+		}
+	}
+	
+	maid_help_your_politics = { #女仆协助内政
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = idea_maid_help_your_politics
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = idea_maid_help_your_politics
+			unlock_decision_tooltip = maid_control_government
+		}
+	}
+	
+	maid_stop_help_your_politics = { #停止女仆帮您打理内政
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = idea_maid_help_your_politics
+		}
+
+		fire_only_once = no
+
+		cost = 10
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = idea_maid_help_your_politics
+		}
+	}
+	
+	maid_strengthen_the_maids_in_government = { #加强女仆政治权威
+		icon = generic_civil_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = idea_maid_strengthen_the_maids_in_government
+			}
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = idea_maid_strengthen_the_maids_in_government
+		}
+	}
+	
+	maid_stop_strengthen_the_maids_in_government = {
+		icon = generic_civil_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = idea_maid_strengthen_the_maids_in_government
+		}
+
+		fire_only_once = no
+
+		cost = 10
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = idea_maid_strengthen_the_maids_in_government
+		}
+	}
+	
+	maid_extra_willingness = { #额外意志力，发展女仆文化
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_country_flag = maid_extra_willingness_flag
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			custom_effect_tooltip = maid_get_willingness_every_seven_weeks_tt
+			set_country_flag = maid_extra_willingness_flag
+		}
+	}
+	
+	maid_extra_willingness_remove = { #停止额外意志力
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = maid_extra_willingness_flag
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			clr_country_flag = maid_extra_willingness_flag
+		}
+	}
+	
+	maid_encourage_free_love = { #鼓励女仆自由恋爱
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_free_love
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 30
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_free_love
+		}
+	}
+	
+	maid_stop_encourage_free_love = { #停止鼓励女仆自由恋爱
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_free_love
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_free_love
+		}
+	}
+	
+	maid_semi_mili_training = { #半军事化训练
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_semi_mili_training
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_semi_mili_training
+		}
+	}
+	
+	maid_stop_semi_mili_training = { #停止半军事化训练
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_semi_mili_training
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_semi_mili_training
+		}
+	}
+	
+	maid_freestyle_skirts = { #自由着装
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_freestyle_skirts
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_freestyle_skirts
+		}
+	}
+	
+	maid_stop_freestyle_skirts = { #停止自由着装
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_freestyle_skirts
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_freestyle_skirts
+		}
+	}
+	
+	maid_ensure_worker_rights = {
+		icon = generic_civil_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_worker_rights
+			}
+			has_country_flag = maid_worker_union_established_flag
+		}
+
+		fire_only_once = no
+
+		cost = 45
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_worker_rights
+		}
+	}
+	
+	maid_stop_ensure_worker_rights = {
+		icon = generic_civil_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_worker_rights
+		}
+
+		fire_only_once = no
+
+		cost = 10
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_worker_rights
+		}
+	}
+	
+	maid_take_over_supply_system = {
+		icon = ger_military_buildup
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_manage_supply_system
+			}
+			has_country_flag = maid_unlock_one_idea_combination_supply_system_flag
+		}
+
+		fire_only_once = no
+
+		cost = 30
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_manage_supply_system
+		}
+	}
+	
+	maid_stop_take_over_supply_system = {
+		icon = ger_military_buildup
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_manage_supply_system
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_manage_supply_system
+		}
+	}
+	
+	maid_get_manpower_propaganda = {
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_get_manpower_propaganda
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 35
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_get_manpower_propaganda
+		}
+	}
+	
+	maid_stop_manpower_propaganda = {
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_get_manpower_propaganda
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_get_manpower_propaganda
+		}
+	}
+	
+	maid_air_trainning_club = {
+		icon = generic_air
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_airforce
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_airforce
+		}
+	}
+	
+	maid_stop_air_trainning_club = {
+		icon = generic_air
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_airforce
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_airforce
+		}
+	}
+	
+	maid_buff_eq_production = {
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_maid_eq_construction
+			}
+			has_country_flag = maid_unlock_one_idea_combination_eq_production_flag
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_maid_eq_construction
+		}
+	}
+	
+	maid_stop_buff_eq_production = {
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_maid_eq_construction
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_maid_eq_construction
+		}
+	}
+	
+	maid_naval_construction = {
+		icon = generic_naval
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_navy_construction
+			}
+			has_country_flag = maid_has_established_naval_corps_flag
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_navy_construction
+		}
+	}
+	
+	maid_stop_naval_construction = {
+		icon = generic_naval
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_navy_construction
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_navy_construction
+		}
+	}
+	
+	maid_soviet_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_soviet_idea_group
+			}
+			has_idea = idea_maid_soviet
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_soviet_idea_group
+		}
+	}
+	
+	maid_stop_soviet_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_soviet_idea_group
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_soviet_idea_group
+		}
+	}
+	
+	maid_empire_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_empire_idea_group
+			}
+			has_idea = idea_maid_empire
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_empire_idea_group
+		}
+	}
+	
+	maid_stop_empire_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_empire_idea_group
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_empire_idea_group
+		}
+	}
+	
+	maid_republic_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+		}
+
+		visible = {
+			not = {
+				has_idea = maid_idea_republic_idea_group
+			}
+			has_idea = idea_maid_republic
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			add_ideas = maid_idea_republic_idea_group
+		}
+	}
+	
+	maid_stop_republic_idea_group = {
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_idea = maid_idea_republic_idea_group
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			remove_ideas = maid_idea_republic_idea_group
+		}
+	}
+	
+	maid_on_the_front_line = {
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+			has_war = yes
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 90
+
+		modifier = {
+			breakthrough_factor = 0.10
+			army_org_regain = 0.10
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+		}
+	}
+	
+	maid_hold_the_music_concert = {
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			maid_idea_slot_is_empty = yes
+			not = {
+				has_country_flag = maid_hold_the_music_concert_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			stability_weekly = 0.004
+			line_change_production_efficiency_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_one_idea_slot_is_filled_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = -1
+			}
+			set_country_flag = {
+				flag = maid_hold_the_music_concert_flag
+				days = 180
+				value = 1
+			}
+			custom_effect_tooltip = maid_random_song_will_play_tt
+			hidden_effect = {
+				random_list = {
+					7 = { play_song = "Planya_My_fine_and_distant_future" }
+					7 = { play_song = "all_project_kowaretasekai" }
+					7 = { play_song = "meiji_17_shanghaiALICE" }
+					7 = { play_song = "yurahatuki_tear_of_blackbird" }
+					7 = { play_song = "RedDahlia" }
+					6 = { play_song = "Rigel_Theatre_ERIS_Legend_of_Gaidelia" }
+					6 = { play_song = "InoryMeiluke" }
+					6 = { play_song = "Eternal_Flower" }
+					7 = { play_song = "Ozoi_Yakui_Bayan" }
+					6 = { play_song = "Yakui_Harmoyear" }
+					7 = { play_song = "badapple" }
+					7 = { play_song = "EpisodeOfMelodica" }
+					6 = { play_song = "LeGivreFreezingFloweret" }
+					7 = { play_song = "gensouenosasoi_shimotsuki" }
+					7 = { play_song = "wasurejinokotonowa" }
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_release_one_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+		}
+	}
+	
+}

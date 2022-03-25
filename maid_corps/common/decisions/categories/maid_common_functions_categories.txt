@@ -1,0 +1,93 @@
+maid_idea_combinations = {
+
+	icon = SOV_propaganda
+	picture = GFX_decision_cat_maid_pic
+	#scripted_gui = sov_propaganda_campaigns_ui等待制作
+
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+maid_suppress_the_rebellion = {
+
+	#icon = SOV_propaganda
+	#picture = GFX_decision_cat_maid_pic
+
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+maid_army_decisions_group = {
+
+	icon = army_reform
+	#picture = GFX_decision_cat_maid_pic
+
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+maid_defence_system_decisions_group = {
+
+	icon = army_reform
+	#picture = GFX_decision_cat_maid_pic
+
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+maid_common_decisions = {
+	
+	icon = GFX_decision_cat_maid_icon
+	
+	picture = GFX_decision_maid_logo
+	
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+hire_maid_decisions = {
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}
+
+maid_active_system = {
+	allowed = {
+		
+	}
+	visible = {
+		is_ai = no
+	}
+}
+
+maid_diplomacy_decisions = {
+	allowed = {
+		
+	}
+	visible = {
+		has_country_flag = maid_system_is_enable_flag
+	}
+}

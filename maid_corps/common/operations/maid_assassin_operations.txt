@@ -1,0 +1,173 @@
+operation_maid_assassin_action = { 
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = maid_assassin_action
+	desc = maid_assassin_action_desc
+
+	days = 60
+	network_strength = 50
+	operatives = 2
+
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 10
+		}
+		has_country_flag = unlock_operation_maid_assassin_flag
+	}
+
+	equipment = {
+		infantry_equipment = 100
+		support_equipment = 100
+	}
+
+	available = {
+		#any_operative_leader = { has_trait = maid_spy }
+		#新版本此代码失效，等修复
+	}
+
+	
+	risk_chance = 0.10
+	experience = 2.5
+	cost_modifiers = { operation_coup_cost }
+	outcome_execute = { # SCOPE_OPERATION
+		random_list = {
+			40 = {
+				FROM = {
+					kill_country_leader = yes
+					add_stability = -0.02
+				}
+			}
+			20 = {
+				FROM = {
+					kill_country_leader = yes
+					add_stability = -0.05
+					add_political_power = -100
+				}
+			}
+			40 = {
+				FROM = {
+					add_political_power = -10
+				}
+			}
+		}	
+	}
+
+	outcome_potential = {
+		random_list = {
+			40 = {
+				custom_effect_tooltip = maid_assassin_outcome_success_tt
+				FROM = {
+					kill_country_leader = yes
+					add_stability = -0.02
+					add_political_power = -30
+				}
+			}
+			20 = {
+				custom_effect_tooltip = maid_assassin_outcome_totally_success_tt
+				FROM = {
+					kill_country_leader = yes
+					add_stability = -0.05
+					add_political_power = -100
+				}
+			}
+			40 = {
+				custom_effect_tooltip = maid_assassin_outcome_fail_tt
+				FROM = {
+					add_political_power = -20
+				}
+			}
+		}
+	}
+
+	phases = { #infiltration 
+		maid_phase_assassin_infiltration = { base = 33 }
+	}
+	phases = { 
+		maid_phase_assassin_get_information = { base = 33 }
+	}
+	phases = { 
+		maid_phase_assassin_execute = { base = 25 }
+	}
+}
+
+operation_maid_assassin_officers_action = { 
+	icon = GFX_operations_boost_resistance
+	map_icon = GFX_operations_boost_resistance_map
+	name = maid_assassin_officers_action
+	desc = maid_assassin_officers_action_desc
+
+	days = 30
+	network_strength = 50
+	operatives = 2
+
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 10
+		}
+		has_country_flag = unlock_operation_maid_assassin_officers_flag
+	}
+
+	equipment = {
+		infantry_equipment = 50
+		support_equipment = 50
+	}
+
+	available = {
+		#any_operative_leader = { has_trait = maid_spy }
+		#新版本此代码失效，等修复
+	}
+
+	
+	risk_chance = 0.10
+	experience = 2.5
+	cost_modifiers = { operation_coup_cost }
+	outcome_execute = { # SCOPE_OPERATION
+		random_list = {
+			60 = {
+				FROM = {
+					add_timed_idea = {
+						idea = idea_maid_assassinate_officers
+						days = 30
+					}
+				}
+			}
+			40 = {
+				FROM = {
+					add_political_power = -5
+				}
+			}
+		}	
+	}
+
+	outcome_potential = {
+		random_list = {
+			60 = {
+				custom_effect_tooltip = maid_assassin_outcome_success_tt
+				FROM = {
+					add_timed_idea = {
+						idea = idea_maid_assassinate_officers
+						days = 30
+					}
+				}
+			}
+			40 = {
+				custom_effect_tooltip = maid_assassin_outcome_fail_tt
+				FROM = {
+					add_political_power = -10
+				}
+			}
+		}
+	}
+
+	phases = { #infiltration 
+		maid_phase_assassin_officers_infiltration = { base = 33 }
+	}
+	phases = { 
+		maid_phase_assassin_officers_get_information = { base = 33 }
+	}
+	phases = { 
+		maid_phase_assassin_officers_execute = { base = 25 }
+	}
+}

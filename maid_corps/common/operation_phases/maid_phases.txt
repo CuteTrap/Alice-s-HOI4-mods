@@ -1,0 +1,71 @@
+maid_phase_assassin_infiltration = {
+	name = maid_phase_assassin_infiltration
+	desc = maid_phase_assassin_infiltration_desc
+	outcome = maid_phase_assassin_infiltration_outcome
+	picture = "GFX_phase_infiltration_diplomatic"
+	icon = "GFX_phase_infiltration_diplomatic_small"
+
+	equipment = {
+		
+	}
+}
+
+maid_phase_assassin_get_information = {
+	name = maid_phase_assassin_get_information
+	desc = maid_phase_assassin_get_information_desc
+	outcome = maid_phase_assassin_get_information_outcome
+	picture = "GFX_phase_lar_communist_uprising_organize_strikes"
+	icon = "GFX_phase_lar_communist_uprising_organize_strikes_small"
+
+	equipment = {
+		
+	}
+}
+
+maid_phase_assassin_execute = {
+	name = maid_phase_assassin_execute
+	desc = maid_phase_assassin_execute_desc
+	outcome = maid_phase_assassin_execute_outcome
+	picture = "GFX_phase_targeted_sabotage_destroy_bridge"
+	icon = "GFX_phase_targeted_sabotage_destroy_bridge_small"
+
+	equipment = {
+		
+	}
+}
+
+maid_phase_assassin_officers_infiltration = {
+	name = maid_phase_assassin_officers_infiltration
+	desc = maid_phase_assassin_officers_infiltration_desc
+	outcome = maid_phase_assassin_officers_infiltration_outcome
+	picture = "GFX_phase_exfiltration_air_pickup"
+	icon = "GFX_phase_exfiltration_air_pickup_small"
+
+	equipment = {
+		
+	}
+}
+
+maid_phase_assassin_officers_get_information = {
+	name = maid_phase_assassin_officers_get_information
+	desc = maid_phase_assassin_officers_get_information_desc
+	outcome = maid_phase_assassin_officers_get_information_outcome
+	picture = "GFX_phase_targeted_sabotage_remove_roadsigns"
+	icon = "GFX_phase_targeted_sabotage_remove_roadsigns_small"
+
+	equipment = {
+		
+	}
+}
+
+maid_phase_assassin_officers_execute = {
+	name = maid_phase_assassin_officers_execute
+	desc = maid_phase_assassin_officers_execute_desc
+	outcome = maid_phase_assassin_officers_execute_outcome
+	picture = "GFX_phase_targeted_sabotage_burn_storage"
+	icon = "GFX_phase_targeted_sabotage_burn_storage_small"
+
+	equipment = {
+		
+	}
+}

@@ -1,0 +1,196 @@
+add_namespace = maid_mdd_event
+
+country_event = { #Repeate
+	id = maid_mdd_event.0
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		country_exists = this
+		num_subjects > 0
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_subject_of = root
+				compare_autonomy_state = autonomy_housemaid_centralization
+			}
+			root = {
+				set_variable = {
+					var = mdd_overload_num_of_factories
+					value = num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories@prev
+					value = prev.num_of_factories
+				}
+				set_variable = {
+					var = mdd_total_factories@prev
+					value = 0
+				}
+				add_to_variable = {
+					var = mdd_total_factories@prev
+					value = mdd_subject_num_of_factories@prev
+				}
+				add_to_variable = {
+					var = mdd_total_factories@prev
+					value = mdd_overload_num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories_share@prev
+					value = mdd_subject_num_of_factories@prev
+				}
+				divide_variable = {
+					var = mdd_subject_num_of_factories_share@prev
+					value = mdd_total_factories@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = 0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = -0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = 400
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = -400
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = 0.05
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = 0.05
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = 80
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = 80
+				}
+			}
+		}
+	}
+}
+
+country_event = { #refresh
+	id = maid_mdd_event.1
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		country_exists = this
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				is_subject_of = root
+				compare_autonomy_state = autonomy_housemaid_centralization
+			}
+			root = {
+				set_variable = {
+					var = mdd_overload_num_of_factories
+					value = num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories@prev
+					value = prev.num_of_factories
+				}
+				set_variable = {
+					var = mdd_total_factories@prev
+					value = 0
+				}
+				add_to_variable = {
+					var = mdd_total_factories@prev
+					value = mdd_subject_num_of_factories@prev
+				}
+				add_to_variable = {
+					var = mdd_total_factories@prev
+					value = mdd_overload_num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories_share@prev
+					value = mdd_subject_num_of_factories@prev
+				}
+				divide_variable = {
+					var = mdd_subject_num_of_factories_share@prev
+					value = mdd_total_factories@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = mdd_subject_num_of_factories_share@prev
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = 0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = -0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = 400
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = -400
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@prev
+					value = 0.05
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@prev
+					value = 0.05
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@prev
+					value = 80
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@prev
+					value = 80
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,386 @@
+#Add to scripted triggers if more levels of hyper inflation is added
+
+#Important to put HIGHEST first
+maid_group_budget_increase = {
+	# level 5 not relevant. Cannot go above.
+	if = {
+		limit = { has_idea = idea_maid_group_budget_degree_4 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_4
+			add_idea = idea_maid_group_budget_degree_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_3 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_3
+			add_idea = idea_maid_group_budget_degree_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_2 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_2
+			add_idea = idea_maid_group_budget_degree_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_1 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_1
+			add_idea = idea_maid_group_budget_degree_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_0 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_0
+			add_idea = idea_maid_group_budget_degree_1
+		}
+	}
+}
+
+#Important to put LOWEST first
+maid_group_budget_decrease = {
+	if = {
+		limit = { has_idea = idea_maid_group_budget_degree_1 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_1
+			add_idea = idea_maid_group_budget_degree_0
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_2 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_2
+			add_idea = idea_maid_group_budget_degree_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_3 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_3
+			add_idea = idea_maid_group_budget_degree_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_4 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_4
+			add_idea = idea_maid_group_budget_degree_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = idea_maid_group_budget_degree_5 }
+		swap_ideas = {
+			remove_idea = idea_maid_group_budget_degree_5
+			add_idea = idea_maid_group_budget_degree_4
+		}
+	}
+	
+}
+
+maid_parliament_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = maid_parliament_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = maid_parliament_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_maid_parliament.dds" }
+		set_country_leader_description = { desc = "POLITICS_maid_parliament_DESC" }
+	}
+	add_country_leader_trait = maid_parliament_country_leader_trait
+}
+
+you_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = you_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = you_name }
+		if = {
+			limit = { has_country_flag = maid_you_profile_green_flag }
+			set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_you_greenhair.dds" }
+		}
+		else_if = {
+			limit = { has_country_flag = maid_you_profile_gold_flag }
+			set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_you_goldhair.dds" }
+		}
+		else_if = {
+			limit = { has_country_flag = maid_you_profile_silver_flag }
+			set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_you_silvercat.dds" }
+		}
+		else_if = {
+			limit = { has_country_flag = maid_you_profile_black_flag }
+			set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_you_blackhair.dds" }
+		}
+		set_country_leader_description = { desc = "POLITICS_you_DESC" }
+	}
+	if = {
+		limit = { has_country_flag = maid_you_leader_trait1_flag }
+		add_country_leader_trait = you_country_leader_1_trait
+	}
+	else_if = {
+		limit = { has_country_flag = maid_you_leader_trait2_flag }
+		add_country_leader_trait = you_country_leader_2_trait
+	}
+	else_if = {
+		limit = { has_country_flag = maid_you_leader_trait3_flag }
+		add_country_leader_trait = you_country_leader_3_trait
+	}
+	else_if = {
+		limit = { has_country_flag = maid_you_leader_trait4_flag }
+		add_country_leader_trait = you_country_leader_4_trait
+	}
+}
+
+sakuya_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = sakuya_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = sakuya_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_sakuya.dds" }
+		set_country_leader_description = { desc = "POLITICS_sakuya_DESC" }
+	}
+	add_country_leader_trait = sakuya_country_leader_trait
+}
+
+felicia_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = felicia_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = felicia_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_felicia.dds" }
+		set_country_leader_description = { desc = "POLITICS_felicia_DESC" }
+	}
+	add_country_leader_trait = felicia_country_leader_trait
+}
+
+reimu_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = reimu_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = reimu_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_reimu.dds" }
+		set_country_leader_description = { desc = "POLITICS_reimu_DESC" }
+	}
+	add_country_leader_trait = reimu_country_leader_trait
+}
+
+tohru_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = tohru_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = tohru_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_tohru.dds" }
+		set_country_leader_description = { desc = "POLITICS_tohru_DESC" }
+	}
+	add_country_leader_trait = tohru_country_leader_trait
+}
+
+noelle_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = noelle_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = noelle_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_noelle.dds" }
+		set_country_leader_description = { desc = "POLITICS_noelle_DESC" }
+	}
+	add_country_leader_trait = noelle_country_leader_trait
+}
+
+bsAlice_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = bsAlice_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = bsAlice_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_bsAlice.dds" }
+		set_country_leader_description = { desc = "POLITICS_bsAlice_DESC" }
+	}
+	add_country_leader_trait = bsAlice_country_leader_trait
+}
+
+william_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = william_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = william_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_william.dds" }
+		set_country_leader_description = { desc = "POLITICS_william_DESC" }
+	}
+	add_country_leader_trait = william_country_leader_trait
+}
+
+kotori_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = kotori_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = kotori_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_kotori.dds" }
+		set_country_leader_description = { desc = "POLITICS_kotori_DESC" }
+	}
+	add_country_leader_trait = kotori_country_leader_trait
+}
+
+maid_1_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = maid_1_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = maid_1_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_maid_1.dds" }
+		set_country_leader_description = { desc = "POLITICS_maid_1_DESC" }
+	}
+	add_country_leader_trait = maid_1_country_leader_trait
+}
+
+maid_2_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = maid_2_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = maid_2_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_maid_2.dds" }
+		set_country_leader_description = { desc = "POLITICS_maid_2_DESC" }
+	}
+	add_country_leader_trait = maid_2_country_leader_trait
+}
+
+maid_3_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = maid_3_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = maid_3_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_maid_3.dds" }
+		set_country_leader_description = { desc = "POLITICS_maid_3_DESC" }
+	}
+	add_country_leader_trait = maid_3_country_leader_trait
+}
+
+maid_4_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = maid_4_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = maid_4_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_maid_4.dds" }
+		set_country_leader_description = { desc = "POLITICS_maid_4_DESC" }
+	}
+	add_country_leader_trait = maid_4_country_leader_trait
+}
+
+saika_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = saika_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = saika_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_saika.dds" }
+		set_country_leader_description = { desc = "POLITICS_saika_DESC" }
+	}
+	add_country_leader_trait = saika_country_leader_trait
+}
+
+asahi_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = asahi_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = asahi_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_asahi.dds" }
+		set_country_leader_description = { desc = "POLITICS_asahi_DESC" }
+	}
+	add_country_leader_trait = asahi_country_leader_trait
+}
+
+rizhao_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = rizhao_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = rizhao_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_rizhao.dds" }
+		set_country_leader_description = { desc = "POLITICS_rizhao_DESC" }
+	}
+	add_country_leader_trait = rizhao_country_leader_trait
+}
+
+Alice_casilia_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = Alice_casilia_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = Alice_casilia_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_Alice_casilia.dds" }
+		set_country_leader_description = { desc = "POLITICS_Alice_casilia_DESC" }
+	}
+	add_country_leader_trait = Alice_casilia_country_leader_trait
+}
+
+felix_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = felix_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = felix_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_felix.dds" }
+		set_country_leader_description = { desc = "POLITICS_felix_DESC" }
+	}
+	add_country_leader_trait = felix_country_leader_trait
+}
+
+hilde_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = hilde_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = hilde_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_hilde.dds" }
+		set_country_leader_description = { desc = "POLITICS_hilde_DESC" }
+	}
+	add_country_leader_trait = hilde_country_leader_trait
+}
+
+G36_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = G36_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = G36_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_G36.dds" }
+		set_country_leader_description = { desc = "POLITICS_G36_DESC" }
+	}
+	add_country_leader_trait = G36_country_leader_trait
+}
+
+newcastle_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = newcastle_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = newcastle_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_newcastle.dds" }
+		set_country_leader_description = { desc = "POLITICS_newcastle_DESC" }
+	}
+	add_country_leader_trait = newcastle_country_leader_trait
+}
+
+belfast_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = belfast_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = belfast_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_belfast.dds" }
+		set_country_leader_description = { desc = "POLITICS_belfast_DESC" }
+	}
+	add_country_leader_trait = belfast_country_leader_trait
+}
+
+sirius_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = sirius_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = sirius_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_sirius.dds" }
+		set_country_leader_description = { desc = "POLITICS_sirius_DESC" }
+	}
+	add_country_leader_trait = sirius_country_leader_trait
+}
+
+shura_become_leader = {
+	retire_country_leader = yes
+	custom_effect_tooltip = shura_become_leader_tt
+	hidden_effect = {
+		set_country_leader_name = { name = shura_name }
+		set_country_leader_portrait = { portrait = "gfx/leaders/maid_group/GFX_portrait_shura.dds" }
+		set_country_leader_description = { desc = "POLITICS_shura_DESC" }
+	}
+	add_country_leader_trait = shura_country_leader_trait
+}

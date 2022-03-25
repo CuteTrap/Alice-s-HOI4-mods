@@ -1,0 +1,520 @@
+maid_active_system = {
+
+	maid_active_the_system = { #激活
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			country_event = maid_event.1
+			set_variable = {
+				var = maid_willingness
+				value = 0
+			}
+			set_variable = {
+				var = maid_idea_slots
+				value = 2
+			}
+			set_country_flag = maid_temp_new_version_updated_flag
+			hidden_effect = {
+				news_event = { id = maid_news.2 days = 3 random_days = 1 }
+				country_event = { id = maid_story.1 days = 90 }
+			}
+		}
+	}
+
+}
+
+maid_diplomacy_decisions = {
+
+	
+	maid_integrate_autonomy_housemaid = {
+		cost = 0
+		# custom_cost_trigger = {
+			
+		# }
+		# custom_cost_text = mdd_integrate_autonomy_housemaid_sb_cost
+		days_remove = 30
+		available = {
+			not = {
+				has_idea = idea_maid_integrate_puppet
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+		target_trigger = {
+			from = {
+				is_subject_of = root
+				compare_autonomy_state = autonomy_housemaid_centralization
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_integrate_autonomy_cost_tt
+			add_timed_idea = {
+				idea = idea_maid_integrate_puppet
+				days = 120
+			}
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			hidden_effect = {
+				set_variable = {
+					var = mdd_overload_num_of_factories
+					value = num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories@from
+					value = from.num_of_factories
+				}
+				set_variable = {
+					var = mdd_total_factories@from
+					value = 0
+				}
+				add_to_variable = {
+					var = mdd_total_factories@from
+					value = mdd_subject_num_of_factories@from
+				}
+				add_to_variable = {
+					var = mdd_total_factories@from
+					value = mdd_overload_num_of_factories
+				}
+				set_variable = {
+					var = mdd_subject_num_of_factories_share@from
+					value = mdd_subject_num_of_factories@from
+				}
+				divide_variable = {
+					var = mdd_subject_num_of_factories_share@from
+					value = mdd_total_factories@from
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@from
+					value = mdd_subject_num_of_factories_share@from
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@from
+					value = mdd_subject_num_of_factories_share@from
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@from
+					value = mdd_subject_num_of_factories_share@from
+				}
+				set_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@from
+					value = mdd_subject_num_of_factories_share@from
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@from
+					value = 0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@from
+					value = -0.5
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@from
+					value = 400
+				}
+				multiply_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@from
+					value = -400
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_need@from
+					value = 0.05
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_sb_cost@from
+					value = 0.05
+				}
+				add_to_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_need@from
+					value = 80
+				}
+				subtract_from_variable = {
+					var = mdd_integrate_autonomy_housemaid_pp_cost@from
+					value = 80
+				}
+			}
+			add_stability = mdd_integrate_autonomy_housemaid_sb_cost@from
+			add_political_power = mdd_integrate_autonomy_housemaid_pp_cost@from
+			add_war_support = -0.05
+			hidden_effect = {
+				clear_variable = mdd_subject_num_of_factories@from
+				clear_variable = mdd_total_factories@from
+				clear_variable = mdd_subject_num_of_factories_share@from
+				clear_variable = mdd_integrate_autonomy_housemaid_sb_cost@from
+				clear_variable = mdd_integrate_autonomy_housemaid_pp_cost@from
+				clear_variable = mdd_integrate_autonomy_housemaid_sb_need@from
+				clear_variable = mdd_integrate_autonomy_housemaid_pp_need@from
+			}
+			from = {
+				every_owned_state = {
+					limit = {
+						is_core_of = from
+					}
+					add_core_of = root
+				}
+			}
+			annex_country = {
+				target = from
+				transfer_troops = yes
+			}
+			
+		}
+	}
+	
+	maid_become_autonomy_housemaid_centralization = {
+		cost = 90
+		visible = {
+	    	has_country_flag = maid_allow_autonomy_housemaid_flag
+		}
+		
+		available = {
+			from = {
+				has_idea = idea_maid_subject_government
+			}
+		}
+		target_trigger = {
+			from = {
+				is_subject_of = root
+				compare_autonomy_state = autonomy_housemaid
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_become_autonomy_centralization_tt
+			set_autonomy = {
+				target = from
+				autonomy_state = autonomy_housemaid_centralization
+			}
+			hidden_effect = {
+				country_event = mdd_event.1
+			}
+		}
+	}
+	
+	maid_become_autonomy_housemaid = {
+		cost = 60
+		visible = {
+	    	has_country_flag = maid_allow_autonomy_housemaid_flag
+		}
+		
+		available = {
+			from = {
+				or = {
+					has_idea = idea_maid_subject_control
+					has_idea = idea_maid_subject_government
+				}
+			}
+		}
+		target_trigger = {
+			from = {
+				is_subject_of = root
+				# NOR = { #钢丝居然没有NOR，，可能和挪威的tag重了，神奇
+				# 	compare_autonomy_state = autonomy_housemaid
+				# 	compare_autonomy_state = autonomy_housemaid_centralization
+				# }
+				NOT = {
+					OR = {
+						compare_autonomy_state = autonomy_housemaid
+						compare_autonomy_state = autonomy_housemaid_centralization
+					}
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_become_autonomy_tt
+			set_autonomy = {
+				target = from
+				autonomy_state = autonomy_housemaid
+			}
+		}
+	}
+	
+	maid_boost_to_autonomy_housemaid = {
+		cost = 10
+		visible = {
+	    	has_country_flag = maid_allow_autonomy_housemaid_flag
+		}
+		
+		available = {
+			from = {
+				compare_autonomy_state = autonomy_housemaid_centralization
+			}
+		}
+		target_trigger = {
+			from = {
+				is_subject_of = root
+				compare_autonomy_state = autonomy_housemaid_centralization
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = maid_become_autonomy_tt
+			set_autonomy = {
+				target = from
+				autonomy_state = autonomy_housemaid
+			}
+		}
+	}
+	
+	maid_subject_leader = {
+    	
+		visible = {
+	    	FROM = { 
+	    		is_subject_of = ROOT
+				has_idea = idea_maid_subject_government
+				not = {
+					has_country_leader = {
+						name = "女仆议会"
+						ruling_only = yes
+					}
+				}
+	    	}
+		}
+		
+		available = {
+			is_subject = no
+			FROM = {
+				is_ai = yes
+				has_idea = idea_maid_subject_government
+				not = {
+					has_country_leader = {
+						name = "女仆议会"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		
+		cancel_if_not_visible = yes
+		
+		#目标对象与要求#
+		target_array = subjects
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				has_idea = idea_maid_subject_government
+				not = {
+					has_country_leader = {
+						name = "女仆议会"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		
+		days_remove = 10
+		cost = 25
+		
+		icon = generic_form_nation
+		
+		remove_effect = {
+			FROM = {
+				maid_parliament_become_leader = yes
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_subject_government = {
+    	
+		visible = {
+			has_country_flag = maid_diplomacy_puppet_government_flag
+	    	FROM = { 
+	    		is_subject_of = ROOT
+				has_idea = idea_maid_subject_control
+				not = { has_idea = idea_maid_subject_government }
+	    	}
+		}
+		
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+			FROM = {
+				is_ai = yes
+				has_idea = idea_maid_subject_control
+				not = { has_idea = idea_maid_subject_government }
+			}
+		}
+		
+		cancel_if_not_visible = yes
+		
+		#目标对象与要求#
+		target_array = subjects
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				has_idea = idea_maid_subject_control
+				not = { has_idea = idea_maid_subject_government }
+			}
+		}
+		
+		days_remove = 30
+		cost = 40
+		
+		icon = generic_form_nation
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			FROM = {
+				swap_ideas = {
+					remove_idea = idea_maid_subject_control
+					add_idea = idea_maid_subject_government
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_subject_control = {
+    	
+		visible = {
+	    	FROM = { 
+	    		is_subject_of = ROOT
+				not = {
+					has_idea = idea_maid_subject_control
+					has_idea = idea_maid_subject_government
+				}
+	    	}
+		}
+		
+		available = {
+			is_subject = no
+			FROM = {
+				is_ai = yes
+				not = {
+					has_idea = idea_maid_subject_control
+					has_idea = idea_maid_subject_government
+				}
+			}
+		}
+		
+		cancel_if_not_visible = yes
+		
+		#目标对象与要求#
+		target_array = subjects
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				not = {
+					has_idea = idea_maid_subject_control
+					has_idea = idea_maid_subject_government
+				}
+			}
+		}
+		
+		days_remove = 10
+		cost = 30
+		
+		icon = generic_form_nation
+		
+		remove_effect = {
+			FROM = { add_ideas = idea_maid_subject_control }
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+	
+	maid_subject_increase_independence = {
+    	
+		visible = {
+	    	FROM = { 
+	    		is_subject_of = ROOT
+				not = { has_idea = idea_maid_increase_independence }
+				OR = {
+					compare_autonomy_state = autonomy_housemaid
+					compare_autonomy_state = autonomy_housemaid_centralization
+				}
+	    	}
+		}
+		
+		available = {
+			is_subject = no
+			FROM = {
+				is_ai = yes
+				not = { has_idea = idea_maid_increase_independence }
+				OR = {
+					compare_autonomy_state = autonomy_housemaid
+					compare_autonomy_state = autonomy_housemaid_centralization
+				}
+			}
+		}
+		
+		#目标对象与要求#
+		target_array = subjects
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		
+		days_remove = 1
+		cost = 0
+		
+		icon = generic_form_nation
+		
+		complete_effect = {
+			add_political_power = 60
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			FROM = {
+				add_offsite_building = { type = industrial_complex level = 2 }
+			}
+			set_autonomy = { target = FROM autonomy_state = autonomy_free }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+}

@@ -1,0 +1,64 @@
+sub_units = {
+	maid_support_team = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		affects_speed = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = 30
+		default_morale = 0.4
+		manpower = 400
+		training_time = 140
+
+		#Misc Abilities
+		weight = 0.2
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Support nerfs to combat abilities
+		defense = -0.2
+		breakthrough = -0.1
+		soft_attack = -0.3
+		hard_attack = -0.4
+
+		# Important Ability
+		initiative = 0.10
+
+		own_equipment_fuel_consumption_mult = 0.0 # no fuel use
+
+		essential = {
+			maid_support_equipment
+			maid_motorized_equipment
+			maid_infantry_equipment
+		}
+		
+		need = {
+			maid_support_equipment = 60
+			maid_motorized_equipment = 40
+			maid_infantry_equipment = 80
+		}
+		
+	}
+}
+
+

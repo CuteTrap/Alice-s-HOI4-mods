@@ -1,0 +1,49 @@
+maid_suppress_the_rebellion = {
+
+	maid_suppress_the_rebel_states = {
+	
+    	fire_only_once = yes
+		
+		visible = {
+			has_country_flag = maid_night_of_maids_started_B_flag
+			any_state = { has_state_flag = maid_night_of_maids_flag }
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+			has_country_flag = maid_successfully_suppressed_the_rebellion_flag
+		}
+		
+		days_remove = 60
+		cost = 0
+		
+		icon = generic_form_nation
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			every_state = {
+				limit = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+				clr_state_flag = maid_night_of_maids_flag
+				remove_dynamic_modifier = {
+					modifier = maid_dm_rebel_states
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+}

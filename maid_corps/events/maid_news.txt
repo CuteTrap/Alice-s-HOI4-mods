@@ -1,0 +1,712 @@
+add_namespace = maid_news
+
+
+news_event = {
+	id = maid_news.1
+	title = maid_news.1.t
+	desc = maid_news.1.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.101
+	title = maid_news.1.t
+	desc = maid_news.101.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.102
+	title = maid_news.1.t
+	desc = maid_news.102.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.103
+	title = maid_news.1.t
+	desc = maid_news.103.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.104
+	title = maid_news.1.t
+	desc = maid_news.104.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.105
+	title = maid_news.1.t
+	desc = maid_news.105.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.106
+	title = maid_news.1.t
+	desc = maid_news.106.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.107
+	title = maid_news.1.t
+	desc = maid_news.107.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.108
+	title = maid_news.1.t
+	desc = maid_news.108.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.109
+	title = maid_news.1.t
+	desc = maid_news.109.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1011
+	title = maid_news.1.t
+	desc = maid_news.1011.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1012
+	title = maid_news.1.t
+	desc = maid_news.1012.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1013
+	title = maid_news.1.t
+	desc = maid_news.1013.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1014
+	title = maid_news.1.t
+	desc = maid_news.1014.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1015
+	title = maid_news.1.t
+	desc = maid_news.1015.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1016
+	title = maid_news.1.t
+	desc = maid_news.1016.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1017
+	title = maid_news.1.t
+	desc = maid_news.1017.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1018
+	title = maid_news.1.t
+	desc = maid_news.1018.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1019
+	title = maid_news.1.t
+	desc = maid_news.1019.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = {
+	id = maid_news.1021
+	title = maid_news.1.t
+	desc = maid_news.1021.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = { #菲莉希娅
+	id = maid_news.1022
+	title = maid_news.1.t
+	desc = maid_news.1022.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = { #贝尔法斯特
+	id = maid_news.1023
+	title = maid_news.1.t
+	desc = maid_news.1023.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = { #天狼星
+	id = maid_news.1024
+	title = maid_news.1.t
+	desc = maid_news.1024.d
+	picture = GFX_news_maid_marry_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.1.b
+		trigger = { has_country_flag = let_marry_with_maid_flag }
+	}
+	
+}
+
+news_event = { #组建女仆团
+	id = maid_news.2
+	title = maid_news.2.t
+	desc = maid_news.2.d
+	picture = GFX_news_maid_generic_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.2.a
+		trigger = {
+			NOT = {
+				tag = ROOT
+				has_country_flag = maid_system_is_enable_flag
+			}
+		}
+	}
+	option = {
+		name = maid_news.2.b
+		trigger = { tag = ROOT }
+	}
+	option = {
+		name = maid_news.2.c
+		trigger = {
+			NOT = {
+				tag = ROOT
+			}
+			has_country_flag = maid_system_is_enable_flag
+		}
+	}
+	
+}
+
+news_event = { #女仆之夜
+	id = maid_news.3
+	title = maid_news.3.t
+	desc = maid_news.3.d
+	picture = GFX_news_maid_battle_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.3.a
+		trigger = {
+			NOT = {
+				tag = ROOT
+			}
+		}
+	}
+	option = {
+		name = maid_news.3.b
+		trigger = { tag = ROOT }
+	}
+	
+}
+
+news_event = { #女仆之国苏维埃
+	id = maid_news.4
+	title = maid_news.4.t
+	desc = maid_news.4.d
+	picture = GFX_news_maid_battle_2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.4.a
+		trigger = {
+			NOT = {
+				tag = ROOT
+			}
+		}
+	}
+	option = {
+		name = maid_news.4.b
+		trigger = { tag = ROOT }
+	}
+	
+}
+
+news_event = { #女仆之国帝国
+	id = maid_news.401
+	title = maid_news.401.t
+	desc = maid_news.401.d
+	picture = GFX_news_maid_castle_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.401.a
+		trigger = {
+			NOT = {
+				tag = ROOT
+			}
+		}
+	}
+	option = {
+		name = maid_news.401.b
+		trigger = { tag = ROOT }
+	}
+	
+}
+
+news_event = { #女仆之国共和
+	id = maid_news.402
+	title = maid_news.402.t
+	desc = maid_news.402.d
+	picture = GFX_news_maid_castle_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_news.402.a
+		trigger = {
+			NOT = {
+				tag = ROOT
+			}
+		}
+	}
+	option = {
+		name = maid_news.402.b
+		trigger = { tag = ROOT }
+	}
+	
+}

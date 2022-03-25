@@ -1,0 +1,71 @@
+leader_traits = {
+
+	maid_spy = {
+		type = operative
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			own_operative_detection_chance_factor = -0.4
+			operation_infiltrate_risk = -0.2
+		}
+	}
+	
+	mark_youhua = {
+		type = all
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			
+		}
+	}
+	
+	mark_sheffield = {
+		type = all
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			
+		}
+	}
+	
+	mark_london = {
+		type = all
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			
+		}
+	}
+	
+	mark_yakui = {
+		type = all
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			
+		}
+	}
+	
+	maid_ambuser = {
+		type = all
+		trait_type = personality_trait
+		allowed = {
+			always = no # not gainable
+		}
+		modifier = {
+			own_operative_detection_chance_factor = -0.1
+			operation_infiltrate_risk = 0.1
+		}
+	}
+
+}

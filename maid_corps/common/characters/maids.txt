@@ -1,0 +1,709 @@
+characters = {
+	maid_izayoi_sakuya = {
+		name = sakuya_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sakuya.dds"
+				small="gfx/interface/ideas/maids/idea_maid_sakuya.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_sakuya maid_fur organizer trait_engineer adaptable }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_sakuya_flag }
+		}
+	}
+	
+	maid_naval_izayoi_sakuya = {
+		name = sakuya_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sakuya.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_sakuya.dds"
+			}
+		}
+		navy_leader={
+			traits = { air_controller flight_deck_manager superior_tactician spotter }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 6
+			legacy_id=0
+			visible = { has_country_flag = got_naval_sakuya_flag }
+		}
+	}
+	
+	maid_felicia = {
+		name = felicia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_felicia.dds"
+				small="gfx/interface/ideas/maids/idea_maid_felicia.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_felicia maid_communist politically_connected brilliant_strategist adaptable }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_felicia_flag }
+		}
+	}
+	
+	maid_you_1 = {
+		name = you_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_greenhair.dds"
+				small="gfx/interface/ideas/maids/idea_maid_you_greenhair.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = {
+				has_country_flag = got_you_flag
+				has_country_flag = maid_you_profile_green_flag
+			}
+		}
+	}
+	
+	maid_you_2 = {
+		name = you_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_goldhair.dds"
+				small="gfx/interface/ideas/maids/idea_maid_you_goldhair.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = {
+				has_country_flag = got_you_flag
+				has_country_flag = maid_you_profile_gold_flag
+			}
+		}
+	}
+	
+	maid_you_3 = {
+		name = you_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_silvercat.dds"
+				small="gfx/interface/ideas/maids/idea_maid_you_silvercat.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = {
+				has_country_flag = got_you_flag
+				has_country_flag = maid_you_profile_silver_flag
+			}
+		}
+	}
+	
+	maid_you_4 = {
+		name = you_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_you_blackhair.dds"
+				small="gfx/interface/ideas/maids/idea_maid_you_blackhair.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_you organizer trait_engineer adaptable }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = {
+				has_country_flag = got_you_flag
+				has_country_flag = maid_you_profile_black_flag
+			}
+		}
+	}
+	
+	maid_reimu = {
+		name = reimu_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_reimu.dds"
+				small="gfx/interface/ideas/maids/idea_maid_reimu.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_reimu trait_reckless infantry_leader commando }
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_reimu_flag }
+		}
+	}
+	
+	maid_tohru = {
+		name = tohru_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_tohru.dds"
+				small="gfx/interface/ideas/maids/idea_maid_tohru.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_tohru trait_engineer trait_mountaineer ranger }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_tohru_flag }
+		}
+	}
+	
+	maid_noelle = {
+		name = noelle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_noelle.dds"
+				small="gfx/interface/ideas/maids/idea_maid_noelle.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_noelle trait_cautious armor_officer fortress_buster inflexible_strategist unyielding_defender }
+			attack_skill = 2
+			defense_skill = 6
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_noelle_flag }
+		}
+	}
+	
+	maid_bsAlice = {
+		name = bsAlice_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_bsAlice.dds"
+				small="gfx/interface/ideas/maids/idea_maid_bsAlice.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_bsAlice trait_reckless armor_officer trickster brilliant_strategist }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_bsAlice_flag }
+		}
+	}
+	
+	maid_naval_bsAlice = {
+		name = bsAlice_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_bsAlice.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_bsAlice.dds"
+			}
+		}
+		navy_leader={
+			traits = { aviation_enthusiast bold flight_deck_manager spotter }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 5
+			coordination_skill = 4
+			legacy_id=0
+			visible = { has_country_flag = got_naval_bsAlice_flag }
+		}
+	}
+	
+	maid_william = {
+		name = william_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_william.dds"
+				small="gfx/interface/ideas/maids/idea_maid_william.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_william organizer trait_cautious urban_assault_specialist infantry_officer }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_william_flag }
+		}
+	}
+	
+	maid_kotori = {
+		name = kotori_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_kotori.dds"
+				small="gfx/interface/ideas/maids/idea_maid_kotori.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_kotori armor_officer infantry_officer media_personality }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_kotori_flag }
+		}
+	}
+	
+	maid_hilde = {
+		name = hilde_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_hilde.dds"
+				small="gfx/interface/ideas/maids/idea_maid_hilde.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_hilde harsh_leader aggressive_assaulter camouflage_expert }
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_hilde_flag }
+		}
+	}
+	
+	maid_G36 = {
+		name = G36_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_G36.dds"
+				small="gfx/interface/ideas/maids/idea_maid_G36.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_G36 infantry_leader infantry_expert commando }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_G36_flag }
+		}
+	}
+	
+	maid_newcastle = {
+		name = newcastle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_newcastle.dds"
+				small="gfx/interface/ideas/maids/idea_maid_newcastle.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_newcastle naval_invader bearer_of_artillery naval_liason }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_newcastle_flag }
+		}
+	}
+	
+	maid_naval_newcastle = {
+		name = newcastle_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_newcastle.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_newcastle.dds"
+			}
+		}
+		navy_leader={
+			traits = { fleet_protector bold arctic_water_expert superior_tactician spotter fly_swatter }
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			maneuvering_skill = 6
+			coordination_skill = 5
+			legacy_id=0
+			visible = { has_country_flag = got_naval_newcastle_flag }
+		}
+	}
+	
+	maid_belfast = {
+		name = belfast_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_belfast.dds"
+				small="gfx/interface/ideas/maids/idea_maid_belfast.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_belfast winter_specialist skilled_staffer old_guard naval_invader naval_liason }
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_belfast_flag }
+		}
+	}
+	
+	maid_naval_belfast = {
+		name = belfast_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_belfast.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_belfast.dds"
+			}
+		}
+		navy_leader={
+			traits = { old_guard_navy bold spotter superior_tactician ironside blue_water_expert }
+			skill = 7
+			attack_skill = 6
+			defense_skill = 6
+			maneuvering_skill = 6
+			coordination_skill = 7
+			legacy_id=0
+			visible = { has_country_flag = got_naval_belfast_flag }
+		}
+	}
+	
+	maid_sirius = {
+		name = sirius_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sirius.dds"
+				small="gfx/interface/ideas/maids/idea_maid_sirius.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_sirius naval_invader naval_liason cavalry_leader }
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_sirius_flag }
+		}
+	}
+	
+	maid_naval_sirius = {
+		name = sirius_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_sirius.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_sirius.dds"
+			}
+		}
+		navy_leader={
+			traits = { bold air_controller superior_tactician flight_deck_manager spotter green_water_expert fly_swatter }
+			skill = 6
+			attack_skill = 5
+			defense_skill = 5
+			maneuvering_skill = 6
+			coordination_skill = 6
+			legacy_id=0
+			visible = { has_country_flag = got_naval_sirius_flag }
+		}
+	}
+	
+	maid_maid_1 = {
+		name = maid_1_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_1.dds"
+				small="gfx/interface/ideas/maids/idea_maid_maid_1.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_1 organizer jungle_rat naval_invader }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_maid_1_flag }
+		}
+	}
+	
+	maid_maid_2 = {
+		name = maid_2_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_2.dds"
+				small="gfx/interface/ideas/maids/idea_maid_maid_2.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_2 winter_specialist hill_fighter }
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 6
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_maid_2_flag }
+		}
+	}
+	
+	maid_maid_3 = {
+		name = maid_3_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_3.dds"
+				small="gfx/interface/ideas/maids/idea_maid_maid_3.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_3 combined_arms_expert scavenger }
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 2
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_maid_3_flag }
+		}
+	}
+	
+	maid_maid_4 = {
+		name = maid_4_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_maid_4.dds"
+				small="gfx/interface/ideas/maids/idea_maid_maid_4.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_maid_4 ambusher trait_engineer }
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 6
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_maid_4_flag }
+		}
+	}
+	
+	maid_saika = {
+		name = saika_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_saika.dds"
+				small="gfx/interface/ideas/maids/idea_maid_saika.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_saika organizer naval_liason invader_ii }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 3
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_saika_flag }
+		}
+	}
+	
+	maid_asahi = {
+		name = asahi_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_asahi.dds"
+				small="gfx/interface/ideas/maids/idea_maid_asahi.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_asahi organizer expert_improviser paratrooper }
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 3
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_asahi_flag }
+		}
+	}
+	
+	maid_rizhao = {
+		name = rizhao_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_rizhao.dds"
+				small="gfx/interface/ideas/maids/idea_maid_rizhao.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_rizhao media_personality trickster panzer_leader }
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_rizhao_flag }
+		}
+	}
+	
+	maid_felix = {
+		name = felix_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_felix.dds"
+				small="gfx/interface/ideas/maids/idea_maid_felix.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_felix brilliant_strategist trait_engineer }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_felix_flag }
+		}
+	}
+	
+	maid_Alice_casilia = {
+		name = Alice_casilia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_Alice_casilia.dds"
+				small="gfx/interface/ideas/maids/idea_maid_Alice_casilia.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_Alice_Casilia organizer maid_ambusher fortress_buster trickster adaptable }
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 5
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_Alice_Casilia_flag }
+		}
+	}
+	
+	maid_naval_Alice_casilia = {
+		name = Alice_casilia_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_Alice_casilia.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_Alice_casilia.dds"
+			}
+		}
+		navy_leader={
+			traits = { aviation_enthusiast bold air_controller superior_tactician }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 5
+			legacy_id=0
+			visible = { has_country_flag = got_naval_Alice_Casilia_flag }
+		}
+	}
+	
+	maid_shura = {
+		name = shura_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_shura.dds"
+				small="gfx/interface/ideas/maids/idea_maid_shura.dds"
+			}
+		}
+		corps_commander={
+			traits = { maid_group mark_shura brilliant_strategist media_personality trickster trait_mountaineer panzer_leader naval_invader }
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			skill = 5
+			legacy_id=-1
+			visible = { has_country_flag = got_shura_flag }
+		}
+	}
+	
+	maid_naval_shura = {
+		name = shura_name
+		portraits={
+			army={
+				large="gfx/leaders/maid_group/GFX_portrait_shura.dds"
+			}
+			navy={
+				small="gfx/interface/ideas/maids/idea_maid_shura.dds"
+			}
+		}
+		navy_leader={
+			traits = { flight_deck_manager bold air_controller superior_tactician spotter }
+			skill = 5
+			attack_skill = 6
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 4
+			legacy_id=0
+			visible = { has_country_flag = got_naval_shura_flag }
+		}
+	}
+	
+	
+}

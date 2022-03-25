@@ -1,0 +1,17 @@
+
+you_are_assigned_maid_commander = {
+	custom_trigger_tooltip = {
+		tooltip = you_shoud_be_assigned_maid_commander_tt
+		any_army_leader = {
+			has_trait = mark_you
+			is_assigned = yes
+		}
+	}
+}
+
+maid_idea_slot_is_empty = {
+	custom_trigger_tooltip = {
+		tooltip = maid_idea_slot_is_empty_tt
+		check_variable = { maid_idea_slots > 0 }
+	}
+}

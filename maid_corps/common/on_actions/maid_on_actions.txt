@@ -1,0 +1,59 @@
+on_actions = {
+
+	
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = maid_event.102 }
+			}
+		}
+	}
+	
+	on_weekly = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = {
+					id = maid_mdd_event.0
+				}
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					has_country_flag = maid_controled_government_flag
+					not = {
+						has_country_flag = maid_got_willingness_this_four_weeks_flag
+					}
+				}
+				set_country_flag = { flag = maid_got_willingness_this_four_weeks_flag value = 1 days = 42 }
+				add_to_variable = {
+					var = maid_willingness
+					value = 1
+				}
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					has_country_flag = maid_extra_willingness_flag
+					not = {
+						has_country_flag = maid_got_willingness_this_seven_weeks_flag
+					}
+				}
+				set_country_flag = { flag = maid_got_willingness_this_seven_weeks_flag value = 1 days = 84 }
+				add_to_variable = {
+					var = maid_willingness
+					value = 1
+				}
+			}
+		}
+	}
+	
+
+}

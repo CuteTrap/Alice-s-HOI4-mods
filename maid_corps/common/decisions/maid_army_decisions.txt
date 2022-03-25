@@ -1,0 +1,2025 @@
+maid_army_decisions_group = {
+	
+	maid_unlock_maid_eq_introduction = { #解锁女仆装备说明
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_eq_0_flag
+		}
+
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			country_event = maid_event.2801
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_unlock_maid_eq_production_idea_slot = { #解锁女仆装备生产理念
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_eq_0_flag
+		}
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			custom_effect_tooltip = maid_unlock_one_idea_combination_eq_production_tt
+			set_country_flag = maid_unlock_one_idea_combination_eq_production_flag
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_unlock_maid_eq_0 = { #解锁女仆装备
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+		cost = 10
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_technology = { maid_infantry_eq_tech = 1 }
+			set_technology = { maid_motorised_eq_tech_1 = 1 }
+			set_technology = { maid_support_eq_tech_1 = 1 }
+			custom_effect_tooltip = maid_unlock_maid_eq_0_tt
+			set_country_flag = maid_unlock_maid_eq_0_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_1
+			unlock_decision_tooltip = maid_unlock_maid_motorised_eq_1
+			unlock_decision_tooltip = maid_unlock_support_team
+			unlock_decision_tooltip = maid_unlock_maid_guard_categories
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_1 = { #解锁女仆步兵装备1
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_eq_0_flag
+		}
+
+		fire_only_once = yes
+		cost = 0
+		days_remove = 60
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_1 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_1_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_1_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_2
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_2_fast
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_2 = { #解锁女仆步兵装备2
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_contradict_to_unlock_inf_eq_2_fast_tt
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_infantry_eq_1_flag
+			not = {
+				has_country_flag = maid_maid_infantry_eq_2_fast_slected_flag
+			}
+		}
+
+		fire_only_once = yes
+		cost = 0
+		days_remove = 800
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_country_flag = maid_maid_infantry_eq_2_slected_flag
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_2 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_2_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_2_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_3
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_2_fast = { #解锁女仆步兵装备2加快
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_3_tt
+				check_variable = { maid_willingness > 3 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_contradict_to_unlock_inf_eq_2_tt
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_infantry_eq_1_flag
+			not = {
+				has_country_flag = maid_maid_infantry_eq_2_slected_flag
+			}
+		}
+
+		fire_only_once = yes
+		cost = 25
+		days_remove = 365
+		modifier = {
+			research_speed_factor = -0.1
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_4_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -4
+			}
+			set_country_flag = maid_maid_infantry_eq_2_fast_slected_flag
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_2 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_2_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_2_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_3
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_3 = { #解锁女仆步兵装备3
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_contradict_to_unlock_inf_eq_3_fast_tt
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_infantry_eq_2_flag
+			not = {
+				has_country_flag = maid_maid_infantry_eq_3_fast_slected_flag
+			}
+		}
+
+		fire_only_once = yes
+		cost = 0
+		days_remove = 860
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_country_flag = maid_maid_infantry_eq_3_slected_flag
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_3 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_3_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_3_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_4
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_3_fast = { #解锁女仆步兵装备3加快
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_3_tt
+				check_variable = { maid_willingness > 3 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_contradict_to_unlock_inf_eq_3_tt
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_infantry_eq_2_flag
+			not = {
+				has_country_flag = maid_maid_infantry_eq_3_slected_flag
+			}
+		}
+
+		fire_only_once = yes
+		cost = 50
+		days_remove = 365
+		modifier = {
+			research_speed_factor = -0.1
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_4_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -4
+			}
+			set_country_flag = maid_maid_infantry_eq_3_fast_slected_flag
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_3 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_3_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_3_flag
+			unlock_decision_tooltip = maid_unlock_maid_infantry_eq_4
+		}
+	}
+	
+	maid_unlock_maid_infantry_eq_4 = { #解锁女仆步兵装备4
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_infantry_eq_3_flag
+		}
+
+		fire_only_once = yes
+		cost = 20
+		days_remove = 900
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_infantry_eq_tech_4 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_infantry_eq_4_tt
+			set_country_flag = maid_unlock_maid_infantry_eq_4_flag
+		}
+	}
+	
+	maid_unlock_maid_motorised_eq_1 = { #解锁女仆摩托化装备1
+		icon = generic_research
+
+		allowed = {
+			
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+		visible = {
+			has_country_flag = maid_unlock_maid_eq_0_flag
+		}
+
+		fire_only_once = yes
+		cost = 0
+		days_remove = 720
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_technology = { maid_motorised_eq_tech_2 = 1 }
+			}
+			custom_effect_tooltip = maid_unlock_maid_motorised_eq_1_tt
+			set_country_flag = maid_unlock_maid_motorised_eq_1_flag
+		}
+	}
+
+	maid_unlock_support_team = { #女仆支援连单位
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = maid_infantry_eq_tech
+			has_tech = maid_motorised_eq_tech_1
+			has_tech = maid_support_eq_tech_1
+			has_army_experience > 20
+			has_country_flag = maid_work_in_army_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			research_speed_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			army_experience = -20
+			hidden_effect = {
+				country_event = maid_event.13
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team = 1 }
+			custom_effect_tooltip = function_of_maid_support_tt
+			set_country_flag = maid_support_step_0_flag
+		}
+	}
+	
+	maid_reinforce_support_team_1 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_0_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_1 = 1 }
+			custom_effect_tooltip = function_of_support_team_1_tt
+			set_country_flag = maid_support_step_1_flag
+		}
+	}
+	
+	maid_reinforce_support_team_2 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_1_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_2 = 1 }
+			custom_effect_tooltip = function_of_support_team_2_tt
+			set_country_flag = maid_support_step_2_flag
+		}
+	}
+	
+	maid_reinforce_support_team_3 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_2_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_3 = 1 }
+			custom_effect_tooltip = function_of_support_team_3_tt
+			set_country_flag = maid_support_step_3_flag
+		}
+	}
+	
+	maid_reinforce_support_team_4 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_3_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_4 = 1 }
+			custom_effect_tooltip = function_of_support_team_4_tt
+			set_country_flag = maid_support_step_4_flag
+		}
+	}
+	
+	maid_reinforce_support_team_5 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_4_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_5 = 1 }
+			custom_effect_tooltip = function_of_support_team_5_tt
+			set_country_flag = maid_support_step_5_flag
+		}
+	}
+	
+	maid_reinforce_support_team_6 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_5_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_6 = 1 }
+			custom_effect_tooltip = function_of_support_team_6_tt
+			set_country_flag = maid_support_step_6_flag
+		}
+	}
+	
+	maid_reinforce_support_team_7 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_6_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_7 = 1 }
+			custom_effect_tooltip = function_of_support_team_7_tt
+			set_country_flag = maid_support_step_7_flag
+		}
+	}
+	
+	maid_reinforce_support_team_8 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+		}
+
+		visible = {
+			has_country_flag = maid_support_step_7_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+		}
+		remove_effect = {
+			set_technology = { tech_maid_support_team_8 = 1 }
+			custom_effect_tooltip = function_of_support_team_8_tt
+			set_country_flag = maid_support_step_8_flag
+		}
+	}
+	
+	maid_battle_hospital = { #女仆战地医院
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_country_flag = got_william_flag
+				has_country_flag = got_felix_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_maid_hospital_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			research_speed_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_technology = { maid_battle_hospital_tech = 1 }
+			custom_effect_tooltip = function_of_maid_battle_hospital_tt
+		}
+	}
+	
+	maid_decryption_recon = { #女仆侦察队
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_hilde_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_maid_recon_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			research_speed_factor = -0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_technology = { maid_decryption_recon_tech = 1 }
+			custom_effect_tooltip = function_of_maid_decryption_recon_tt
+		}
+	}
+	
+	G36_infantry_plan = { #G36方案
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_G36_flag
+			has_army_experience > 25
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_G36_plan_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			army_experience = -25
+		}
+		remove_effect = {
+			set_technology = { G36_infantry_through_river_tech = 1 }
+			custom_effect_tooltip = function_of_G36_infantry_tt
+		}
+	}
+	
+	newcastle_infantry_plan = { #纽卡斯特方案
+		icon = generic_tank
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_newcastle_flag
+			has_army_experience > 15
+			has_navy_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_newcastle_plan_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			army_experience = -15
+			navy_experience = -10
+		}
+		remove_effect = {
+			set_technology = { newcastle_amphibious_reinforce_tech = 1 }
+			custom_effect_tooltip = function_of_newcastle_amphibious_tt
+		}
+	}
+	
+	maid_unlock_maid_guard_categories = { #解锁女仆师
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = maid_infantry_eq_tech
+			has_tech = maid_motorised_eq_tech_1
+			has_tech = maid_support_eq_tech_1
+			has_army_experience > 30
+			has_country_flag = maid_work_in_army_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			army_experience = -30
+			set_technology = { tech_maid_guard = 1 }
+			set_technology = { tech_maid_guard_moto = 1 }
+			custom_effect_tooltip = maid_unlock_tech_maid_guard_tt
+			custom_effect_tooltip = maid_guard_units_introduction_tt
+			set_country_flag = maid_army_is_unlocked_flag
+			unlock_decision_tooltip = maid_buff_for_maid_guards_1
+			unlock_decision_tooltip = recruit_maid_infantry_21_A
+			unlock_decision_tooltip = recruit_maid_infantry_31_A
+			unlock_decision_tooltip = recruit_maid_infantry_42_A
+			unlock_decision_tooltip = recruit_maid_moto_21_A
+			unlock_decision_tooltip = recruit_maid_moto_42_A
+		}
+	}
+	
+	maid_guard_introduction = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			country_event = maid_event.28
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_buff_for_maid_guards_1 = { 
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_1 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_1_tt
+			set_country_flag = maid_guard_step_1_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_2 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_1_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_2 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_2_tt
+			set_country_flag = maid_guard_step_2_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_3 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_2_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_3 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_3_tt
+			set_country_flag = maid_guard_step_3_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_4 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_exclusive_with_5_and_6_tt
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_3_flag
+			not = {
+				has_country_flag = maid_guard_mutual_exclusive_buff_5_flag
+				has_country_flag = maid_guard_mutual_exclusive_buff_6_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			set_country_flag = maid_guard_mutual_exclusive_buff_4_flag
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_4 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_4_tt
+			set_country_flag = maid_guard_step_4_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_5 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_exclusive_with_4_and_6_tt
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_3_flag
+			not = {
+				has_country_flag = maid_guard_mutual_exclusive_buff_4_flag
+				has_country_flag = maid_guard_mutual_exclusive_buff_6_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			set_country_flag = maid_guard_mutual_exclusive_buff_5_flag
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_5 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_5_tt
+			set_country_flag = maid_guard_step_5_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_6 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_exclusive_with_4_and_5_tt
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_3_flag
+			not = {
+				has_country_flag = maid_guard_mutual_exclusive_buff_4_flag
+				has_country_flag = maid_guard_mutual_exclusive_buff_5_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			set_country_flag = maid_guard_mutual_exclusive_buff_6_flag
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_6 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_6_tt
+			set_country_flag = maid_guard_step_6_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_7 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			or = {
+				has_country_flag = maid_guard_step_4_flag
+				has_country_flag = maid_guard_step_5_flag
+				has_country_flag = maid_guard_step_6_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_7 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_7_tt
+			set_country_flag = maid_guard_step_7_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_8 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 15
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_7_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_8 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_8_tt
+			set_country_flag = maid_guard_step_8_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_9 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_1_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 300
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_9 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_9_tt
+			set_country_flag = maid_guard_step_9_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_10 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_9_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 400
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_10 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_10_tt
+			set_country_flag = maid_guard_step_10_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_11 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_10_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 500
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_11 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_11_tt
+			set_country_flag = maid_guard_step_11_flag
+		}
+	}
+	
+	maid_buff_for_maid_guards_12 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_army_experience > 10
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_guard_step_11_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 600
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -10
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+		}
+		remove_effect = {
+			set_technology = { tech_maid_guard_buff_12 = 1 }
+			custom_effect_tooltip = function_of_maid_guard_12_tt
+			set_country_flag = maid_guard_step_12_flag
+		}
+	}
+	
+	recruit_maid_infantry_21_A = { #招募21宽女仆近卫军A型
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = tech_maid_support_team
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30 #90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+		
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_recruit_21A_maid_infantry_tt
+			hidden_effect = {
+				division_template = {
+					name = "Maid Guard Violet"
+					regiments = {
+						battle_maid_guard = { x = 0 y = 0 }
+						battle_maid_guard = { x = 0 y = 1 }
+						battle_maid_guard = { x = 0 y = 2 }
+						battle_maid_guard = { x = 0 y = 3 }
+						battle_maid_guard = { x = 1 y = 0 }
+						battle_maid_guard = { x = 1 y = 1 }
+						battle_maid_guard = { x = 1 y = 2 }
+						battle_maid_guard = { x = 1 y = 3 }
+					}
+					support = {
+						maid_support_team = { x = 0 y = 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "name = \"Maid Guard Violet\" division_template = \"Maid Guard Violet\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	recruit_maid_infantry_31_A = { #招募31宽女仆近卫军A型
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = tech_maid_support_team
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+			
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30 #90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_recruit_31A_maid_infantry_tt
+			hidden_effect = {
+				division_template = {
+					name = "Maid Guard Iris"
+					regiments = {
+						battle_maid_guard = { x = 0 y = 0 }
+						battle_maid_guard = { x = 0 y = 1 }
+						battle_maid_guard = { x = 0 y = 2 }
+						battle_maid_guard = { x = 0 y = 3 }
+						battle_maid_guard = { x = 0 y = 4 }
+						battle_maid_guard = { x = 1 y = 0 }
+						battle_maid_guard = { x = 1 y = 1 }
+						battle_maid_guard = { x = 1 y = 2 }
+						battle_maid_guard = { x = 1 y = 3 }
+						battle_maid_guard = { x = 1 y = 4 }
+						battle_maid_guard = { x = 2 y = 0 }
+						battle_maid_guard = { x = 2 y = 1 }
+						battle_maid_guard = { x = 2 y = 2 }
+					}
+					support = {
+						maid_support_team = { x = 0 y = 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "name = \"Maid Guard Iris\" division_template = \"Maid Guard Iris\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	recruit_maid_infantry_42_A = { #招募42宽女仆近卫军A型
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = tech_maid_support_team
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+			
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30 #90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_recruit_42A_maid_infantry_tt
+			hidden_effect = {
+				division_template = {
+					name = "Maid Guard Lycoris Radiata"
+					regiments = {
+						battle_maid_guard = { x = 0 y = 0 }
+						battle_maid_guard = { x = 0 y = 1 }
+						battle_maid_guard = { x = 0 y = 2 }
+						battle_maid_guard = { x = 0 y = 3 }
+						battle_maid_guard = { x = 0 y = 4 }
+						battle_maid_guard = { x = 1 y = 0 }
+						battle_maid_guard = { x = 1 y = 1 }
+						battle_maid_guard = { x = 1 y = 2 }
+						battle_maid_guard = { x = 1 y = 3 }
+						battle_maid_guard = { x = 1 y = 4 }
+						battle_maid_guard = { x = 2 y = 0 }
+						battle_maid_guard = { x = 2 y = 1 }
+						battle_maid_guard = { x = 2 y = 2 }
+						battle_maid_guard = { x = 2 y = 3 }
+						battle_maid_guard = { x = 2 y = 4 }
+						battle_maid_guard = { x = 3 y = 0 }
+						battle_maid_guard = { x = 3 y = 1 }
+						battle_maid_guard = { x = 3 y = 2 }
+						battle_maid_guard = { x = 3 y = 3 }
+						battle_maid_guard = { x = 3 y = 4 }
+						battle_maid_guard = { x = 4 y = 0 }
+					}
+					support = {
+						maid_support_team = { x = 0 y = 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "name = \"Maid Guard Lycoris Radiata\" division_template = \"Maid Guard Lycoris Radiata\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	recruit_maid_moto_21_A = { #招募21宽女仆机动近卫军A型
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = tech_maid_support_team
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30 #90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_recruit_21A_maid_moto_tt
+			hidden_effect = {
+				division_template = {
+					name = "Maid Mobile Guard Alpha"
+					regiments = {
+						moto_maid_guard = { x = 0 y = 0 }
+						moto_maid_guard = { x = 0 y = 1 }
+						moto_maid_guard = { x = 0 y = 2 }
+						moto_maid_guard = { x = 0 y = 3 }
+						moto_maid_guard = { x = 0 y = 4 }
+						moto_maid_guard = { x = 1 y = 0 }
+						moto_maid_guard = { x = 1 y = 1 }
+						moto_maid_guard = { x = 1 y = 2 }
+						moto_maid_guard = { x = 1 y = 3 }
+						moto_maid_guard = { x = 1 y = 4 }
+					}
+					support = {
+						maid_support_team = { x = 0 y = 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "name = \"Maid Mobile Guard Alpha\" division_template = \"Maid Mobile Guard Alpha\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	recruit_maid_moto_42_A = { #招募42宽女仆机动近卫军A型
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = tech_maid_support_team
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+			
+		}
+
+		visible = {
+			has_country_flag = maid_army_is_unlocked_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 30 #90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_recruit_42A_maid_moto_tt
+			hidden_effect = {
+				division_template = {
+					name = "Maid Mobile Guard Beta"
+					regiments = {
+						moto_maid_guard = { x = 0 y = 0 }
+						moto_maid_guard = { x = 0 y = 1 }
+						moto_maid_guard = { x = 0 y = 2 }
+						moto_maid_guard = { x = 0 y = 3 }
+						moto_maid_guard = { x = 0 y = 4 }
+						moto_maid_guard = { x = 1 y = 0 }
+						moto_maid_guard = { x = 1 y = 1 }
+						moto_maid_guard = { x = 1 y = 2 }
+						moto_maid_guard = { x = 1 y = 3 }
+						moto_maid_guard = { x = 1 y = 4 }
+						moto_maid_guard = { x = 2 y = 0 }
+						moto_maid_guard = { x = 2 y = 1 }
+						moto_maid_guard = { x = 2 y = 2 }
+						moto_maid_guard = { x = 2 y = 3 }
+						moto_maid_guard = { x = 2 y = 4 }
+						moto_maid_guard = { x = 3 y = 0 }
+						moto_maid_guard = { x = 3 y = 1 }
+						moto_maid_guard = { x = 3 y = 2 }
+						moto_maid_guard = { x = 3 y = 3 }
+						moto_maid_guard = { x = 3 y = 4 }
+						moto_maid_guard = { x = 4 y = 0 }
+					}
+					support = {
+						maid_support_team = { x = 0 y = 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
+					create_unit = {
+						division = "name = \"Maid Mobile Guard Beta\" division_template = \"Maid Mobile Guard Beta\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+						owner = ROOT
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,2967 @@
+add_namespace = maid_event
+
+
+country_event = {
+	id = maid_event.1
+	title = maid_event.1.t
+	desc = maid_event.1.d
+	picture = GFX_report_maid_sakuya_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1.a
+		add_stability = 0.01
+		custom_effect_tooltip = available_maid_group_tt
+		add_ideas = idea_maid_group_budget_degree_0
+		maid_recruit_sakuya_effect = yes
+		set_country_flag = got_sakuya_flag
+		custom_effect_tooltip = maid_get_sakuya_general_tt
+		hidden_effect = {
+			country_event = { id = maid_event.2 }
+			country_event = { id = maid_event.101 }
+		}
+		set_country_flag = maid_system_is_enable_flag
+		set_country_flag = maid_this_event_is_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #我们即将进行一场内战，为避免丢失将领所以稍后通过决议来获得十六夜咲夜
+		name = maid_event.1.b
+		add_stability = 0.01
+		custom_effect_tooltip = available_maid_group_tt
+		add_ideas = idea_maid_group_budget_degree_0
+		set_country_flag = maid_system_is_enable_flag
+		custom_effect_tooltip = get_sakuya_later_tt
+		hidden_effect = {
+			country_event = { id = maid_event.2 }
+			country_event = { id = maid_event.101 }
+		}
+		set_country_flag = maid_this_event_is_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = maid_event.101
+	title = maid_event.101.t
+	desc = maid_event.101.d
+	picture = GFX_report_maid_generic_6
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.101.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.101.b
+		#custom_effect_tooltip = maid_add_willingness_20_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 40
+		}
+		custom_effect_tooltip = maid_alarm_this_is_not_balanced_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = maid_event.102
+	title = maid_event.102.t
+	desc = maid_event.102.d
+	picture = GFX_report_maid_generic_6
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.102.a
+		unlock_decision_tooltip = maid_active_the_system
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #更新修正
+	id = maid_event.103
+	title = maid_event.103.t
+	desc = maid_event.103.d
+	picture = GFX_report_maid_generic_6
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_country_flag = maid_system_is_enable_flag
+		not = {
+			has_country_flag = maid_temp_new_version_updated_flag
+			has_country_flag = maid_event_103_has_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.103.a
+		set_country_flag = maid_event_103_has_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = maid_event.2
+	title = maid_event.2.t
+	desc = maid_event.2.d
+	picture = GFX_report_maid_rizhao_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.2.a
+		unlock_decision_tooltip = maid_enable_to_hire_traps
+		set_country_flag = unlock_hire_trap_decision_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.2.b
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #政治点
+	id = maid_event.3
+	title = maid_event.3.t
+	desc = maid_event.3.d
+	picture = GFX_report_maid_generic_15
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.3.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #经验
+	id = maid_event.301
+	title = maid_event.301.t
+	desc = maid_event.301.d
+	picture = GFX_report_maid_generic_10
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.301.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_political_power = 5
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #武器
+	id = maid_event.302
+	title = maid_event.302.t
+	desc = maid_event.302.d
+	picture = GFX_report_maid_generic_5
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.302.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.302.b
+		add_political_power = 5
+		add_timed_idea = {
+			idea = maid_idea_supply_for_country
+			days = 60
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #啪啪啪
+	id = maid_event.303
+	title = maid_event.303.t
+	desc = maid_event.303.d
+	picture = GFX_report_maid_generic_2
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.303.a
+		if = {
+			limit = {
+				not = { has_country_flag = let_marry_with_maid_flag }
+			}
+			unlock_decision_tooltip = maid_marry_celebrate
+			unlock_decision_tooltip = maid_allow_clean_room_automatically
+			set_country_flag = let_marry_with_maid_flag
+		}
+		if = {
+			limit = {
+				has_country_flag = let_marry_with_maid_flag
+			}
+			add_political_power = 20
+			army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+		}
+		custom_effect_tooltip = maid_add_willingness_2_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 2
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #控制政府
+	id = maid_event.4
+	title = maid_event.4.t
+	desc = maid_event.4.d
+	picture = GFX_report_maid_sakuya_2
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.4.a
+		add_political_power = 40
+		add_stability = -0.03
+		custom_effect_tooltip = maid_add_willingness_2_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 2
+		}
+		hidden_effect = {
+			country_event = { id = maid_event.15 days = 30 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #输死防御，未雨绸缪
+	id = maid_event.5
+	title = maid_event.5.t
+	desc = maid_event.5.d
+	picture = GFX_report_maid_noelle_1
+	
+	fire_only_once = no
+	
+	trigger = {
+		is_ai = no
+		or = {
+			has_idea = idea_maid_group_budget_degree_3
+			has_idea = idea_maid_group_budget_degree_4
+			has_idea = idea_maid_group_budget_degree_5
+			has_country_flag = maid_controled_government_flag
+		}
+		not = {
+			has_country_flag = maid_evnet_five_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.5.a
+		unlock_decision_category_tooltip = maid_defence_system_decisions_group
+		custom_effect_tooltip = maid_unlock_defence_decision_tt
+		set_country_flag = maid_unlock_defence_decision_flag
+		set_country_flag = maid_evnet_five_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.5.b
+		set_country_flag = maid_evnet_five_triggered_flag
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_war_support = 0.03
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #输死防御，未雨绸缪2 废弃事件
+	id = maid_event.501
+	title = maid_event.501.t
+	desc = maid_event.501.d
+	picture = GFX_report_maid_noelle_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.501.a
+		add_political_power = -200
+		add_stability = -0.02
+		custom_effect_tooltip = maid_unlock_defence_decision_tt
+		set_country_flag = maid_unlock_defence_decision_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.501.b
+		add_war_support = 0.02
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #十六夜咲夜任命女仆长
+	id = maid_event.6
+	title = maid_event.6.t
+	desc = maid_event.6.d
+	picture = GFX_report_maid_sakuya_3
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.6.a
+		random_army_leader = {
+			limit = { 
+				has_trait = maid_group
+				has_trait = maid_fur
+			}
+			#add_unit_leader_trait = skilled_staffer
+			add_skill_level = 2
+			add_logistics = 2
+			add_planning = 2
+			add_defense = 2
+			add_attack = 2
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.6.b
+		random_army_leader = {
+			limit = { 
+				has_trait = maid_group
+				has_trait = maid_fur
+			}
+			add_unit_leader_trait = brilliant_strategist
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #测试事件
+	id = maid_event.7
+	title = maid_event.7.t
+	desc = maid_event.7.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.7.a
+		add_to_variable = {
+			var = maid_willingness
+			value = 20
+		}
+		add_political_power = 500
+		add_ideas = idea_maid_group_budget_degree_5
+		set_technology = { tech_maid_support_team = 1 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.7.b
+		random_army_leader = {
+			limit = { 
+				is_assigned = yes
+				has_trait = maid_group
+			}
+			add_unit_leader_trait = maid_vow_ring
+		}
+		random_army_leader = {
+			limit = { 
+				is_assigned = yes
+				not = {
+					has_trait = maid_group
+				}
+			}
+			add_unit_leader_trait = maid_vow_ring
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.7.c
+		every_army_leader = {
+			limit = { 
+				is_assigned = yes
+				has_trait = maid_group
+			}
+			add_unit_leader_trait = maid_vow_ring
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.7.e
+		random_army_leader = {
+			limit = { 
+				is_assigned = yes
+				has_trait = maid_group
+			}
+			add_unit_leader_trait = maid_knight
+		}
+		random_army_leader = {
+			limit = { 
+				is_assigned = yes
+				not = {
+					has_trait = maid_group
+				}
+			}
+			add_unit_leader_trait = maid_knight
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #测试事件
+	id = maid_event.701
+	title = maid_event.701.t
+	desc = maid_event.701.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.701.a
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antiair1 }
+			}
+			set_technology = { antiair1 = 1 }
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Battle Maid Guard"
+				is_locked = yes
+				regiments = {
+					battle_maid_guard = { x = 0 y = 0 }
+					battle_maid_guard = { x = 0 y = 1 }
+					battle_maid_guard = { x = 0 y = 2 }
+					battle_maid_guard = { x = 0 y = 3 }
+					battle_maid_guard = { x = 0 y = 4 }
+					battle_maid_guard = { x = 1 y = 0 }
+					battle_maid_guard = { x = 1 y = 1 }
+					battle_maid_guard = { x = 1 y = 2 }
+					battle_maid_guard = { x = 1 y = 3 }
+					battle_maid_guard = { x = 1 y = 4 }
+					battle_maid_guard = { x = 2 y = 0 }
+					battle_maid_guard = { x = 2 y = 1 }
+					battle_maid_guard = { x = 2 y = 2 }
+					battle_maid_guard = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maid_support_team = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
+				create_unit = {
+					division = "name = \"Battle Maid Guard 1\" division_template = \"Battle Maid Guard\" start_experience_factor = 1.0 start_equipment_factor = 0.01" 
+					owner = ROOT
+				}
+				
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.701.b
+		set_technology = { tech_maid_guard_buff_1 = 1 }
+		set_technology = { tech_maid_guard_buff_2 = 1 }
+		set_technology = { tech_maid_guard_buff_3 = 1 }
+		set_technology = { tech_maid_guard_buff_4 = 1 }
+		set_technology = { tech_maid_guard_buff_5 = 1 }
+		set_technology = { tech_maid_guard_buff_6 = 1 }
+		set_technology = { tech_maid_guard_buff_7 = 1 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.701.c
+		set_technology = { tech_maid_guard_buff_8 = 1 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.701.e
+		retire_character = maid_izayoi_sakuya_3
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #黑魔法复活
+	id = maid_event.8
+	title = maid_event.8.t
+	desc = maid_event.8.d
+	picture = GFX_report_maid_shinsha_door
+	
+	fire_only_once = no
+	
+	trigger = {
+		is_ai = no
+		or = {
+			has_idea = idea_maid_group_budget_degree_1
+			has_idea = idea_maid_group_budget_degree_2
+			has_idea = idea_maid_group_budget_degree_3
+			has_idea = idea_maid_group_budget_degree_4
+			has_idea = idea_maid_group_budget_degree_5
+			has_country_flag = maid_controled_government_flag
+		}
+		not = {
+			has_country_flag = maid_evnet_eight_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.8.a
+		set_country_flag = can_use_summon_magic_decision_flag
+		set_country_flag = maid_evnet_eight_triggered_flag
+		add_ideas = idea_maid_summon_magic
+		unlock_decision_tooltip = maid_resummon_magic
+		custom_effect_tooltip = can_use_summon_magic_decision_tt
+		hidden_effect = {
+			country_event = { id = maid_event.801 days = 2 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.8.b
+		set_country_flag = maid_evnet_eight_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { 
+	id = maid_event.801
+	title = maid_event.801.t
+	desc = maid_event.801.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.801.a
+		add_political_power = -30
+		add_stability = -0.02
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.801.b
+		add_manpower = -500
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆医疗队或者侦查队
+	id = maid_event.9
+	title = maid_event.9.t
+	desc = maid_event.9.d
+	picture = GFX_report_maid_dead_end
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.9.a
+		set_country_flag = can_use_maid_hospital_decision_flag
+		unlock_decision_tooltip = maid_battle_hospital
+		custom_effect_tooltip = can_use_maid_hospital_decision_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.9.b
+		set_country_flag = can_use_maid_recon_decision_flag
+		unlock_decision_tooltip = maid_decryption_recon
+		custom_effect_tooltip = can_use_maid_recon_decision_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.9.c
+		add_political_power = 50
+		army_experience = 100
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #G36或者纽卡斯特方案
+	id = maid_event.11
+	title = maid_event.11.t
+	desc = maid_event.11.d
+	picture = GFX_report_maid_generic_8
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.11.a
+		set_country_flag = can_use_G36_plan_decision_flag
+		unlock_decision_tooltip = G36_infantry_plan
+		custom_effect_tooltip = can_use_G36_plan_decision_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.11.b
+		set_country_flag = can_use_newcastle_plan_decision_flag
+		unlock_decision_tooltip = newcastle_infantry_plan
+		custom_effect_tooltip = can_use_newcastle_plan_decision_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.11.c
+		add_political_power = 50
+		army_experience = 100
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #南小鸟的愿望
+	id = maid_event.12
+	title = maid_event.12.t
+	desc = maid_event.12.d
+	picture = GFX_report_maid_kotori_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.12.a
+		set_country_flag = can_use_improve_idol_decision_flag
+		unlock_decision_tooltip = kotori_improve_idol
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆支援连说明，军方对此不高兴
+	id = maid_event.13
+	title = maid_event.13.t
+	desc = maid_event.13.d
+	picture = GFX_report_maid_generic_9
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.13.a
+		army_experience = 50
+		add_political_power = -50
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.13.b
+		army_experience = 10
+		add_war_support = -0.06
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.13.c
+		army_experience = 50
+		custom_effect_tooltip = maid_remove_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = -1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女装照
+	id = maid_event.14
+	title = maid_event.14.t
+	desc = maid_event.14.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.14.a
+		hidden_effect = {
+			country_event = maid_event.1401
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.14.b
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女装照
+	id = maid_event.1401
+	title = maid_event.1401.t
+	desc = maid_event.1401.d
+	picture = GFX_report_maid_cosplay_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1401.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #建国提示
+	id = maid_event.15
+	title = maid_event.15.t
+	desc = maid_event.15.d
+	picture = GFX_report_maid_generic_16
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.15.a
+		set_country_flag = prepare_to_establish_maid_country_flag
+		custom_effect_tooltip = prepare_to_establish_maid_country_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #准备建国
+	id = maid_event.1501
+	title = maid_event.1501.t
+	desc = maid_event.1501.d
+	picture = GFX_report_maid_generic_17
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_country_flag = maid_work_in_army_flag
+		has_country_flag = prepare_to_establish_maid_country_flag
+		or = {
+			has_country_flag = maid_manage_resources_flag
+			has_country_flag = maid_able_to_transfer_factories_flag
+			has_country_flag = maid_has_established_agency_flag
+		}
+		or = {
+			has_stability > 0.6
+			has_war_support > 0.8
+		}
+		not = {
+			has_country_flag = maid_evnet_1501_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.1501.a
+		country_event = { id = maid_event.1502 days = 15 }
+		set_country_flag = maid_evnet_1501_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #建国方向
+	id = maid_event.1502
+	title = maid_event.1502.t
+	desc = maid_event.1502.d
+	picture = GFX_report_maid_generic_13
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { #联盟
+		name = maid_event.1502.a
+		country_event = { id = maid_event.1503 days = 15 }
+		custom_effect_tooltip = maid_prefer_republic_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #帝国
+		name = maid_event.1502.b
+		country_event = { id = maid_event.150301 days = 15 }
+		custom_effect_tooltip = maid_prefer_empire_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #苏维埃
+		name = maid_event.1502.c
+		country_event = { id = maid_event.1504 days = 15 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #建国联盟
+	id = maid_event.1503
+	title = maid_event.1503.t
+	desc = maid_event.1503.d
+	picture = GFX_report_maid_generic_18
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1503.a
+		set_country_flag = ready_to_form_maid_country_flag
+		set_country_flag = maid_follow_contrast_flag
+		unlock_decision_tooltip = maid_establish_republic
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #建国帝国
+	id = maid_event.150301
+	title = maid_event.150301.t
+	desc = maid_event.150301.d
+	picture = GFX_report_maid_church
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.150301.a
+		set_country_flag = ready_to_form_maid_country_flag
+		set_country_flag = the_master_is_the_highest_flag
+		unlock_decision_tooltip = maid_establish_empire
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #妹抖苏维埃
+	id = maid_event.1504
+	title = maid_event.1504.t
+	desc = maid_event.1504.d
+	picture = GFX_report_maid_soviet_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1504.a
+		country_event = { id = maid_event.1505 days = 15 }
+		custom_effect_tooltip = maid_prefer_soviet_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.1504.b
+		country_event = { id = maid_event.1502 days = 1 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #建国苏维埃
+	id = maid_event.1505
+	title = maid_event.1505.t
+	desc = maid_event.1505.d
+	picture = GFX_report_maid_soviet_2
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1505.a
+		set_country_flag = ready_to_form_maid_country_flag
+		set_country_flag = the_definition_of_maid_in_new_world_flag
+		unlock_decision_tooltip = maid_establish_soviet
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #苏维埃建立
+	id = maid_event.16
+	title = maid_event.16.t
+	desc = maid_event.16.d
+	picture = GFX_report_maid_soviet_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.16.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #帝国建立
+	id = maid_event.1601
+	title = maid_event.1601.t
+	desc = maid_event.1601.d
+	picture = GFX_report_maid_generic_18
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1601.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #联盟建立
+	id = maid_event.1602
+	title = maid_event.1602.t
+	desc = maid_event.1602.d
+	picture = GFX_report_maid_church
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1602.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #白丝黑丝
+	id = maid_event.17
+	title = maid_event.17.t
+	desc = maid_event.17.d
+	picture = GFX_report_maid_generic_1
+	
+	fire_only_once = no
+	
+	trigger = {
+		is_ai = no
+		or = {
+			has_idea = idea_maid_group_budget_degree_2
+			has_idea = idea_maid_group_budget_degree_3
+			has_idea = idea_maid_group_budget_degree_4
+			has_idea = idea_maid_group_budget_degree_5
+			has_country_flag = maid_controled_government_flag
+		}
+		not = {
+			has_country_flag = maid_evnet_17_triggered_flag
+		}
+	}
+	
+	option = { #白丝
+		name = maid_event.17.a
+		set_country_flag = maid_evnet_17_triggered_flag
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #黑丝
+		name = maid_event.17.b
+		set_country_flag = maid_evnet_17_triggered_flag
+		add_political_power = 50
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #其他
+		name = maid_event.17.c
+		set_country_flag = maid_evnet_17_triggered_flag
+		navy_experience = 20
+		air_experience = 20
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #不穿
+		name = maid_event.17.e
+		set_country_flag = maid_evnet_17_triggered_flag
+		army_experience = 20
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆间谍
+	id = maid_event.18
+	title = maid_event.18.t
+	desc = maid_event.18.d
+	picture = GFX_report_maid_youhua
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.18.a
+		unlock_decision_tooltip = maid_establish_agency
+		set_country_flag = ready_to_establish_agancy_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #咖啡还是茶
+	id = maid_event.19
+	title = maid_event.19.t
+	desc = maid_event.19.d
+	picture = GFX_report_maid_generic_4
+	
+	fire_only_once = no
+	
+	trigger = {
+		is_ai = no
+		or = {
+			has_idea = idea_maid_group_budget_degree_4
+			has_idea = idea_maid_group_budget_degree_5
+			has_country_flag = maid_controled_government_flag
+		}
+		not = {
+			has_country_flag = maid_evnet_19_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.19.a
+		hidden_effect = {
+			country_event = { id = maid_event.1901 days = 30 }
+		}
+		set_country_flag = maid_evnet_19_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.19.b
+		hidden_effect = {
+			country_event = { id = maid_event.1902 days = 30 }
+		}
+		set_country_flag = maid_evnet_19_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #咖啡
+	id = maid_event.1901
+	title = maid_event.1901.t
+	desc = maid_event.1901.d
+	picture = GFX_report_maid_generic_16
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1901.a
+		add_ideas = idea_maid_import_coffee
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.1901.b
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #茶
+	id = maid_event.1902
+	title = maid_event.1902.t
+	desc = maid_event.1902.d
+	picture = GFX_report_maid_generic_16
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.1902.a
+		add_ideas = idea_maid_import_tea
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.1902.b
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #成为女仆
+	id = maid_event.21
+	title = maid_event.21.t
+	desc = maid_event.21.d
+	picture = GFX_report_maid_generic_16
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.21.a
+		hidden_effect = {
+			country_event = { id = maid_event.2101 days = 2 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #成为女仆，选择特长，决定领袖特质
+	id = maid_event.2101
+	title = maid_event.2101.t
+	desc = maid_event.2101.d
+	picture = GFX_report_maid_generic_17
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { #极强的行动力
+		name = maid_event.2101.a
+		set_country_flag = maid_you_leader_trait1_flag
+		hidden_effect = {
+			country_event = { id = maid_event.2102 days = 2 }
+		}
+		custom_effect_tooltip = maid_this_will_decide_your_leader_trait1_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #聪明过人的智慧
+		name = maid_event.2101.b
+		set_country_flag = maid_you_leader_trait2_flag
+		hidden_effect = {
+			country_event = { id = maid_event.2102 days = 2 }
+		}
+		custom_effect_tooltip = maid_this_will_decide_your_leader_trait2_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #惊人的魅力
+		name = maid_event.2101.c
+		set_country_flag = maid_you_leader_trait3_flag
+		hidden_effect = {
+			country_event = { id = maid_event.2102 days = 2 }
+		}
+		custom_effect_tooltip = maid_this_will_decide_your_leader_trait3_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #丰富的经验与见识
+		name = maid_event.2101.e
+		set_country_flag = maid_you_leader_trait4_flag
+		hidden_effect = {
+			country_event = { id = maid_event.2102 days = 2 }
+		}
+		custom_effect_tooltip = maid_this_will_decide_your_leader_trait4_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #成为女仆，学习与考核
+	id = maid_event.2102
+	title = maid_event.2102.t
+	desc = maid_event.2102.d
+	picture = GFX_report_maid_generic_13
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = maid_event.2102.a
+		add_political_power = -40
+		random_list = {
+			90 = { country_event = { id = maid_event.210201 days = 60 } }
+			10 = { country_event = { id = maid_event.210202 days = 60 } }
+		}
+		custom_effect_tooltip = maid_60days_to_study_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.2102.b
+		add_political_power = -20
+		random_list = {
+			50 = { country_event = { id = maid_event.210201 days = 30 } }
+			50 = { country_event = { id = maid_event.210202 days = 30 } }
+		}
+		custom_effect_tooltip = maid_30days_to_study_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.2102.c
+		add_political_power = -10
+		random_list = {
+			20 = { country_event = { id = maid_event.210201 days = 10 } }
+			80 = { country_event = { id = maid_event.210202 days = 10 } }
+		}
+		custom_effect_tooltip = maid_10days_to_study_tt
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #通过
+	id = maid_event.210201
+	title = maid_event.210201.t
+	desc = maid_event.210201.d
+	picture = GFX_report_maid_generic_15
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.210201.a
+		country_event = { id = maid_event.2103 days = 1 }
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #没有通过
+	id = maid_event.210202
+	title = maid_event.210202.t
+	desc = maid_event.210202.d
+	picture = GFX_report_maid_generic_5
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.210202.a
+		country_event = { id = maid_event.2102 days = 1 }
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #成为女仆，选择形象
+	id = maid_event.2103
+	title = maid_event.2103.t
+	desc = maid_event.2103.d
+	picture = GFX_report_maid_shinsha_door
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { #绿发
+		name = maid_event.2103.a
+		set_country_flag = maid_you_profile_green_flag
+		unlock_decision_tooltip = hire_you
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #金发双马尾
+		name = maid_event.2103.b
+		set_country_flag = maid_you_profile_gold_flag
+		unlock_decision_tooltip = hire_you
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #银发猫耳
+		name = maid_event.2103.c
+		set_country_flag = maid_you_profile_silver_flag
+		unlock_decision_tooltip = hire_you
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { #黑发
+		name = maid_event.2103.e
+		set_country_flag = maid_you_profile_black_flag
+		unlock_decision_tooltip = hire_you
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #成为女仆，庆祝仪式
+	id = maid_event.2104
+	title = maid_event.2104.t
+	desc = maid_event.2104.d
+	picture = GFX_report_maid_generic_18
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.2104.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #满开
+	id = maid_event.22
+	title = maid_event.22.t
+	desc = maid_event.22.d
+	picture = GFX_report_maid_sakuya_2
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = maid_event.22.a
+		every_unit_leader = {
+			limit = {
+				is_assigned = yes
+				has_trait = maid_group
+			}
+			add_timed_unit_leader_trait = {
+				trait = maid_full_bloom
+				days = 30
+			}
+			custom_effect_tooltip = maid_full_bloom_effect_tt
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.22.b
+		every_unit_leader = {
+			limit = {
+				is_assigned = yes
+				has_trait = maid_group
+			}
+			add_timed_unit_leader_trait = {
+				trait = maid_half_bloom
+				days = 180
+			}
+			custom_effect_tooltip = maid_half_bloom_effect_tt
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #满开
+	id = maid_event.2201
+	title = maid_event.2201.t
+	desc = maid_event.2201.d
+	picture = GFX_report_maid_noelle_1
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_war = yes
+		has_country_flag = maid_work_in_army_flag
+		not = {
+			has_country_flag = maid_evnet_2201_triggered_flag
+		}
+	}
+	
+	option = { 
+		name = maid_event.2201.a
+		set_country_flag = maid_evnet_2201_triggered_flag
+		set_country_flag = allow_maid_blooming_flag
+		unlock_decision_tooltip = maid_full_blooming_decision
+		custom_effect_tooltip = allow_maid_blooming_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆团采购
+	id = maid_event.23
+	title = maid_event.23.t
+	desc = maid_event.23.d
+	picture = GFX_report_maid_generic_11
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = maid_event.23.a
+		add_political_power = 30
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.23.b
+		army_experience = 12
+		navy_experience = 6
+		air_experience = 6
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.23.c
+		if = {
+			limit = {
+				num_of_factories > 120
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 4000 }
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 1800 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 800 }
+		}
+		if = {
+			limit = {
+				num_of_factories > 120
+				has_tech = maid_infantry_eq_tech
+			}
+			add_equipment_to_stockpile = { type = maid_infantry_equipment amount = 3200 }
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+				has_tech = maid_infantry_eq_tech
+			}
+			add_equipment_to_stockpile = { type = maid_infantry_equipment amount = 1600 }
+		}
+		else_if = {
+			limit = {
+				has_tech = maid_infantry_eq_tech
+			}
+			add_equipment_to_stockpile = { type = maid_infantry_equipment amount = 800 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.23.e
+		country_event = maid_event.2301
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆团采购2
+	id = maid_event.2301
+	title = maid_event.23.t
+	desc = maid_event.23.d
+	picture = GFX_report_maid_generic_11
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = maid_event.2301.a
+		if = {
+			limit = {
+				num_of_factories > 120
+			}
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 350 }
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+			}
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 220 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 190 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 100 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 80 }
+		}
+		if = {
+			limit = {
+				num_of_factories > 120
+				has_tech = maid_motorised_eq_tech_1
+				has_tech = maid_support_eq_tech_1
+			}
+			add_equipment_to_stockpile = { type = maid_motorized_equipment amount = 400 }
+			add_equipment_to_stockpile = { type = maid_support_equipment amount = 360 }
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+				has_tech = maid_motorised_eq_tech_1
+				has_tech = maid_support_eq_tech_1
+			}
+			add_equipment_to_stockpile = { type = maid_motorized_equipment amount = 200 }
+			add_equipment_to_stockpile = { type = maid_support_equipment amount = 180 }
+		}
+		else_if = {
+			limit = {
+				has_tech = maid_motorised_eq_tech_1
+				has_tech = maid_support_eq_tech_1
+			}
+			add_equipment_to_stockpile = { type = maid_motorized_equipment amount = 100 }
+			add_equipment_to_stockpile = { type = maid_support_equipment amount = 90 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.2301.b
+		if = {
+			limit = {
+				num_of_factories > 120
+			}
+			add_manpower = 6000
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+			}
+			add_manpower = 2400
+		}
+		else = {
+			add_manpower = 1000
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.2301.c
+		if = {
+			limit = {
+				num_of_factories > 120
+			}
+			add_tech_bonus = {
+				name = maid_common_tech_card
+				bonus = 0.12
+				uses = 1
+				category = armor
+				category = cas_bomber
+				category = tactical_bomber
+				category = light_fighter
+				category = industry
+				category = synth_resources
+				category = infantry_weapons
+				category = artillery
+				category = naval_equipment
+				category = electronics	
+				category = rocketry
+				category = support_tech
+			}
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+			}
+			add_tech_bonus = {
+				name = maid_common_tech_card
+				bonus = 0.10
+				uses = 1
+				category = armor
+				category = cas_bomber
+				category = tactical_bomber
+				category = light_fighter
+				category = industry
+				category = synth_resources
+				category = infantry_weapons
+				category = artillery
+				category = naval_equipment
+				category = electronics	
+				category = rocketry
+				category = support_tech
+			}
+		}
+		else = {
+			add_tech_bonus = {
+				name = maid_common_tech_card
+				bonus = 0.08
+				uses = 1
+				category = armor
+				category = cas_bomber
+				category = tactical_bomber
+				category = light_fighter
+				category = industry
+				category = synth_resources
+				category = infantry_weapons
+				category = artillery
+				category = naval_equipment
+				category = electronics	
+				category = rocketry
+				category = support_tech
+			}
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.2301.e
+		country_event = maid_event.23
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆团季度采购
+	id = maid_event.24
+	title = maid_event.24.t
+	desc = maid_event.24.d
+	picture = GFX_report_maid_generic_11
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = maid_event.24.a
+		if = {
+			limit = {
+				num_of_factories > 120
+			}
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 200 }
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 60
+			}
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 130 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 80 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = { 
+		name = maid_event.24.b
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		add_political_power = 61
+		add_stability = 0.02
+		custom_effect_tooltip = maid_orphan_will_be_happy_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.24.c
+		if = {
+			limit = {
+				num_of_factories > 160 #180
+			}
+			#add_offsite_building = { type = industrial_complex level = 3 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 80 #90
+			}
+			#add_offsite_building = { type = industrial_complex level = 2 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else = {
+			#add_offsite_building = { type = industrial_complex level = 1 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.24.e
+		if = {
+			limit = {
+				num_of_factories > 160
+			}
+			#add_offsite_building = { type = arms_factory level = 3 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				num_of_factories > 80
+			}
+			#add_offsite_building = { type = arms_factory level = 2 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		else = {
+			#add_offsite_building = { type = arms_factory level = 1 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #招募菲莉希娅
+	id = maid_event.25
+	title = maid_event.25.t
+	desc = maid_event.25.d
+	picture = GFX_report_maid_soviet_3
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.25.a
+		custom_effect_tooltip = maid_remove_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = -1
+		}
+		maid_recruit_felicia_effect = yes
+		custom_effect_tooltip = maid_felicia_bcome_commander_tt
+		set_country_flag = got_felicia_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.25.b
+		set_country_flag = let_hire_felicia_later_flag
+		unlock_decision_tooltip = hire_felicia
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆之夜
+	id = maid_event.26
+	title = maid_event.26.t
+	desc = maid_event.26.d
+	#picture = GFX_report_maid_sakuya_2
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.26.a
+		set_country_flag = maid_night_of_maids_started_A_flag
+		if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_5
+			}
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			add_political_power = -50
+			add_stability = -0.05
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_4
+			}
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			add_political_power = -60
+			add_stability = -0.08
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_3
+			}
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			add_political_power = -70
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_2
+			}
+			custom_effect_tooltip = maid_remove_willingness_4_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -4
+			}
+			add_political_power = -80
+			add_stability = -0.15
+			add_war_support = -0.1
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_1
+			}
+			custom_effect_tooltip = maid_remove_willingness_4_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -4
+			}
+			add_political_power = -100
+			add_stability = -0.2
+			add_war_support = -0.1
+		}
+		else = {
+			custom_effect_tooltip = maid_remove_willingness_5_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -5
+			}
+			add_political_power = -120
+			add_stability = -0.2
+			add_war_support = -0.1
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.26.b
+		set_country_flag = maid_night_of_maids_started_B_flag
+		custom_effect_tooltip = maid_night_of_maids_starts_tt
+		if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_5
+			}
+			add_stability = -0.05
+			maid_night_of_maids_level_1_effect = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = maid_assasinate_political_enemy_3
+			}
+			add_stability = -0.08
+			maid_night_of_maids_level_2_effect = yes
+		}
+		else = {
+			add_stability = -0.10
+			maid_night_of_maids_level_3_effect = yes
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #官僚作风
+	id = maid_event.27
+	title = maid_event.27.t
+	desc = maid_event.27.d
+	picture = GFX_report_maid_generic_18
+	
+	fire_only_once = no
+	
+	trigger = {
+		is_ai = no
+		or = {
+			has_idea = idea_maid_group_budget_degree_5
+			has_country_flag = maid_controled_government_flag
+		}
+		not = {
+			has_country_flag = maid_evnet_27_triggered_flag
+		}
+	}
+	
+	option = {
+		name = maid_event.27.a
+		add_political_power = -35
+		add_stability = 0.04
+		set_country_flag = maid_evnet_27_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.27.b
+		add_ideas = maid_idea_officialism
+		add_political_power = 100
+		set_country_flag = maid_evnet_27_triggered_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #女仆作战单位说明
+	id = maid_event.28
+	title = maid_event.28.t
+	desc = maid_event.28.d
+	picture = GFX_report_maid_generic_20
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.28.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.28.b
+		add_political_power = 1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #女仆装备说明
+	id = maid_event.2801
+	title = maid_event.2801.t
+	desc = maid_event.2801.d
+	picture = GFX_report_maid_generic_20
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.2801.a
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.2801.b
+		add_political_power = 1
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #是否保留国旗
+	id = maid_event.29
+	title = maid_event.29.t
+	desc = maid_event.29.d
+	picture = GFX_report_maid_parliament_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.29.a
+		if = {
+			limit = {
+				has_country_flag = the_definition_of_maid_in_new_world_flag
+			}
+			custom_effect_tooltip = maid_change_national_name_flag_soviet_tt
+			hidden_effect = {
+				set_cosmetic_tag = SSM_maid
+				country_event = maid_event.16
+				news_event = { id = maid_news.4 days = 2 random_days = 1 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_master_is_the_highest_flag
+			}
+			custom_effect_tooltip = maid_change_national_name_flag_empire_tt
+			hidden_effect = {
+				set_cosmetic_tag = HME_maid
+				country_event = maid_event.1601
+				news_event = { id = maid_news.401 days = 2 random_days = 1 }
+			}
+		}
+		else = {
+			custom_effect_tooltip = maid_change_national_name_flag_republic_tt
+			hidden_effect = {
+				set_cosmetic_tag = RUM_maid
+				country_event = maid_event.1602
+				news_event = { id = maid_news.402 days = 2 random_days = 1 }
+			}
+		}
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.29.b
+		if = {
+			limit = {
+				has_country_flag = the_definition_of_maid_in_new_world_flag
+			}
+			custom_effect_tooltip = maid_change_national_name_soviet_tt
+			hidden_effect = {
+				set_cosmetic_tag = N_SSM_maid
+				country_event = maid_event.16
+				news_event = { id = maid_news.4 days = 2 random_days = 1 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_master_is_the_highest_flag
+			}
+			custom_effect_tooltip = maid_change_national_name_empire_tt
+			hidden_effect = {
+				set_cosmetic_tag = N_HME_maid
+				country_event = maid_event.1601
+				news_event = { id = maid_news.401 days = 2 random_days = 1 }
+			}
+		}
+		else = {
+			custom_effect_tooltip = maid_change_national_name_republic_tt
+			hidden_effect = {
+				set_cosmetic_tag = N_RUM_maid
+				country_event = maid_event.1602
+				news_event = { id = maid_news.402 days = 2 random_days = 1 }
+			}
+		}
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.29.c
+		if = {
+			limit = {
+				has_country_flag = the_definition_of_maid_in_new_world_flag
+			}
+			custom_effect_tooltip = maid_country_dont_change_anything_tt
+			hidden_effect = {
+				country_event = maid_event.16
+				news_event = { id = maid_news.4 days = 2 random_days = 1 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = the_master_is_the_highest_flag
+			}
+			custom_effect_tooltip = maid_country_dont_change_anything_tt
+			hidden_effect = {
+				country_event = maid_event.1601
+				news_event = { id = maid_news.401 days = 2 random_days = 1 }
+			}
+		}
+		else = {
+			custom_effect_tooltip = maid_country_dont_change_anything_tt
+			hidden_effect = {
+				country_event = maid_event.1602
+				news_event = { id = maid_news.402 days = 2 random_days = 1 }
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #终焉防御体系建成
+	id = maid_event.31
+	title = maid_event.31.t
+	desc = maid_event.31.d
+	picture = GFX_report_maid_noelle_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.31.a
+		add_ideas = maid_idea_protected_by_defence_system
+		add_political_power = 40
+		custom_effect_tooltip = maid_add_willingness_1_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 1
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.31.b
+		custom_effect_tooltip = maid_noelle_constellation_6_tt
+		hidden_effect = {
+			random_army_leader = {
+				limit = { 
+					has_trait = maid_group
+					has_trait = mark_noelle
+				}
+				add_skill_level = 1
+				add_logistics = 1
+				add_planning = 1
+				add_defense = 1
+				add_attack = 4
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+
+country_event = { #抽卡结果
+	id = maid_event.32
+	title = maid_event.32.t
+	desc = maid_event.32.d
+	picture = GFX_report_maid_shinsha_door
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = maid_event.32.a
+		if = {
+			limit = {
+				has_country_flag = maid_gacha_result_1_flag
+			}
+			add_political_power = 648
+			add_stability = 0.1
+		}
+		if = {
+			limit = {
+				has_country_flag = maid_gacha_result_2_flag
+			}
+			custom_effect_tooltip = maid_all_maids_get_attack_1_tt
+			every_unit_leader = {
+				limit = {
+					has_trait = maid_group
+				}
+				add_attack = 1
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = maid_gacha_result_3_flag
+			}
+			set_country_flag = maid_allow_extra_blooming_flag
+			custom_effect_tooltip = maid_allow_extra_blooming_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = maid_gacha_result_4_flag
+			}
+			set_technology = { tech_maid_support_team_gacha_1 = 1 }
+			custom_effect_tooltip = maid_support_team_gacha_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = maid_gacha_result_5_flag
+			}
+			add_ideas = idea_maid_gacha_stronger_production
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = maid_event.32.b
+		custom_effect_tooltip = maid_add_willingness_8_tt
+		add_to_variable = {
+			var = maid_willingness
+			value = 8
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}

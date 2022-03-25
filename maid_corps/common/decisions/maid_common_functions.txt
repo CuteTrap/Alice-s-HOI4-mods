@@ -1,0 +1,6151 @@
+maid_common_decisions = {
+
+	maid_start_funds = { #启动资金
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_0
+				has_idea = idea_maid_group_budget_degree_1
+				has_idea = idea_maid_group_budget_degree_2
+			}
+		}
+
+		visible = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_0
+				has_idea = idea_maid_group_budget_degree_1
+				has_idea = idea_maid_group_budget_degree_2
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 60
+
+		modifier = {
+			consumer_goods_factor = 0.10
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 3
+			}
+		}
+	}
+
+	maid_boost_budget = { #提高女仆团预算
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			not = {
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+				has_country_flag = maid_budget_just_changed_flag
+			}
+		}
+
+		visible = {
+			not = {
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 1
+			}
+			maid_group_budget_increase = yes
+			custom_effect_tooltip = we_can_change_budget_after_sesson_tt
+			set_country_flag = {
+				flag = maid_budget_just_changed_flag
+				days = 90
+				value = 1
+			}
+		}
+	}
+	
+	maid_decline_budget = { #调低女仆团预算
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			not = {
+				has_country_flag = maid_controled_government_flag
+				has_idea = idea_maid_group_budget_degree_0
+				has_country_flag = maid_budget_just_changed_flag
+			}
+		}
+
+		visible = {
+			not = {
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			maid_group_budget_decrease = yes
+			custom_effect_tooltip = we_can_change_budget_after_sesson_tt
+			set_country_flag = {
+				flag = maid_budget_just_changed_flag
+				days = 90
+				value = 1
+			}
+		}
+	}
+	
+	maid_invest_more_funds = { #为女仆团添加经费
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = no
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			stability_weekly = -0.001
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_add_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 3
+			}
+		}
+	}
+	
+	maid_gacha_once = { #一次性抽奖
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_9_tt
+				check_variable = { maid_willingness > 9 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_10_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -10
+			}
+			custom_effect_tooltip = maid_this_is_a_single_chance_gacha_tt
+			hidden_effect = {
+				random_list = {
+					20 = { set_country_flag = maid_gacha_result_1_flag }
+					20 = { set_country_flag = maid_gacha_result_2_flag }
+					20 = { set_country_flag = maid_gacha_result_3_flag }
+					20 = { set_country_flag = maid_gacha_result_4_flag }
+					20 = { set_country_flag = maid_gacha_result_5_flag }
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_will_get_a_random_reward_tt
+			country_event = { id = maid_event.32 }
+		}
+	}
+	
+	maid_tno_add_money_reserve = { #TNO决议，增加流动准备金
+		icon = generic_industry
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_tno_cheating_switch_flag
+		}
+
+		fire_only_once = no
+
+		cost = 20
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_temp_variable = { money_reserves_temp = 0.20 }
+			econ_money_reserves_change_raw_money = yes
+		}
+	}
+	
+	maid_tno_add_gdp_increasing = { #TNO决议，增加gdp增速
+		icon = generic_industry
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_tno_cheating_switch_flag
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			set_temp_variable = { temp_econ_GDP_boost_percentage = 0.025 }
+			econ_GDP_boost_once_percentage = yes
+		}
+	}
+	
+	maid_purchase_decision = { #女仆团采购
+		icon = generic_industry
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			country_event = maid_event.23
+			custom_effect_tooltip = maid_dynamic_option_effect_tt
+		}
+	}
+	
+	maid_purchase_decision_on_season = { #女仆团季度采购
+		icon = generic_industry
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 5
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			country_event = maid_event.24
+			custom_effect_tooltip = maid_dynamic_option_effect_tt
+		}
+	}
+	
+	maid_expand_group = { #扩编女仆团
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			custom_effect_tooltip = expanded_group_tt
+			set_country_flag = expanded_group_flag
+			hidden_effect = {
+				country_event = { id = maid_event.11 days = 60 }
+			}
+		}
+	}
+	
+	you_becoming_maid_decision = { #你自己成为女仆
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_1
+				has_idea = idea_maid_group_budget_degree_2
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			country_event = maid_event.21
+		}
+	}
+	
+	sakuya_as_maid_leader = { #任命十六夜咲夜为女仆长
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = expanded_group_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = got_sakuya_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 5
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			country_event = maid_event.6
+		}
+	}
+	
+	kotori_improve_idol = { #南小鸟的愿望
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			has_country_flag = got_kotori_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_improve_idol_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_country_flag = idol_has_being_improved_flag
+			custom_effect_tooltip = idol_has_being_improved_tt
+			if = {
+				limit = { has_idea = idea_maid_idol }
+				swap_ideas = {
+					remove_idea = idea_maid_idol
+					add_idea = idea_maid_idol_2
+				}
+			}
+		}
+	}
+	
+	maid_taisouji = { #女仆大扫除
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_2
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			not = {
+				has_country_flag = maid_done_taisouji_this_year_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 60
+		days_remove = 90
+
+		modifier = {
+			production_speed_buildings_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.10
+			consumer_goods_factor = -0.02
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_country_flag = {
+				flag = maid_done_taisouji_this_year_flag
+				days = 365
+				value = 1
+			}
+		}
+		
+		remove_effect = {
+			add_stability = 0.03
+			add_political_power = 25
+		}
+	}
+	
+	maid_clean_room = { #女仆清理房间
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_1
+				has_idea = idea_maid_group_budget_degree_2
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		visible = {
+			not = {
+				has_country_flag = maid_can_clean_room_automatically_flag
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 10
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			random_list = {
+				28 = { country_event = { id = maid_event.3 } }
+				28 = { country_event = { id = maid_event.301 } }
+				38 = { country_event = { id = maid_event.302 } }
+				6 = { country_event = { id = maid_event.303 } }
+			}
+		}
+	}
+	
+	maid_allow_clean_room_automatically = { #决定自动清理
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = let_marry_with_maid_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = maid_can_clean_room_automatically_flag
+			custom_effect_tooltip = maid_can_clean_room_automatically_tt
+		}
+	}
+	
+	maid_clean_room_automatically = { #自动清理房间
+
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+		
+		visible = {
+			
+		}
+		
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 110 #120
+
+		activation = {
+			has_country_flag = maid_can_clean_room_automatically_flag
+		}
+
+		fire_only_once = no
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+
+		timeout_effect = {
+			random_list = {
+				32 = { country_event = { id = maid_event.3 } }
+				32 = { country_event = { id = maid_event.301 } }
+				33 = { country_event = { id = maid_event.302 } }
+				3 = { country_event = { id = maid_event.303 } }
+			}
+		}
+	}
+	
+	maid_worker_union = { #组建女仆劳动者工会
+		icon = generic_civil_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_country_flag = maid_worker_union_established_flag
+			custom_effect_tooltip = maid_unlock_one_idea_combination_tt
+		}
+	}
+	
+	maid_fighting_training = { #训练战斗女仆
+		icon = generic_prepare_civil_war
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			has_army_experience > 15
+		}
+
+		visible = {
+			any_army_leader = { 
+				has_trait = maid_group 
+				not = {
+					has_trait = maid_knight
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			army_experience = -15
+		}
+		
+		remove_effect = {
+			random_army_leader = {
+				limit = { 
+					has_trait = maid_group 
+					not = {
+						has_trait = maid_knight
+					}
+				}
+				add_unit_leader_trait = maid_knight
+			}
+		}
+	}
+	
+	maid_murder_inside_enemy = { #女仆帮您暗杀政敌
+		icon = generic_political_discourse
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 35
+		days_remove = 60
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		
+		remove_effect = {
+			add_war_support = 0.04
+			custom_effect_tooltip = maid_will_reduce_penalty_of_night_of_maids_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = maid_assasinate_political_enemy_4
+						not = { has_country_flag = maid_assasinate_political_enemy_5 }
+					}
+					set_country_flag = maid_assasinate_political_enemy_5
+				}
+				else_if = {
+					limit = {
+						has_country_flag = maid_assasinate_political_enemy_3
+						not = { has_country_flag = maid_assasinate_political_enemy_4 }
+					}
+					set_country_flag = maid_assasinate_political_enemy_4
+				}
+				else_if = {
+					limit = {
+						has_country_flag = maid_assasinate_political_enemy_2
+						not = { has_country_flag = maid_assasinate_political_enemy_3 }
+					}
+					set_country_flag = maid_assasinate_political_enemy_3
+				}
+				else_if = {
+					limit = {
+						has_country_flag = maid_assasinate_political_enemy_1
+						not = { has_country_flag = maid_assasinate_political_enemy_2 }
+					}
+					set_country_flag = maid_assasinate_political_enemy_2
+				}
+				else_if = {
+					limit = {
+						not = { has_country_flag = maid_assasinate_political_enemy_1 }
+					}
+					set_country_flag = maid_assasinate_political_enemy_1
+				}
+			}
+		}
+	}
+	
+	maid_spy_agency = { #女仆间谍
+		icon = generic_political_discourse
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_intelligence_agency = yes
+				has_country_flag = got_Alice_Casilia_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			set_country_flag = got_youhua_flag
+			create_operative_leader = {
+				name = "幽花"
+				GFX = GFX_portrait_youhua
+				traits = { maid_spy operative_linguist mark_youhua }
+				bypass_recruitment = no
+				available_to_spy_master = yes
+				nationalities = { ROOT }
+			}
+			set_country_flag = got_sheffield_flag
+			create_operative_leader = {
+				name = "谢菲尔德"
+				GFX = GFX_portrait_sheffield
+				traits = { maid_spy operative_commando mark_sheffield }
+				bypass_recruitment = no
+				available_to_spy_master = yes
+				nationalities = { ROOT }
+			}
+			set_country_flag = got_london_flag
+			create_operative_leader = {
+				name = "伦敦"
+				GFX = GFX_portrait_london
+				traits = { maid_spy operative_commando mark_london }
+				bypass_recruitment = no
+				available_to_spy_master = yes
+				nationalities = { ROOT }
+			}
+			set_country_flag = unlock_maid_spy_flag
+			unlock_decision_tooltip = maid_murder_outside_enemy_1
+			unlock_decision_tooltip = maid_murder_enemy_officers
+			country_event = { id = maid_event.18 days = 2 }
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_establish_agency = { #女仆情报处
+		icon = generic_political_discourse
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = maid_controled_government_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = unlock_maid_spy_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			add_ideas = idea_maid_central_agency
+			set_country_flag = maid_has_established_agency_flag
+			set_country_flag = got_yakui_flag
+			create_operative_leader = {
+				name = "Yakui"
+				GFX = GFX_portrait_yakui
+				traits = { maid_spy operative_linguist maid_ambuser mark_yakui }
+				bypass_recruitment = no
+				available_to_spy_master = yes
+				nationalities = { ROOT }
+			}
+			unlock_decision_tooltip = maid_upgrade_agency
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_upgrade_agency = { #升级情报处
+		icon = generic_political_discourse
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_has_established_agency_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			swap_ideas = {
+				remove_idea = idea_maid_central_agency
+				add_idea = idea_maid_central_agency_2
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_murder_outside_enemy_1 = { #女仆帮您暗杀敌国主要领导人
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		visible = {
+			has_country_flag = unlock_maid_spy_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = unlock_operation_maid_assassin_flag
+			custom_effect_tooltip = unlock_operation_maid_assassin_tt
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_murder_enemy_officers = { #女仆帮您暗杀敌国指挥官
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+		}
+
+		visible = {
+			has_country_flag = unlock_maid_spy_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = unlock_operation_maid_assassin_officers_flag
+			custom_effect_tooltip = unlock_operation_maid_assassin_officers_tt
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_enable_to_hire_traps = { #允许招募伪娘女仆
+		icon = generic_decision
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = unlock_hire_trap_decision_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			custom_effect_tooltip = enalbe_to_hire_trap_tt
+			set_country_flag = enalbe_to_hire_trap_flag
+		}
+	}
+	
+	maid_fight_on_sea = { #允许招募海军将领女仆
+		icon = generic_naval
+
+		allowed = {
+			
+		}
+
+		available = {
+			or = {
+				has_idea = idea_maid_group_budget_degree_3
+				has_idea = idea_maid_group_budget_degree_4
+				has_idea = idea_maid_group_budget_degree_5
+				has_country_flag = maid_controled_government_flag
+			}
+			has_navy_experience > 40
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			navy_experience = -40
+			custom_effect_tooltip = enalbe_maid_battleship_tt
+			set_country_flag = enalbe_maid_battleship_flag
+			if = {
+				limit = { has_country_flag = the_definition_of_maid_in_new_world_flag }
+				unlock_decision_tooltip = maid_establish_red_naval_maid_corps
+			}
+			else = {
+				unlock_decision_tooltip = maid_establish_royal_naval_maid_corps
+			}
+		}
+	}
+	
+	maid_establish_royal_naval_maid_corps = { #皇家海军女仆团
+		icon = generic_naval
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_belfast_flag
+			has_country_flag = got_sirius_flag
+			has_country_flag = got_newcastle_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = enalbe_maid_battleship_flag
+			not = {
+				has_country_flag = the_definition_of_maid_in_new_world_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 65
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			add_ideas = maid_idea_royal_naval_corps
+			custom_effect_tooltip = maid_unlock_one_idea_combination_naval_construction_tt
+			set_country_flag = maid_has_established_naval_corps_flag
+		}
+	}
+	
+	maid_establish_red_naval_maid_corps = { #红海军女仆团
+		icon = generic_naval
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_belfast_flag
+			has_country_flag = got_sirius_flag
+			has_country_flag = got_newcastle_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = enalbe_maid_battleship_flag
+			has_country_flag = the_definition_of_maid_in_new_world_flag
+			not = {
+				has_country_flag = maid_has_established_naval_corps_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			add_ideas = maid_idea_red_naval_corps
+			custom_effect_tooltip = maid_unlock_one_idea_combination_naval_construction_tt
+			set_country_flag = maid_has_established_naval_corps_flag
+		}
+	}
+	
+	maid_control_government = { #女仆团控制政府
+		icon = generic_scorched_earth
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_idea = idea_maid_group_budget_degree_5
+			custom_trigger_tooltip = {
+				tooltip = maid_unlocking_needs_maid_join_goverment_idea_tt
+				has_idea = idea_maid_help_your_politics
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 140
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = maid_controled_government_flag
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			#remove_ideas = idea_maid_help_your_politics
+			swap_ideas = {
+				remove_idea = idea_maid_group_budget_degree_5
+				add_idea = idea_maid_group_is_government
+			}
+			swap_ideas = {
+				remove_idea = idea_maid_help_your_politics
+				add_idea = idea_maid_strengthen_the_maids_in_government
+			}
+			custom_effect_tooltip = maid_help_your_politics_is_replaced_tt
+			custom_effect_tooltip = maid_add_willingness_1_monthly_tt
+			unlock_decision_tooltip = maid_can_be_leader
+			unlock_decision_tooltip = maid_troop_command_centre
+			unlock_decision_tooltip = maid_resources_management_centre
+			unlock_decision_tooltip = maid_buidings_construction_centre
+			unlock_decision_tooltip = maid_puppet_form_government
+			unlock_decision_tooltip = maid_invest_more_funds
+			hidden_effect = {
+				country_event = maid_event.4
+				news_event = { id = maid_news.3 days = 2 random_days = 1 }
+			}
+		}
+	}
+	
+	maid_puppet_form_government = { #傀儡女仆政府
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			any_country = {
+				is_subject_of = ROOT
+				has_idea = idea_maid_subject_control
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		remove_effect = {
+			set_country_flag = maid_diplomacy_puppet_government_flag
+			custom_effect_tooltip = maid_diplomacy_puppet_government_tt
+			unlock_decision_tooltip = maid_form_maid_puppet_country
+		}
+	}
+	
+	maid_form_maid_puppet_country = { #设立女仆领
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_diplomacy_puppet_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 60
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			set_country_flag = maid_allow_autonomy_housemaid_flag
+			custom_effect_tooltip = maid_allow_autonomy_housemaid_tt
+		}
+	}
+	
+	maid_establish_soviet = { #成立最高妹抖苏维埃
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = ready_to_form_maid_country_flag
+			has_country_flag = the_definition_of_maid_in_new_world_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = prepare_to_establish_maid_country_flag
+			not = {
+				has_country_flag = has_established_maid_country_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			set_country_flag = has_established_maid_country_flag
+			custom_effect_tooltip = maid_change_national_name_flag_soviet_tt
+			add_ideas = idea_maid_soviet
+			if = {
+				limit = {
+					has_idea = maid_idea_royal_naval_corps
+				}
+				swap_ideas = {
+					remove_idea = maid_idea_royal_naval_corps
+					add_idea = maid_idea_red_naval_corps
+				}
+			}
+			custom_effect_tooltip = maid_add_one_more_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			custom_effect_tooltip = maid_unlock_one_idea_combination_soviet_idea_tt
+			hidden_effect = {
+				country_event = { id = maid_event.25 days = 15 }
+				play_song = "Tachanka"
+				country_event = maid_event.29
+			}
+		}
+	}
+	
+	maid_establish_empire = { #成立神圣妹抖帝国
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = ready_to_form_maid_country_flag
+			has_country_flag = the_master_is_the_highest_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = prepare_to_establish_maid_country_flag
+			not = {
+				has_country_flag = has_established_maid_country_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			set_country_flag = has_established_maid_country_flag
+			custom_effect_tooltip = maid_change_national_name_flag_empire_tt
+			add_ideas = idea_maid_empire
+			custom_effect_tooltip = maid_add_one_more_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			custom_effect_tooltip = maid_unlock_one_idea_combination_empire_idea_tt
+			hidden_effect = {
+				country_event = maid_event.29
+			}
+		}
+	}
+	
+	maid_establish_republic = { #成立妹抖共和联盟
+		icon = generic_form_nation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = ready_to_form_maid_country_flag
+			has_country_flag = maid_follow_contrast_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = prepare_to_establish_maid_country_flag
+			not = {
+				has_country_flag = has_established_maid_country_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			set_country_flag = has_established_maid_country_flag
+			custom_effect_tooltip = maid_change_national_name_flag_republic_tt
+			add_ideas = idea_maid_republic
+			custom_effect_tooltip = maid_add_one_more_idea_slot_tt
+			add_to_variable = {
+				var = maid_idea_slots
+				value = 1
+			}
+			custom_effect_tooltip = maid_unlock_one_idea_combination_republic_idea_tt
+			hidden_effect = {
+				country_event = maid_event.29
+			}
+		}
+	}
+	
+	maid_parliament_leader = { 
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			not = {
+				has_country_leader = {
+					name = "女仆议会"
+					ruling_only = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = has_established_maid_country_flag
+		}
+
+		fire_only_once = no
+
+		cost = 45
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			maid_parliament_become_leader = yes
+		}
+	}
+	
+	maid_troop_command_centre = { #女仆团中央指挥部
+		icon = generic_army_support
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			if = {
+				limit = { has_idea = idea_maid_group_is_government }
+				swap_ideas = {
+					remove_idea = idea_maid_group_is_government
+					add_idea = idea_maid_group_is_government_2
+				}
+			}
+			if = {
+				limit = { has_idea = idea_maid_group_is_government_3 }
+				swap_ideas = {
+					remove_idea = idea_maid_group_is_government_3
+					add_idea = idea_maid_group_is_government_4
+				}
+			}
+			country_event = maid_event.9
+			set_country_flag = maid_work_in_army_flag
+			unlock_decision_tooltip = maid_unlock_support_team
+			unlock_decision_tooltip = maid_unlock_maid_guard_categories
+		}
+	}
+	
+	maid_full_blooming_decision = { #满开
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+
+		available = {
+			command_power > 99
+			has_country_flag = got_you_flag
+			you_are_assigned_maid_commander = yes
+			has_war = yes
+		}
+
+		visible = {
+			has_country_flag = allow_maid_blooming_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			add_command_power = -99
+			country_event = maid_event.22
+			custom_effect_tooltip = all_assigned_maids_bloom_tt
+			set_country_flag = maid_finisheed_first_blooming_flag
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_full_blooming_decision_extra = { #额外满开
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = got_you_flag
+			you_are_assigned_maid_commander = yes
+			has_war = yes
+		}
+
+		visible = {
+			has_country_flag = maid_finisheed_first_blooming_flag
+			has_country_flag = maid_allow_extra_blooming_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			country_event = maid_event.22
+			custom_effect_tooltip = all_assigned_maids_bloom_tt
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_resources_management_centre = { #女仆团后勤采购部
+		icon = ger_military_buildup
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 65
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			if = {
+				limit = { has_idea = idea_maid_group_is_government }
+				swap_ideas = {
+					remove_idea = idea_maid_group_is_government
+					add_idea = idea_maid_group_is_government_3
+				}
+			}
+			if = {
+				limit = { has_idea = idea_maid_group_is_government_2 }
+				swap_ideas = {
+					remove_idea = idea_maid_group_is_government_2
+					add_idea = idea_maid_group_is_government_4
+				}
+			}
+			set_country_flag = maid_manage_resources_flag
+			unlock_decision_tooltip = maid_emergency_logistics_plan
+		}
+	}
+	
+	maid_emergency_logistics_plan = { #女仆团后勤行动
+		icon = ger_military_buildup
+
+		allowed = {
+			
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_1_tt
+				check_variable = { maid_willingness > 1 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_manage_resources_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_2_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -2
+			}
+			custom_effect_tooltip = maid_unlock_one_idea_combination_supply_system_tt
+			set_country_flag = maid_unlock_one_idea_combination_supply_system_flag
+		}
+	}
+	
+	maid_buidings_construction_centre = { #女仆团中央建设部
+		icon = generic_construction
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_factories > 50
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 80
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			add_tech_bonus = {
+				name = maid_industry_card
+				bonus = 0.5
+				uses = 2
+				category = industry
+				category = synth_resources
+			}
+			custom_effect_tooltip = maid_factories_transfer_tt
+			unlock_decision_tooltip = maid_civilian_factories_transfer
+			set_country_flag = maid_able_to_transfer_factories_flag
+		}
+	}
+	
+	maid_civilian_factories_transfer = {
+		icon = generic_construction
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 9
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_able_to_transfer_factories_flag
+		}
+
+		fire_only_once = no
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 10
+			consumer_goods_factor = 0.05
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					#industrial_complex > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				#remove_building = {
+				#	type = industrial_complex
+				#	level = 2
+				#}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					#arms_factory > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+				#remove_building = {
+				#	type = arms_factory
+				#	level = 2
+				#}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = arms_factory level = 1 }
+			custom_effect_tooltip = maid_the_paradox_bug_of_offsite_buildings_tt
+		}
+	}
+	
+	maid_can_be_leader = { #女仆团当领袖
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = maid_controled_government_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_2_tt
+				check_variable = { maid_willingness > 2 }
+			}
+		}
+
+		visible = {
+			has_country_flag = maid_controled_government_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -3
+			}
+			custom_effect_tooltip = enable_maid_leader_tt
+			set_country_flag = enable_maid_leader_flag
+		}
+	}
+	
+	maid_marry_celebrate = { #大婚
+		icon = generic_nationalism
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_country_flag = has_selected_marry_target_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = let_marry_with_maid_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 120
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+		}
+		
+		remove_effect = {
+			add_political_power = 300
+			add_stability = 0.1
+			add_timed_idea = {
+				idea = maid_marry_celebration
+				days = 120
+			}
+			custom_effect_tooltip = maid_add_willingness_3_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = 3
+			}
+			custom_effect_tooltip = will_make_marry_celebration_tt
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = will_marry_sakuya_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_sakuya
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_reimu_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_reimu
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.101 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_tohru_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_tohru
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.102 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_noelle_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_noelle
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.103 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_bsAlice_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_bsAlice
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.104 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_william_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_william
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.105 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_kotori_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_kotori
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.106 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_hilde_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_hilde
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.107 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_maid_1_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_maid_1
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.108 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_maid_2_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_maid_2
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.109 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_maid_3_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_maid_3
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1011 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_maid_4_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_maid_4
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1012 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_saika_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_saika
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1013 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_asahi_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_asahi
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1014 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_rizhao_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_rizhao
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1015 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_felix_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_felix
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1016 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_Alice_Casilia_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_Alice_Casilia
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1017 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_G36_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_G36
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1018 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_newcastle_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_newcastle
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1019 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_shura_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_shura
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1021 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_felicia_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_felicia
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1022 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_belfast_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_belfast
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1023 days = 1 random_days = 2 }
+				}
+				if = {
+					limit = { has_country_flag = will_marry_sirius_flag }
+					random_army_leader = {
+						limit = { 
+							has_trait = mark_sirius
+						}
+						add_unit_leader_trait = maid_vow_ring
+					}
+					news_event = { id = maid_news.1024 days = 1 random_days = 2 }
+				}
+			}
+		}
+	}
+	
+	maid_resummon_magic = { #召唤失去的女仆
+		icon = generic_research
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_idea = idea_maid_summon_magic
+			has_country_flag = got_bsAlice_flag
+			custom_trigger_tooltip = {
+				tooltip = maid_willingness_bigger_0_tt
+				check_variable = { maid_willingness > 0 }
+			}
+		}
+
+		visible = {
+			has_country_flag = can_use_summon_magic_decision_flag
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			#custom_effect_tooltip = maid_dont_back_to_save_after_lost_tt
+			custom_effect_tooltip = maid_95_per_to_success_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = got_youhua_flag
+						not = { any_operative_leader = { has_trait = mark_youhua } }
+					}
+					create_operative_leader = {
+						name = "幽花"
+						GFX = GFX_portrait_youhua
+						traits = { maid_spy operative_linguist mark_youhua }
+						bypass_recruitment = no
+						available_to_spy_master = yes
+						nationalities = { ROOT }
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = got_sheffield_flag
+						not = { any_operative_leader = { has_trait = mark_sheffield } }
+					}
+					create_operative_leader = {
+						name = "谢菲尔德"
+						GFX = GFX_portrait_sheffield
+						traits = { maid_spy operative_commando mark_sheffield }
+						bypass_recruitment = no
+						available_to_spy_master = yes
+						nationalities = { ROOT }
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = got_london_flag
+						not = { any_operative_leader = { has_trait = mark_london } }
+					}
+					create_operative_leader = {
+						name = "伦敦"
+						GFX = GFX_portrait_london
+						traits = { maid_spy operative_commando mark_london }
+						bypass_recruitment = no
+						available_to_spy_master = yes
+						nationalities = { ROOT }
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = got_yakui_flag
+						not = { any_operative_leader = { has_trait = mark_yakui } }
+					}
+					create_operative_leader = {
+						name = "Yakui"
+						GFX = GFX_portrait_yakui
+						traits = { maid_spy operative_linguist maid_ambuser mark_yakui }
+						bypass_recruitment = no
+						available_to_spy_master = yes
+						nationalities = { ROOT }
+					}
+				}
+			}
+			#你
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = maid_you_profile_green_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_you_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = revive_you_flag
+					has_country_flag = maid_you_profile_green_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_2_you_flag
+			}
+			#
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = maid_you_profile_gold_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_you_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = revive_you_flag
+					has_country_flag = maid_you_profile_gold_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_2_you_flag
+			}
+			#
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = maid_you_profile_silver_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_you_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = revive_you_flag
+					has_country_flag = maid_you_profile_silver_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_2_you_flag
+			}
+			#
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = maid_you_profile_black_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_you_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_you_flag
+					has_country_flag = revive_you_flag
+					has_country_flag = maid_you_profile_black_flag
+					not = { any_army_leader = { has_trait = mark_you } }
+				}
+				set_country_flag = revive_2_you_flag
+			}
+			#菲莉希娅
+			if = {
+				limit = {
+					has_country_flag = got_felicia_flag
+					not = { any_army_leader = { has_trait = mark_felicia } }
+				}
+				set_country_flag = revive_felicia_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_felicia_flag
+					has_country_flag = revive_felicia_flag
+					not = { any_army_leader = { has_trait = mark_felicia } }
+				}
+				set_country_flag = revive_2_felicia_flag
+			}
+			#十六夜咲夜
+			if = {
+				limit = {
+					has_country_flag = got_sakuya_flag
+					not = { any_army_leader = { has_trait = mark_sakuya } }
+				}
+				set_country_flag = revive_sakuya_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_sakuya_flag
+					has_country_flag = revive_sakuya_flag
+					not = { any_army_leader = { has_trait = mark_sakuya } }
+				}
+				set_country_flag = revive_2_sakuya_flag
+			}
+			#蕾姆
+			if = {
+				limit = {
+					has_country_flag = got_reimu_flag
+					not = { any_army_leader = { has_trait = mark_reimu } }
+				}
+				set_country_flag = revive_reimu_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_reimu_flag
+					has_country_flag = revive_reimu_flag
+					not = { any_army_leader = { has_trait = mark_reimu } }
+				}
+				set_country_flag = revive_2_reimu_flag
+			}
+			#托尔
+			if = {
+				limit = {
+					has_country_flag = got_tohru_flag
+					not = { any_army_leader = { has_trait = mark_tohru } }
+				}
+				set_country_flag = revive_tohru_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_tohru_flag
+					has_country_flag = revive_tohru_flag
+					not = { any_army_leader = { has_trait = mark_tohru } }
+				}
+				set_country_flag = revive_2_tohru_flag
+			}
+			#诺艾尔
+			if = {
+				limit = {
+					has_country_flag = got_noelle_flag
+					not = { any_army_leader = { has_trait = mark_noelle } }
+				}
+				set_country_flag = revive_noelle_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_noelle_flag
+					has_country_flag = revive_noelle_flag
+					not = { any_army_leader = { has_trait = mark_noelle } }
+				}
+				set_country_flag = revive_2_noelle_flag
+			}
+			#爱丽丝
+			if = {
+				limit = {
+					has_country_flag = got_bsAlice_flag
+					not = { any_army_leader = { has_trait = mark_bsAlice } }
+				}
+				set_country_flag = revive_bsAlice_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_bsAlice_flag
+					has_country_flag = revive_bsAlice_flag
+					not = { any_army_leader = { has_trait = mark_bsAlice } }
+				}
+				set_country_flag = revive_2_bsAlice_flag
+			}
+			#威尔艾米娜
+			if = {
+				limit = {
+					has_country_flag = got_william_flag
+					not = { any_army_leader = { has_trait = mark_william } }
+				}
+				set_country_flag = revive_william_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_william_flag
+					has_country_flag = revive_william_flag
+					not = { any_army_leader = { has_trait = mark_william } }
+				}
+				set_country_flag = revive_2_william_flag
+			}
+			#南小鸟
+			if = {
+				limit = {
+					has_country_flag = got_kotori_flag
+					not = { any_army_leader = { has_trait = mark_kotori } }
+				}
+				set_country_flag = revive_kotori_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_kotori_flag
+					has_country_flag = revive_kotori_flag
+					not = { any_army_leader = { has_trait = mark_kotori } }
+				}
+				set_country_flag = revive_2_kotori_flag
+			}
+			#希露迪
+			if = {
+				limit = {
+					has_country_flag = got_hilde_flag
+					not = { any_army_leader = { has_trait = mark_hilde } }
+				}
+				set_country_flag = revive_hilde_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_hilde_flag
+					not = { any_army_leader = { has_trait = mark_hilde } }
+				}
+				set_country_flag = revive_2_hilde_flag
+			}
+			#G36
+			if = {
+				limit = {
+					has_country_flag = got_G36_flag
+					not = { any_army_leader = { has_trait = mark_G36 } }
+				}
+				set_country_flag = revive_G36_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_G36_flag
+					not = { any_army_leader = { has_trait = mark_G36 } }
+				}
+				set_country_flag = revive_2_G36_flag
+			}
+			#纽卡斯特
+			if = {
+				limit = {
+					has_country_flag = got_newcastle_flag
+					not = { any_army_leader = { has_trait = mark_newcastle } }
+				}
+				set_country_flag = revive_newcastle_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_newcastle_flag
+					not = { any_army_leader = { has_trait = mark_newcastle } }
+				}
+				set_country_flag = revive_2_newcastle_flag
+			}
+			#贝尔法斯特
+			if = {
+				limit = {
+					has_country_flag = got_belfast_flag
+					not = { any_army_leader = { has_trait = mark_belfast } }
+				}
+				set_country_flag = revive_belfast_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_belfast_flag
+					not = { any_army_leader = { has_trait = mark_belfast } }
+				}
+				set_country_flag = revive_2_belfast_flag
+			}
+			#天狼星
+			if = {
+				limit = {
+					has_country_flag = got_sirius_flag
+					not = { any_army_leader = { has_trait = mark_sirius } }
+				}
+				set_country_flag = revive_sirius_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_sirius_flag
+					not = { any_army_leader = { has_trait = mark_sirius } }
+				}
+				set_country_flag = revive_2_sirius_flag
+			}
+			#女仆1
+			if = {
+				limit = {
+					has_country_flag = got_maid_1_flag
+					not = { any_army_leader = { has_trait = mark_maid_1 } }
+				}
+				set_country_flag = revive_maid_1_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_maid_1_flag
+					not = { any_army_leader = { has_trait = mark_maid_1 } }
+				}
+				set_country_flag = revive_2_maid_1_flag
+			}
+			#女仆2
+			if = {
+				limit = {
+					has_country_flag = got_maid_2_flag
+					not = { any_army_leader = { has_trait = mark_maid_2 } }
+				}
+				set_country_flag = revive_maid_2_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_maid_2_flag
+					not = { any_army_leader = { has_trait = mark_maid_2 } }
+				}
+				set_country_flag = revive_2_maid_2_flag
+			}
+			#女仆3
+			if = {
+				limit = {
+					has_country_flag = got_maid_3_flag
+					not = { any_army_leader = { has_trait = mark_maid_3 } }
+				}
+				set_country_flag = revive_maid_3_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_maid_3_flag
+					not = { any_army_leader = { has_trait = mark_maid_3 } }
+				}
+				set_country_flag = revive_2_maid_3_flag
+			}
+			#女仆4
+			if = {
+				limit = {
+					has_country_flag = got_maid_4_flag
+					not = { any_army_leader = { has_trait = mark_maid_4 } }
+				}
+				set_country_flag = revive_maid_4_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_maid_4_flag
+					not = { any_army_leader = { has_trait = mark_maid_4 } }
+				}
+				set_country_flag = revive_2_maid_4_flag
+			}
+			#才华
+			if = {
+				limit = {
+					has_country_flag = got_saika_flag
+					not = { any_army_leader = { has_trait = mark_saika } }
+				}
+				set_country_flag = revive_saika_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_saika_flag
+					not = { any_army_leader = { has_trait = mark_saika } }
+				}
+				set_country_flag = revive_2_saika_flag
+			}
+			#朝日
+			if = {
+				limit = {
+					has_country_flag = got_asahi_flag
+					not = { any_army_leader = { has_trait = mark_asahi } }
+				}
+				set_country_flag = revive_asahi_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_asahi_flag
+					not = { any_army_leader = { has_trait = mark_asahi } }
+				}
+				set_country_flag = revive_2_asahi_flag
+			}
+			#日照
+			if = {
+				limit = {
+					has_country_flag = got_rizhao_flag
+					not = { any_army_leader = { has_trait = mark_rizhao } }
+				}
+				set_country_flag = revive_rizhao_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_rizhao_flag
+					not = { any_army_leader = { has_trait = mark_rizhao } }
+				}
+				set_country_flag = revive_2_rizhao_flag
+			}
+			#菲利克斯
+			if = {
+				limit = {
+					has_country_flag = got_felix_flag
+					not = { any_army_leader = { has_trait = mark_felix } }
+				}
+				set_country_flag = revive_felix_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_felix_flag
+					not = { any_army_leader = { has_trait = mark_felix } }
+				}
+				set_country_flag = revive_2_felix_flag
+			}
+			#爱丽丝卡希莉雅
+			if = {
+				limit = {
+					has_country_flag = got_Alice_Casilia_flag
+					not = { any_army_leader = { has_trait = mark_Alice_Casilia } }
+				}
+				set_country_flag = revive_Alice_Casilia_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_Alice_Casilia_flag
+					not = { any_army_leader = { has_trait = mark_Alice_Casilia } }
+				}
+				set_country_flag = revive_2_Alice_Casilia_flag
+			}
+			#Shura
+			if = {
+				limit = {
+					has_country_flag = got_shura_flag
+					not = { any_army_leader = { has_trait = mark_shura } }
+				}
+				set_country_flag = revive_shura_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = got_shura_flag
+					not = { any_army_leader = { has_trait = mark_shura } }
+				}
+				set_country_flag = revive_2_shura_flag
+			}
+			
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_20_surrend_limit = {
+		
+		icon = generic_independence
+
+		available = {
+			surrender_progress > 0.20
+			has_country_flag = got_noelle_flag
+		}
+
+		visible = {
+			surrender_progress > 0.15
+			is_ai = yes #决议作废，隐藏
+			has_country_flag = maid_unlock_defence_decision_flag
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			experience_loss_factor = -0.30
+			weekly_manpower = 20000
+			army_core_defence_factor = 0.15
+			army_core_attack_factor = 0.15
+			local_resources_factor = 0.1
+			production_lack_of_resource_penalty_factor = -0.2
+			fuel_gain_factor = 0.2
+			fuel_gain_factor_from_states = 0.5
+			production_speed_buildings_factor = 0.1
+			supply_consumption_factor = -0.10
+			land_reinforce_rate = 0.02
+			army_morale_factor = 0.10
+			army_org_factor = 0.10
+			industry_repair_factor = 0.2
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			industrial_capacity_factory = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			modify_building_resources = {
+        	   building = synthetic_refinery
+        	   resource = rubber
+        	   amount = 2
+        	}
+			add_political_power = 100
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 3000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 30000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 3000 }
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 600 }
+		}	
+	}
+	
+	maid_40_surrend_limit = {
+		
+		icon = generic_independence
+
+		available = {
+			surrender_progress > 0.40
+			has_country_flag = got_noelle_flag
+		}
+
+		visible = {
+			surrender_progress > 0.35
+			is_ai = yes #决议作废，隐藏
+			has_country_flag = maid_unlock_defence_decision_flag
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			weekly_manpower = 20000
+			army_core_defence_factor = 0.2
+			army_core_attack_factor = 0.2
+			breakthrough_factor = 0.10
+			army_speed_factor = 0.10
+			attrition = -0.05
+			minimum_training_level = -0.1
+			fuel_gain_factor = 0.3
+			fuel_gain_factor_from_states = 0.5
+			local_resources_factor = 0.2
+			production_lack_of_resource_penalty_factor = -0.2
+			production_speed_buildings_factor = 0.1
+			supply_consumption_factor = -0.1
+			land_reinforce_rate = 0.03
+			army_morale_factor = 0.10
+			army_org_factor = 0.10
+			industry_repair_factor = 0.2
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.1
+			line_change_production_efficiency_factor = 0.1
+			industrial_capacity_factory = 0.2
+			global_building_slots_factor = 0.2
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			add_political_power = 200
+			army_experience = 60
+			navy_experience = 60
+			air_experience = 60
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 10000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 95000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 10000 }
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 1500 }
+			add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 1000 }
+		}	
+	}
+	
+	maid_60_surrend_limit = {
+		
+		icon = generic_independence
+
+		available = {
+			surrender_progress > 0.60
+			has_country_flag = got_noelle_flag
+		}
+
+		visible = {
+			surrender_progress > 0.55
+			is_ai = yes #决议作废，隐藏
+			has_country_flag = maid_unlock_defence_decision_flag
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			surrender_limit = 0.15
+			army_org_factor = 0.20
+			army_core_defence_factor = 0.25
+			army_core_attack_factor = 0.25
+			breakthrough_factor = 0.10
+			army_speed_factor = 0.10
+			attrition = -0.1
+			minimum_training_level = -0.1
+			weekly_manpower = 20000
+			supply_consumption_factor = -0.1
+			local_resources_factor = 0.2
+			production_lack_of_resource_penalty_factor = -0.2
+			production_speed_buildings_factor = 0.1
+			land_reinforce_rate = 0.05
+			army_morale_factor = 0.15
+			industry_repair_factor = 0.2
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.1
+			line_change_production_efficiency_factor = 0.1
+			industrial_capacity_factory = 0.2
+			global_building_slots_factor = 0.2
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			add_political_power = 300
+			army_experience = 100
+			navy_experience = 100
+			air_experience = 100
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 5000 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 5000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 8000 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 32000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 220000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 32000 }
+			add_equipment_to_stockpile = { type = fighter_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = tac_bomber_equipment amount = 1500 }
+		}	
+	}
+
+}
+
+hire_maid_decisions = {
+
+	hire_you = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			or = {
+				has_country_flag = maid_you_profile_green_flag
+				has_country_flag = maid_you_profile_gold_flag
+				has_country_flag = maid_you_profile_silver_flag
+				has_country_flag = maid_you_profile_black_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = maid_you_profile_green_flag }
+				#maid_recruit_you_1_effect = yes
+			}
+			else_if = {
+				limit = { has_country_flag = maid_you_profile_gold_flag }
+				#maid_recruit_you_2_effect = yes
+			}
+			else_if = {
+				limit = { has_country_flag = maid_you_profile_silver_flag }
+				#maid_recruit_you_3_effect = yes
+			}
+			else_if = {
+				limit = { has_country_flag = maid_you_profile_black_flag }
+				#maid_recruit_you_4_effect = yes
+			}
+			set_country_flag = got_you_flag
+			hidden_effect = {
+				country_event = { id = maid_event.2104 }
+			}
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	you_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_you_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			you_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	hire_felicia = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = let_hire_felicia_later_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = maid_remove_willingness_1_tt
+			add_to_variable = {
+				var = maid_willingness
+				value = -1
+			}
+			#maid_recruit_felicia_effect = yes
+			set_country_flag = got_felicia_flag
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	felicia_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_felicia_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			felicia_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_felicia = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_felicia_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_felicia_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_sakya = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			not = {
+				has_country_flag = got_sakuya_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_sakuya_effect = yes
+			set_country_flag = got_sakuya_flag
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	sakuya_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_sakuya_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			sakuya_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_sakuya = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_sakuya_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_sakuya_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	sakuya_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_sakuya_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_sakuya_effect = yes
+			set_country_flag = got_naval_sakuya_flag
+		}
+	}
+	
+	hire_reimu = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_reimu_effect = yes
+			set_country_flag = got_reimu_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	reimu_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_reimu_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			reimu_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_reimu = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_reimu_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_reimu_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_tohru = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_tohru_effect = yes
+			set_country_flag = got_tohru_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	tohru_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_tohru_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			tohru_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_tohru = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_tohru_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_tohru_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_noelle = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_noelle_effect = yes
+			set_country_flag = got_noelle_flag
+			add_political_power = 25
+			add_stability = 0.01
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	noelle_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_noelle_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			noelle_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_noelle = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_noelle_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_noelle_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_bsAlice = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_bsAlice_effect = yes
+			set_country_flag = got_bsAlice_flag
+			add_political_power = 69
+			add_stability = -0.02
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	bsAlice_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_bsAlice_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			bsAlice_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_bsAlice = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_bsAlice_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_bsAlice_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	bsAlice_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_bsAlice_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_bsAlice_effect = yes
+			set_country_flag = got_naval_bsAlice_flag
+		}
+	}
+	
+	hire_william = { #威尔艾米娜
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_william_effect = yes
+			set_country_flag = got_william_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	william_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_william_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			william_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_william = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_william_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_william_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_kotori = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_kotori_effect = yes
+			set_country_flag = got_kotori_flag
+			add_political_power = 20
+			air_experience = 15
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	kotori_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_kotori_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			kotori_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_kotori = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_kotori_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_kotori_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_hilde = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_hilde_effect = yes
+			set_country_flag = got_hilde_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	hilde_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_hilde_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			hilde_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_hilde = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_hilde_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_hilde_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_G36 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_G36_effect = yes
+			set_country_flag = got_G36_flag
+			add_political_power = 25
+			add_war_support = 0.01
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	G36_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_G36_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			G36_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_G36 = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_G36_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_G36_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_newcastle = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_newcastle_effect = yes
+			set_country_flag = got_newcastle_flag
+			add_political_power = 10
+			navy_experience = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	newcastle_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_newcastle_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			newcastle_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	newcastle_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_newcastle_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_newcastle_effect = yes
+			set_country_flag = got_naval_newcastle_flag
+		}
+	}
+	
+	marry_newcastle = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_newcastle_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_newcastle_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_belfast = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_newcastle_effect = yes
+			set_country_flag = got_belfast_flag
+			add_political_power = 10
+			navy_experience = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	belfast_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_belfast_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			belfast_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	belfast_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_belfast_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_newcastle_effect = yes
+			set_country_flag = got_naval_belfast_flag
+		}
+	}
+	
+	marry_belfast = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_belfast_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_belfast_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_sirius = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_newcastle_effect = yes
+			set_country_flag = got_sirius_flag
+			add_political_power = 10
+			navy_experience = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	sirius_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_sirius_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			sirius_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	sirius_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_sirius_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 10
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_newcastle_effect = yes
+			set_country_flag = got_naval_sirius_flag
+		}
+	}
+	
+	marry_sirius = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_sirius_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_sirius_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_maid_1 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_maid_1_effect = yes
+			set_country_flag = got_maid_1_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_1_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_maid_1_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			maid_1_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_maid_1 = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_maid_1_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_maid_1_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_maid_2 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_maid_2_effect = yes
+			set_country_flag = got_maid_2_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_2_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_maid_2_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			maid_2_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_maid_2 = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_maid_2_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_maid_2_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_maid_3 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_maid_3_effect = yes
+			set_country_flag =  got_maid_3_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_3_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_maid_3_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			maid_3_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_maid_3 = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_maid_3_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_maid_3_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_maid_4 = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = expanded_group_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_maid_4_effect = yes
+			set_country_flag = got_maid_4_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	maid_4_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_maid_4_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			maid_4_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_maid_4 = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_maid_4_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_maid_4_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_saika = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_saika_effect = yes
+			set_country_flag = got_saika_flag
+			add_political_power = 50
+			add_stability = 0.01
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	saika_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_saika_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			saika_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_saika = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_saika_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_saika_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_asahi = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_asahi_effect = yes
+			set_country_flag = got_asahi_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	asahi_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_asahi_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			asahi_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_asahi = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_asahi_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_asahi_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_rizhao = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_rizhao_effect = yes
+			set_country_flag = got_rizhao_flag
+			add_political_power = 20
+			army_experience = 15
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	rizhao_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_rizhao_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			rizhao_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_rizhao = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_rizhao_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_rizhao_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_felix = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_felix_effect = yes
+			set_country_flag = got_felix_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	felix_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_felix_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			felix_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_felix = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_felix_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_felix_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	hire_Alice_Casilia = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_Alice_casilia_effect = yes
+			set_country_flag = got_Alice_Casilia_flag
+			add_political_power = 30
+			army_experience = 10
+			hidden_effect = {
+				country_event = maid_event.14
+			}
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	Alice_Casilia_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_Alice_Casilia_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			Alice_Casilia_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_Alice_Casilia = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_Alice_Casilia_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_Alice_Casilia_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	Alice_Casilia_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_Alice_Casilia_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_Alice_casilia_effect = yes
+			set_country_flag = got_naval_Alice_Casilia_flag
+		}
+	}
+	
+	hire_shura = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = enalbe_to_hire_trap_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			#maid_recruit_shura_effect = yes
+			set_country_flag = got_shura_flag
+			add_political_power = 35
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	shura_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_country_flag = got_shura_flag
+			has_country_flag = enable_maid_leader_flag
+		}
+
+		fire_only_once = no
+
+		cost = 69
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			shura_become_leader = yes
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	marry_shura = {
+		icon = generic_operation
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			has_country_flag = got_shura_flag
+			has_country_flag = let_marry_with_maid_flag
+			not = {
+				has_country_flag = has_selected_marry_target_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			set_country_flag = will_marry_shura_flag
+		}
+		remove_effect = {
+			set_country_flag = has_selected_marry_target_flag
+		}
+	}
+	
+	shura_navy_leader = {
+		icon = generic_operation
+
+		allowed = {
+			
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = got_shura_flag
+			has_country_flag = enalbe_maid_battleship_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 35
+		days_remove = 90
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			
+		}
+
+		remove_effect = {
+			#maid_naval_shura_effect = yes
+			set_country_flag = got_naval_shura_flag
+		}
+	}
+	
+	
+}

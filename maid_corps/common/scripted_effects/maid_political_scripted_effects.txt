@@ -1,0 +1,598 @@
+maid_night_of_maids_level_3_effect = {
+	if = {
+		limit = { #8
+			num_of_controlled_states > 18
+		}
+		custom_effect_tooltip = maid_8_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #5
+		limit = {
+			num_of_controlled_states > 10
+		}
+		custom_effect_tooltip = maid_5_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #3
+		limit = {
+			num_of_controlled_states > 5
+		}
+		custom_effect_tooltip = maid_3_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else = { #1
+		custom_effect_tooltip = maid_1_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+}
+
+maid_night_of_maids_level_2_effect = {
+	if = {
+		limit = { #6
+			num_of_controlled_states > 18
+		}
+		custom_effect_tooltip = maid_6_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #4
+		limit = {
+			num_of_controlled_states > 10
+		}
+		custom_effect_tooltip = maid_3_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #2
+		limit = {
+			num_of_controlled_states > 5
+		}
+		custom_effect_tooltip = maid_2_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else = { #1
+		custom_effect_tooltip = maid_1_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+}
+
+maid_night_of_maids_level_1_effect = {
+	if = {
+		limit = { #4
+			num_of_controlled_states > 18
+		}
+		custom_effect_tooltip = maid_4_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #2
+		limit = {
+			num_of_controlled_states > 10
+		}
+		custom_effect_tooltip = maid_3_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else_if = { #1
+		limit = {
+			num_of_controlled_states > 5
+		}
+		custom_effect_tooltip = maid_2_states_will_rebel_tt
+		random_state = {
+			limit = {
+				is_core_of = ROOT
+				is_owned_and_controlled_by = ROOT
+				not = {
+					has_state_flag = maid_night_of_maids_flag
+				}
+			}
+			set_state_flag = maid_night_of_maids_flag
+			add_dynamic_modifier = {
+				modifier = maid_dm_rebel_states
+			}
+		}
+	}
+	else = { #0
+		custom_effect_tooltip = maid_0_states_will_rebel_tt
+	}
+}
+
+maid_fill_ideas_slots_effect = {
+	if = {
+		limit = {
+			and = {
+				not = {
+					has_country_flag = maid_idea_slot_using_1
+				}
+				not = {
+					has_country_flag = maid_idea_slot_using_2
+				}
+			}
+		}
+		set_country_flag = maid_idea_slot_using_1
+	}
+	else_if = {
+		limit = {
+			has_country_flag = maid_idea_slot_using_1
+			not = {
+				has_country_flag = maid_idea_slot_using_2
+			}
+		}
+		set_country_flag = maid_idea_slot_using_2
+	}
+}
+
+maid_remove_ideas_slots_effect = {
+	if = {
+		limit = {
+			has_country_flag = maid_idea_slot_using_1
+			not = {
+				has_country_flag = maid_idea_slot_using_2
+			}
+		}
+		clr_country_flag = maid_idea_slot_using_1
+	}
+	else_if = {
+		limit = {
+			and = {
+				has_country_flag = maid_idea_slot_using_1
+				has_country_flag = maid_idea_slot_using_2
+			}
+		}
+		clr_country_flag = maid_idea_slot_using_2
+	}
+}
