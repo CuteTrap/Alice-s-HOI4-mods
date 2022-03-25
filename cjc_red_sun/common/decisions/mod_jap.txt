@@ -1,0 +1,2093 @@
+JAP_return_territory = {
+
+	JAP_return_PRC_territory = {
+		icon = generic_independence
+		available = {
+			any_state = {
+				is_core_of = PRC
+				OR = {
+					is_fully_controlled_by = JAP
+					any_country = {
+						has_full_control_of_state = PREV
+						is_subject_of = JAP 
+					}
+				}
+			}
+			
+		}
+
+		visible = {
+			has_government = communism
+			country_exists = PRC
+			any_state = {
+				is_core_of = PRC
+				OR = {
+					is_fully_controlled_by = JAP
+					any_country = {
+						has_full_control_of_state = PREV
+						is_subject_of = JAP 
+					}
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1000
+		}
+		modifier = {
+
+		}
+		cost = 1
+		complete_effect = {
+			add_threat = -5
+			PRC = { country_event = { id = PRC_mod.4 }}
+			every_state = {
+				limit = {
+					is_core_of = PRC
+					OR = {
+						is_fully_controlled_by = JAP
+						any_country = {
+							has_full_control_of_state = PREV
+							is_subject_of = JAP 
+						}
+					}
+					
+				}
+				PRC = { transfer_state = PREV }
+			}
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_workers_benefits_priority = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+		}
+		visible = {
+			has_completed_focus = JAP_everything_for_workers
+		}
+		cost = 100
+		fire_only_once = yes
+		days_remove = -1
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				date < 1943.6.1
+			}
+		}
+		
+		modifier = {
+			production_factory_max_efficiency_factor = 0.05
+			production_factory_efficiency_gain_factor = 0.1
+			industrial_capacity_factory = -0.1
+			MONTHLY_POPULATION = 0.1
+			stability_factor = 0.05
+		}
+		complete_effect = {
+		
+		}
+	}
+	
+	JAP_join_ger_war = {
+		icon = generic_independence
+		available = {
+			PRC = { has_army_manpower = { size > 799999 } }
+			SOV = { has_War_with = GER }
+			SOV = { surrender_progress > 0.15 }
+		}
+
+		visible = {
+			has_government = communism
+			country_exists = SOV
+			not = { has_war_with = GER }
+		}
+
+		days_remove = 30
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				SOV = { surrender_progress < 0.55 }
+			}
+		}
+		modifier = {
+
+		}
+		cost = 30
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER			
+				expire = 0
+			}
+		
+		}
+		
+		
+	}
+	
+	jap_east_asia_supply_battle_strategy = {
+		icon = generic_independence
+		available = {
+			has_army_experience > 10
+			cjc_east_asia_is_not_peace = yes
+		}
+
+		visible = {
+			cjc_east_asia_is_not_peace = yes
+			has_completed_focus = JAP_army_reformed
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 10
+		complete_effect = {
+			army_experience = -10
+			add_ideas = cjc_idea_special_supply
+			unlock_decision_tooltip = jap_end_east_asia_supply_battle_strategy
+		}
+		
+	}
+	
+	jap_end_east_asia_supply_battle_strategy = {
+		icon = generic_independence
+		available = {
+			has_idea = cjc_idea_special_supply
+		}
+
+		visible = {
+			has_idea = cjc_idea_special_supply
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 10
+		complete_effect = {
+			remove_ideas = cjc_idea_special_supply
+		}
+		
+	}
+	
+	JAP_make_sure_thai = {
+		icon = generic_operation
+		available = {
+			has_government = communism
+			country_exists = SIA
+			not = {
+				SIA = { has_government = communism }
+			}
+			not = {
+				country_exists = MAN
+			}
+		
+		}
+
+		visible = {
+			has_completed_focus = JAP_finish_the_fight
+		}
+
+		days_remove = 20
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		modifier = {
+
+		}
+		cost = 20
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SIA			
+				expire = 0
+			}
+		
+		}
+		
+		
+	}
+	
+	JAP_cjc_supply_to_man_frontline = {
+		icon = generic_operation
+		available = {
+			has_government = communism
+			has_full_control_of_state = 527
+		}
+
+		visible = {
+			has_completed_focus = JAP_finish_the_fight
+		}
+
+		days_remove = 70
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 5
+		}
+		modifier = {
+			civilian_factory_use = 5
+		}
+		cost = 30
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			527 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 6944
+					instant_build = yes
+				}
+			}
+		}
+		
+		
+	}
+	
+	JAP_red_sword_proj = {
+		icon = generic_operation
+		available = {
+			has_army_experience > 19
+			country_exists = USA
+			not = {
+				USA = { has_government = communism }
+			}
+			has_war_with = USA
+			network_strength = {
+				target = USA
+				value > 50
+			}
+		}
+
+		visible = {
+			has_completed_focus = JAP_free_USA
+		}
+
+		days_remove = 50
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.25
+			defense_bonus_against = 0.25
+			breakthrough_bonus_against = 0.25
+		}
+		
+		modifier = {
+			supply_consumption_factor = -0.1
+			army_speed_factor = 0.1
+			army_org_factor = 0.2
+			attrition = 0.05
+			shore_bombardment_bonus = 0.25
+		}
+		cost = 60
+		complete_effect = {
+			army_experience = -20
+		}
+		
+		remove_effect = {
+			
+		}
+		
+		
+	}
+	
+	JAP_south_america_get_chl = {
+		icon = generic_operation
+		available = {
+			country_exists = CHL
+			not = {
+				CHL = { has_government = communism }
+				has_war_with = CHL
+			}
+			if = {
+				limit = {
+					JAP = { is_ai = no }
+				}
+				network_strength = {
+					target = CHL
+					value > 35
+				}
+			}
+		}
+
+		visible = {
+			has_country_flag = JAP_start_to_influence_chl
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		
+		cost = 75
+		complete_effect = {
+			custom_effect_tooltip = CHL_will_be_with_us_tt
+			CHL = {
+				add_timed_idea = {
+					idea = JAP_idea_japanese_communism_influence
+					days = 300
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+				CHL = {
+					add_popularity = {
+						ideology = communism
+						popularity = 0.32
+					}
+				}
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+		
+		
+	}
+	
+	JAP_middle_america_influence_gua = {
+		icon = generic_operation
+		available = {
+			country_exists = GUA
+			not = {
+				GUA = { has_government = communism }
+				has_war_with = GUA
+			}
+			if = {
+				limit = {
+					JAP = { is_ai = no }
+				}
+				network_strength = {
+					target = GUA
+					value > 35
+				}
+			}
+		}
+
+		visible = {
+			has_country_flag = JAP_start_to_influence_gua
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		cost = 50
+		complete_effect = {
+			custom_effect_tooltip = CHL_will_be_with_us_tt
+			GUA = {
+				add_timed_idea = {
+					idea = JAP_idea_japanese_communism_influence
+					days = 300
+				}
+			}
+			GUA = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.10
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 50
+				GUA = {
+					add_popularity = {
+						ideology = communism
+						popularity = 0.30
+					}
+				}
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_middle_america_get_gua = {
+		icon = generic_operation
+		available = {
+			country_exists = GUA
+			not = {
+				GUA = { has_government = communism }
+				has_war_with = GUA
+			}
+			if = {
+				limit = {
+					JAP = { is_ai = no }
+				}
+				network_strength = {
+					target = GUA
+					value > 35
+				}
+			}
+		}
+
+		visible = {
+			has_country_flag = JAP_start_to_influence_gua
+		}
+
+		days_remove = 1
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 8
+		}
+		
+		cost = 100
+		complete_effect = {
+			custom_effect_tooltip = CHL_will_be_with_us_tt
+			set_autonomy = { target = GUA autonomy_state = autonomy_puppet }
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_get_road_to_prc = {
+		icon = generic_operation
+		available = {
+			has_government = communism
+			or = {
+				country_exists = SHX
+				country_exists = MEN
+			}
+			not = {
+				country_exists = MAN
+			}
+		
+		}
+
+		visible = {
+			has_completed_focus = JAP_asian_communist_solidarity_2
+			or = {
+				country_exists = SHX
+				country_exists = MEN
+			}
+		}
+
+		days_remove = 20
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		modifier = {
+
+		}
+		cost = 20
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SHX			
+				expire = 0
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MEN			
+				expire = 0
+			}
+		
+		}
+		
+		
+	}
+	
+	JAP_eliminate_kmt = {
+		icon = generic_operation
+		available = {
+			has_government = communism
+			country_exists = CHI
+			PRC = { has_army_manpower = { size > 369999 } }
+		}
+
+		visible = {
+			has_completed_focus = JAP_asian_communist_solidarity_2
+			country_exists = CHI
+			not = {
+				has_War_with = CHI
+			}
+		}
+
+		days_remove = 30
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 25
+		complete_effect = {
+
+		}
+		
+		remove_effect = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CHI
+				expire = 0
+			}
+		
+		}
+		
+		
+	}
+	
+	form_allies = {
+		icon = generic_independence
+		available = {
+			PRC = { is_ai = yes }
+		}
+
+		visible = {
+			has_government = communism
+			country_exists = PRC
+			is_in_faction = no
+			PRC = { is_in_faction = no }
+			
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 0
+		complete_effect = {
+			PRC = { country_event = { id = JAP_mod.6 }}
+			
+		}
+		
+		
+		
+	}
+	
+	reinforce_AI_prc_attack_kmt = {
+		icon = generic_independence
+		available = {
+			PRC = {
+				is_ai = yes
+				has_army_manpower = { size > 429999 }
+			}
+		}
+
+		visible = {
+			has_government = communism
+			country_exists = PRC
+			PRC = {
+				is_in_faction_with = JAP
+				not = { has_War_with = CHI }
+			}
+			has_War_with = CHI
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 0
+		complete_effect = {
+			PRC = {
+				declare_war_on = {
+					type = annex_everything
+					target = CHI
+				}
+			}
+			
+		}
+		
+	}
+	
+	JAP_AI_navy_production = {
+
+		icon = generic_independence
+
+		available = {
+			
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 1
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			industrial_capacity_dockyard = 0.3
+			naval_speed_factor = 0.1
+			navy_capital_ship_attack_factor = 0.10
+			navy_capital_ship_defence_factor = 0.10
+			navy_screen_attack_factor = 0.10
+			navy_screen_defence_factor = 0.10
+			convoy_escort_efficiency = 0.2
+			convoy_raiding_efficiency_factor = 0.1
+			navy_max_range_factor = 0.2
+			navy_fuel_consumption_factor = -0.2
+			port_strike = 1
+			carrier_capacity_penalty_reduction = -0.2
+			sortie_efficiency = 0.15
+			naval_strike_attack_factor = 0.15
+			naval_strike_targetting_factor = 0.15
+			naval_strike_agility_factor = 0.15
+			no_supply_grace = 48
+			out_of_supply_factor = -0.15
+			shore_bombardment_bonus = 0.25
+		}
+		complete_effect = {
+		
+		}
+	}
+	
+	JAP_AI_goods_production = {
+
+		icon = generic_independence
+
+		available = {
+			has_completed_focus = JAP_everything_for_proletariat
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 1
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			consumer_goods_factor = -0.03
+		}
+		complete_effect = {
+		
+		}
+	}
+	
+	JAP_AI_keep_stability = {
+
+		icon = generic_independence
+
+		available = {
+			has_stability < 0.50
+			date > 1944.1.1
+			has_government = communism
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = no
+		days_remove = 1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			
+		}
+		complete_effect = {
+			add_stability = 0.05
+		}
+	}
+	
+	JAP_ai_civilwar_reinforce = {
+
+		icon = generic_independence
+
+		available = {
+			JAP = { has_civil_war = yes }
+			JAP = { has_government = communism }
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			army_attack_factor = 0.20
+			army_defence_factor = 0.15
+			army_org_factor = 0.10
+			training_time_army_factor = -0.3
+			breakthrough_factor = 0.15
+		}
+		complete_effect = {
+			add_manpower = 1500000
+			army_experience = 120
+			air_experience = 100
+			navy_experience = 100
+			add_political_power = 300
+			add_war_support = 0.2
+			add_equipment_to_stockpile = { type = light_tank_chassis amount = 300 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 600 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 1200 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 900 }
+			add_tech_bonus = {
+				name = touhou_secret_weapons
+				bonus = 1.0
+				uses = 2
+				category = electronics
+				category = nuclear
+				category = rocketry
+			}
+			add_tech_bonus = {
+				name = touhou_RAB_with_kap
+				bonus = 2.0
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	JAP_ai_usa_war_reinforce = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+			has_war_with = USA
+			USA = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 150
+		ai_will_do = {
+			factor = 200
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.30
+			defense_bonus_against = 0.30
+			breakthrough_bonus_against = 0.30
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 0.30
+			defense_bonus_against = 0.30
+			breakthrough_bonus_against = 0.30
+		}
+		targeted_modifier = {
+			tag = PAN
+			attack_bonus_against = 0.30
+			defense_bonus_against = 0.30
+			breakthrough_bonus_against = 0.30
+		}
+		modifier = {
+			army_org_factor = 0.10
+			army_morale_factor = 0.20
+			no_supply_grace = 72
+			land_reinforce_rate = 0.10
+			cas_damage_reduction = 0.5
+			enemy_army_bonus_air_superiority_factor = -0.20
+			training_time_army_factor = -0.1
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 9000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 900 }
+			
+		}
+	}
+	
+	cjc_jap_support_tech_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1939.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_1 = yes
+		}	
+	}
+	
+	cjc_jap_support_tech_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1941.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_2 = yes
+		}	
+	}
+	
+	cjc_jap_support_tech_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1943.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_3 = yes
+		}	
+	}
+	
+	JAP_AI_strengthen_decision = {
+
+		icon = generic_independence
+
+		available = {
+			date > 1941.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 1
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			army_attack_factor = 0.10
+			army_defence_factor = 0.10
+			breakthrough_factor = 0.10
+			experience_loss_factor = -0.30
+		}
+		complete_effect = {
+		
+		}
+	}
+	
+	JAP_AI_strengthen_decision_second = {
+
+		icon = generic_independence
+
+		available = {
+			date > 1946.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 1
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			breakthrough_factor = 0.05
+		}
+		complete_effect = {
+		
+		}
+	}
+	
+	JAP_AI_strengthen_decision_forth = {
+
+		icon = generic_independence
+
+		available = {
+			date > 1945.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 1
+		fire_only_once = yes
+		days_remove = -1
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			weekly_manpower = 10000
+			army_attack_factor = 0.05
+			army_defence_factor = 0.05
+			breakthrough_factor = 0.05
+		}
+		complete_effect = {
+		
+		}
+	}
+
+	
+
+}
+
+JAP_mine_resources = {
+	JAP_mine_resources1 = {
+		icon = steel
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 534
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			534 = {
+				add_resource = {
+				type = steel
+				amount = 16
+				}
+				add_resource = {
+				type = oil
+				amount = 8
+				}
+			}
+			
+		}
+	}
+	
+	JAP_mine_resources2 = {
+		icon = tungsten
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 535
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			
+			535 = {
+				add_resource = {
+				type = tungsten
+				amount = 9
+				}
+			}
+		}
+	}
+	
+	JAP_mine_resources3 = {
+		icon = rubber
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 528
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			
+			528 = {
+				add_resource = {
+				type = rubber
+				amount = 2
+				}
+			}
+			
+		}
+	}
+	
+	JAP_mine_resources4 = {
+		icon = steel
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 531
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			
+			531 = {
+				add_resource = {
+				type = steel
+				amount = 14
+				}
+				add_resource = {
+				type = aluminium
+				amount = 7
+				}
+
+			}
+			
+		}
+	}
+	
+	JAP_mine_resources5 = {
+		icon = steel
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 282
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			
+			282 = {
+				add_resource = {
+				type = steel
+				amount = 10
+				}
+			}
+			
+		}
+	}
+	
+	JAP_mine_resources6 = {
+		icon = oil
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			controls_state = 536
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		remove_effect = {
+			
+			536 = {
+				add_resource = {
+				type = oil
+				amount = 14
+				}
+				add_resource = {
+				type = chromium
+				amount = 6
+				}
+			}
+		}
+	}
+	
+	JAP_get_rubber_tech = {
+		icon = rubber
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			network_strength = {
+				target = GER
+				value > 50
+			}
+		}
+
+		visible = {
+			has_completed_focus = JAP_resources_proj_2
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 100
+			}
+			
+		}
+		
+		remove_effect = {
+			modify_building_resources = {
+        	   building = synthetic_refinery
+        	   resource = rubber
+        	   amount = 2
+        	}
+			hidden_effect = {
+				JAP = { country_event = { id = cjc_mod_JAP.2 days = 2 } }
+			}
+		}
+	}
+	
+	JAP_resources_emergency_proj = {
+		icon = oil
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			has_completed_focus = JAP_industry_input
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 1
+
+		modifier = {
+		
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = JAP_input
+				add_idea = JAP_input_2
+			}
+			
+		}
+		
+	}
+	
+}
+
+JAP_unit_old_colonies = {
+	JAP_unit_kor = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			country_exists = KOR
+			KOR = { has_government = communism }
+		}
+
+		visible = {
+			has_completed_focus = JAP_get_core_korea
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 8
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		remove_effect = {
+			KOR = { country_event = JAP_mod.11 }
+			
+		}
+	}
+	
+	JAP_unit_gum = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			country_exists = GUM
+			GUM = { has_government = communism }
+		}
+
+		visible = {
+			has_completed_focus = JAP_free_islands_in_pacific
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		remove_effect = {
+			GUM = { country_event = JAP_mod.102 }
+			
+		}
+	}
+	
+	JAP_unit_fsm = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			country_exists = FSM
+			FSM = { has_government = communism }
+		}
+
+		visible = {
+			has_completed_focus = JAP_free_islands_in_pacific
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		remove_effect = {
+			FSM = { country_event = JAP_mod.103 }
+			
+		}
+	}
+	
+	
+	
+}
+
+
+
+JAP_industrial_great_project = {
+	JAP_civilian_factories_transfer = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 7
+		}
+
+		visible = {
+			has_completed_focus = JAP_industrial_transfer_project
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 65
+
+		modifier = {
+			civilian_factory_use = 8
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					#industrial_complex > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				#remove_building = {
+				#	type = industrial_complex
+				#	level = 2
+				#}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					#industrial_complex > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				#remove_building = {
+				#	type = industrial_complex
+				#	level = 2
+				#}
+			}
+			custom_effect_tooltip = maid_the_paradox_bug_of_offsite_buildings_tt
+			add_offsite_building = { type = industrial_complex level = 1 }
+			if = {
+				limit = {
+					and = {
+						is_ai = yes
+					}
+				}
+				add_political_power = 35
+			}
+		}
+	}
+	
+	JAP_mili_factories_transfer = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 7
+		}
+
+		visible = {
+			has_completed_focus = JAP_industrial_transfer_project
+		}
+
+		fire_only_once = no
+
+		cost = 25
+		days_remove = 65
+
+		modifier = {
+			civilian_factory_use = 8
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					#arms_factory > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				#remove_building = {
+				#	type = arms_factory
+				#	level = 2
+				#}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					#arms_factory > 1
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				#remove_building = {
+				#	type = arms_factory
+				#	level = 2
+				#}
+			}
+			custom_effect_tooltip = maid_the_paradox_bug_of_offsite_buildings_tt
+			add_offsite_building = { type = arms_factory level = 1 }
+			if = {
+				limit = {
+					and = {
+						is_ai = yes
+					}
+				}
+				add_political_power = 35
+			}
+		}
+	}
+
+	
+}
+
+JAP_asia_communist_union = {
+
+	JAP_coop_mission_1 = { #请求移民许可
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+		}
+
+		visible = {
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 5
+		}
+		modifier = {
+
+		}
+		cost = 50
+		remove_effect = {
+		
+			PRC = { country_event = JAP_union.1 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_2 = { #请求武器代工
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+		}
+
+		visible = {
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 2
+		}
+		modifier = {
+
+		}
+		cost = 50
+		remove_effect = {
+		
+			PRC = { country_event = JAP_union.2 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_3 = { #联合军事演习
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+		}
+
+		visible = {
+			
+		}
+
+		days_remove = 210
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 5
+		complete_effect = {
+		
+			PRC = { country_event = JAP_union.3 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_4 = { #共同防御分工协定
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+			
+		}
+
+		visible = {
+			not = {
+				PRC = { has_country_flag = PRC_union_has_selected1 }
+			}
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 50
+		complete_effect = {
+			set_country_flag = JAP_union_has_selected1
+			JAP = { country_event = JAP_union.4 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_5 = { #联合战机制造
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+			
+		}
+
+		visible = {
+			not = {
+				PRC = { has_country_flag = PRC_union_has_selected2 }
+			}
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 2
+		}
+		modifier = {
+
+		}
+		cost = 50
+		complete_effect = {
+			set_country_flag = JAP_union_has_selected2
+			PRC = { country_event = JAP_union.5 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_6 = { #经济合作
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+			
+		}
+
+		visible = {
+			not = {
+				PRC = { has_country_flag = PRC_union_has_selected3 }
+			}
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 4
+		}
+		modifier = {
+
+		}
+		cost = 75
+		complete_effect = {
+			set_country_flag = JAP_union_has_selected3
+			PRC = { country_event = JAP_union.6 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_7 = { #经济一体化
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+			
+		}
+
+		visible = {
+			has_idea = united_economy_system
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 6
+		}
+		modifier = {
+
+		}
+		cost = 100
+		complete_effect = {
+			PRC = { country_event = JAP_union.7 }
+			
+		}
+		
+		
+		
+	}
+	
+	JAP_coop_mission_8 = { #阵营合并
+		icon = generic_independence
+		available = {
+			has_government = communism
+			is_in_faction_with = PRC
+			PRC = { has_government = communism }
+			country_exists = SOV
+			SOV = { has_government = communism }
+			SOV = { is_faction_leader = yes }
+			threat > 0.80
+		}
+
+		visible = {
+			not = {
+				is_in_faction_with = SOV
+			}
+			has_completed_focus = JAP_invite_PRC_to_comintern2
+		}
+
+		days_remove = 1
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+		}
+		modifier = {
+
+		}
+		cost = 50
+		complete_effect = {
+		
+			PRC = { country_event = JAP_union.8 }
+			
+		}
+		
+		
+		
+	}
+	
+}
+
+ai_navy_improve_decisions = {
+
+	dont_show_ai_navy_improve_decison = { 
+		icon = generic_independence
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			set_country_flag = dont_show_ai_navy_improve_flag
+		}
+	}
+	
+	ai_navy_improve_ger_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.31
+		}
+	}
+	
+	ai_navy_improve_eng_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3101
+		}
+	}
+	
+	ai_navy_improve_usa_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3102
+		}
+	}
+	
+	ai_navy_improve_ita_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3103
+		}
+	}
+	
+	ai_navy_improve_fra_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3104
+		}
+	}
+	
+	ai_navy_improve_sov_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3105
+		}
+	}
+	
+	ai_navy_improve_jap_1 = { 
+		icon = generic_independence
+		visible = {
+			
+		}
+		days_remove = 1
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 0
+		}
+		cost = 0
+		complete_effect = {
+			country_event = cjc_common.3106
+		}
+	}
+
+}
+

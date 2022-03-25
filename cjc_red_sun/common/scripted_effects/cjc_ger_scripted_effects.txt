@@ -1,0 +1,59 @@
+ger_ai_build_army_motorized_1 = { #德国ai摩托化，37年1月决议触发
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 1
+		}
+	}
+}
+
+ger_ai_build_army_motorized_2 = { #德国ai摩托化
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 2
+		}
+	}
+}
+
+ger_ai_build_army_motorized_10 = { #德国ai摩托化，在德国开战时决议触发
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 10
+		}
+	}
+}
+
+ger_ai_build_army_motorized_20 = { #德国ai摩托化
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 20
+		}
+	}
+}
+
+ger_ai_build_army_motorized_minus_16000 = { #德国aidebug测试
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = -16000
+		}
+	}
+}
+
+ger_ai_build_army_motorized_16000 = { #德国aidebug测试
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 16000
+		}
+	}
+}

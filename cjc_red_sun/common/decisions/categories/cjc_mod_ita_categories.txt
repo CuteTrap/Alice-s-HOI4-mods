@@ -1,0 +1,8 @@
+ita_ai_common_functions = {
+	allowed = {
+		original_tag = ITA
+	}
+	visible = {
+		is_ai = yes
+	}
+}

@@ -1,0 +1,124 @@
+technologies = {
+	engineers_landing_reinforce = {
+
+		engineer = {
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.25
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_landing_reinforce_ai = {
+
+		engineer = {
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.75
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_save_manpower_ai = {
+
+		engineer = {
+			casualty_trickleback = 0.30
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	infantry_add_width_ai = {
+
+		infantry = {
+			combat_width = 0.4
+		}
+		category_army = {
+			breakthrough = 0.10
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_decryption_recon_tech = {
+				
+		research_cost = 1.5
+		start_year = 1944
+
+		allow = {
+			always = no
+		}
+		decryption_power = 10
+		category_recon = {
+			recon = 1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	cjc_cas_restriction_1 = {
+
+		air_cas_efficiency = -0.20
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_cas_restriction_2 = {
+
+		category_cas = {
+			air_ground_attack = -5
+		}
+		
+		category_tac_bomber = {
+			air_ground_attack = -5
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+}

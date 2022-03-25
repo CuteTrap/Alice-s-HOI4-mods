@@ -1,0 +1,29 @@
+leader_traits = {
+
+	PRC_communist = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = PRC
+			}
+		}
+		modifier = {
+			equipment_capture = 0.05
+			experience_gain_army_unit_factor = 0.2
+			breakthrough_factor = 0.05
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	
+}

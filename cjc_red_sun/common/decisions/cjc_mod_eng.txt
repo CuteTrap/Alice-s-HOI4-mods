@@ -1,0 +1,117 @@
+eng_ai_common_functions = {
+	cjc_eng_buff_to_player_jap = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = JAP
+			JAP = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_eng_buff_to_player_prc = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = PRC
+			PRC = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_eng_buff_to_player_sov = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+			SOV = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			weekly_manpower = 2000
+			industrial_capacity_factory = 0.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+
+}

@@ -1,0 +1,52 @@
+CHI_cjc_functions = {
+	CHI_decision_defend_commies = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			or = {
+				has_war_with = JAP
+				has_war_with = PRC
+			}
+			or = {
+				JAP = { is_ai = no }
+				PRC = { is_ai = no }
+			}
+		}
+		visible = {
+			is_ai = yes
+			or = {
+				JAP = {
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 180
+		modifier = {
+			army_core_defence_factor = 0.05
+			army_org_factor = 0.08
+		}
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			
+		}
+	}
+
+}

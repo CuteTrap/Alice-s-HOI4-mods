@@ -1,0 +1,8 @@
+A_JAP_cjc_conflicts_politics = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		tag = JAP
+	}
+}

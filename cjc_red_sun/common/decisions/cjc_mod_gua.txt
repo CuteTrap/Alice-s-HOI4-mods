@@ -1,0 +1,116 @@
+gua_ai_common_functions = {
+	GUA_ai_usa_war_reinforce = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+			has_war_with = USA
+			USA = {
+				is_ai = yes
+			}
+			JAP = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 150
+		ai_will_do = {
+			factor = 200
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.60
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.80
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 0.60
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.80
+		}
+		targeted_modifier = {
+			tag = PAN
+			attack_bonus_against = 0.60
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.80
+		}
+		modifier = {
+			army_org_factor = 0.25
+			army_attack_factor = 0.30
+			army_morale_factor = 0.30
+			no_supply_grace = 72
+			cas_damage_reduction = 0.5
+			enemy_army_bonus_air_superiority_factor = -0.20
+			land_reinforce_rate = 0.15
+			training_time_army_factor = -0.1
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 9000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 900 }
+		}
+	}
+	
+	GUA_ai_usa_war_reinforce_2 = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+			has_war_with = USA
+			USA = {
+				is_ai = yes
+			}
+			JAP = {
+				is_ai = no
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 150
+		ai_will_do = {
+			factor = 200
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.40
+			defense_bonus_against = 0.50
+			breakthrough_bonus_against = 0.50
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 0.40
+			defense_bonus_against = 0.50
+			breakthrough_bonus_against = 0.50
+		}
+		targeted_modifier = {
+			tag = PAN
+			attack_bonus_against = 0.40
+			defense_bonus_against = 0.50
+			breakthrough_bonus_against = 0.50
+		}
+		modifier = {
+			army_org_factor = 0.25
+			army_morale_factor = 0.30
+			no_supply_grace = 72
+			cas_damage_reduction = 0.5
+			enemy_army_bonus_air_superiority_factor = -0.20
+			land_reinforce_rate = 0.15
+			training_time_army_factor = -0.1
+		}
+		complete_effect = {
+			
+		}
+	}
+
+}

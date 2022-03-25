@@ -1,0 +1,90 @@
+PRC_historical_plan = {
+	name = "Communist China historical plan"
+	desc = "Historical behavior for Communist China"
+
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes
+				has_game_rule = {
+					rule = PRC_ai_behavior
+					option = DEFAULT
+				}
+			}
+			has_country_flag = PRC_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = PRC_ai_behavior
+				option = HISTORICAL
+			}
+		}
+	}
+	abort = {
+		has_game_rule = {
+			rule = PRC_ai_behavior
+			option = DEFAULT
+		}
+		OR = {
+			JAP = {
+				has_government = communism
+			}
+			USA = {
+				has_government = communism
+			}
+			NOT = {
+				any_other_country = {
+					has_government = communism
+					is_major = yes
+				}
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		PRC_strengthen_the_central_secretariat #March 10 1936	
+		PRC_land_redistribution #May 20 1936	
+		PRC_enforce_the_three_rules
+		PRC_agrarian_socialism
+		PRC_the_yanan_base_area
+		PRC_revolutionary_military_commission
+		PRC_literacy_programs
+		PRC_invite_foreign_investors
+		PRC_mission_to_the_soviet_union
+		PRC_ban_the_opium_trade
+		PRC_protracted_warfare
+		PRC_abolish_the_land_rent
+		PRC_rectification_campaign
+		PRC_proletariat_arts
+		PRC_maoism
+		PRC_comintern_advisor
+		PRC_socialism_with_chinese_characteristics
+		PRC_exploit_the_weak_neighbours
+		PRC_proclaim_the_peoples_republic
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JAP"
+		value = -500
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

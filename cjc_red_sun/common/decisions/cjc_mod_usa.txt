@@ -1,0 +1,780 @@
+USA_cjc_functions = {
+	usa_decision_support_kmt = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			or = {
+				JAP = {
+					has_war_with = CHI
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					has_war_with = CHI
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		visible = {
+			or = {
+				JAP = {
+					has_war_with = CHI
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					has_war_with = CHI
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			country_event = { id = cjc_common.8 }
+		}
+	}
+	
+	usa_decision_ai_emergant_divisions = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			any_country = {
+				is_ai = no
+				has_war_with = USA
+			}
+			any_state = {
+				is_owned_by = USA
+				is_core_of = USA
+				not = {
+					is_fully_controlled_by = USA
+				}
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "Emergent National Guard"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						artillery_brigade = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						recon = { x = 0 y = 2 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 369 }
+					create_unit = {
+						division = "name = \"National Guard 1\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 2\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 3\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 4\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 5\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 6\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 7\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 8\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 9\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 10\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 11\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 12\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 13\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 14\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"National Guard 15\" division_template = \"Emergent National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+				}
+			}
+		}
+	}
+	
+	usa_decision_ai_home_land_protect = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			any_country = {
+				is_ai = no
+				has_war_with = USA
+			}
+			surrender_progress > 0.10
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			set_country_flag = cjc_usa_homeland_denfece_1_flag
+			hidden_effect = {
+				division_template = {
+					name = "Final National Guard"
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						anti_air_brigade = { x = 4 y = 0 }
+						anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+						anti_tank = { x = 0 y = 3 }
+						maintenance_company = { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 369 }
+					create_unit = {
+						division = "name = \"Final National Guard 1\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 2\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 3\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 4\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 5\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 6\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 7\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 8\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 9\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 10\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 25\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 26\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+				}
+			}
+		}
+	}
+	
+	usa_decision_ai_home_land_protect_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			any_country = {
+				is_ai = no
+				has_war_with = USA
+			}
+			surrender_progress > 0.20
+			has_country_flag = cjc_usa_homeland_denfece_1_flag
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 369 }
+					create_unit = {
+						division = "name = \"Final National Guard 11\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 12\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 13\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 14\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 15\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 16\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 17\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 18\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 19\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 20\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 21\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 22\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 23\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 24\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 27\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+					create_unit = {
+						division = "name = \"Final National Guard 28\" division_template = \"Final National Guard\" start_experience_factor = 0.2" 
+						owner = USA
+					}
+				}
+			}
+		}
+	}
+	
+	cjc_usa_support_tech_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			date > 1939.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_1 = yes
+		}	
+	}
+	
+	cjc_usa_support_tech_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			date > 1941.1.1
+			or = {
+				surrender_progress > 0.10
+				date > 1942.6.1
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_2 = yes
+		}	
+	}
+	
+	cjc_usa_support_tech_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			date > 1944.1.1
+			or = {
+				surrender_progress > 0.15
+				date > 1945.6.1
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_3 = yes
+		}	
+	}
+	
+	usa_clear_communism_from_middle_america = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+		}
+		visible = {
+			not = {
+				has_government = communism
+			}
+			GUA = {
+				has_government = communism
+				is_in_faction_with = JAP
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 40
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0
+				date < 1941.2.1
+			}
+			modifier = {
+				factor = 0
+				country_exists = CHI
+			}
+		}
+		complete_effect = {
+			JAP = {
+				country_event = { id = cjc_common.3704 }
+				set_country_flag = {
+					flag = cjc_usa_will_attack_us_flag
+					days = 300
+					value = 1
+				}
+			}
+		}
+		remove_effect = {
+			create_wargoal = {
+				target = GUA
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+			set_country_flag = cjc_usa_has_wargoal_to_ma_flag
+		}
+	}
+	
+	usa_give_pressure_to_mexico = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			MEX = {
+				is_puppet = no
+				is_in_faction = no
+				has_war = no
+				has_civil_war = no
+				is_ai = yes
+				not = {
+					has_government = communism
+				}
+			}
+		}
+		visible = {
+			has_country_flag = cjc_usa_has_wargoal_to_ma_flag
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 10
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 35
+		}
+		complete_effect = {
+			JAP = {
+				country_event = { id = cjc_common.3705 }
+			}
+		}
+		remove_effect = {
+			set_autonomy = { target = MEX autonomy_state = autonomy_puppet }
+			set_country_flag = cjc_usa_has_wargoal_to_ma2_flag
+		}
+	}
+	
+	usa_give_pressure_to_pan = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			PAN = {
+				is_puppet = no
+				is_in_faction = no
+				has_war = no
+				has_civil_war = no
+				is_ai = yes
+				not = {
+					has_government = communism
+				}
+			}
+		}
+		visible = {
+			has_country_flag = cjc_usa_has_wargoal_to_ma_flag
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 10
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			set_autonomy = { target = PAN autonomy_state = autonomy_puppet }
+		}
+	}
+	
+	usa_delcare_war_to_ma = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = USA
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+		}
+		visible = {
+			has_country_flag = cjc_usa_has_wargoal_to_ma2_flag
+			not = {
+				has_war_with = GUA
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 80
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 30
+		}
+		complete_effect = {
+			
+		}
+		remove_effect = {
+			declare_war_on = {
+				type = annex_everything
+				target = GUA
+			}
+		}
+	}
+
+}
+
+usa_ai_common_functions = {
+	cjc_usa_buff_to_player_jap = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = JAP
+			JAP = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_usa_buff_to_player_prc = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = PRC
+			PRC = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_usa_buff_to_player_sov = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+			SOV = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			weekly_manpower = 2000
+			industrial_capacity_factory = 0.1
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+
+}
